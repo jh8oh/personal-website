@@ -1,0 +1,74 @@
+// ---------------------------------------------------------------------------
+// Contains all styles related to the header of this site
+// ---------------------------------------------------------------------------
+
+// Default height for the header wehn content inside isn't wrapped
+$header-height: 50px;
+
+header {
+  height: $header-height;
+
+  // Fills the whole width with the header
+  width: 100%;
+  top: 0;
+  left: 0;
+
+  // Horizontal padding to make sure elements aren't at the edges
+  padding: 0 $horizontal-padding;
+  box-sizing: border-box;
+
+  // Center logo
+  display: flex;
+  align-items: center;
+
+  // Make the navigation bar stay at the top of the page
+  position: fixed;
+
+  background-color: $color-background-inverse;
+
+  .logo {
+    height: 85%;
+    float: left;
+    margin-right: 10px;
+  }
+
+  nav{
+    width: 100%;
+  }
+}
+
+.header-nav {
+  height: $header-height;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  list-style-type: none;
+
+  li {
+    a {
+      display: block;
+      padding: 14px 16px;
+      text-align: center;
+      text-decoration: none;
+      color: $color-text-on-inverse;
+
+      &:hover {
+        color: $color-accent;
+      }
+
+      &.router-link-active {
+        border-bottom: 3px solid $color-accent;
+        color: $color-accent;
+      }
+    }
+  }
+
+  // HTML class must be the <li> element
+  &__item--left {
+    float: left;
+  }
+
+  &__item--right {
+    float: right;
+  }
+}

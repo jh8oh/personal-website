@@ -1,0 +1,31 @@
+// ---------------------------------------------------------------------------
+// Contains all site-wide Sass variables
+// ---------------------------------------------------------------------------
+
+// Colors
+
+// Greyscale
+$mine-shaft: #222 !default;
+$tundora: #444 !default;
+$gallery: #eee !default;
+
+// Color
+$purple-heart: #8a2be2;
+
+// Semantic
+$color-background: $gallery !default;
+$color-background-inverse: $mine-shaft !default;
+$color-text-on-background: $tundora !default;
+$color-text-on-inverse: $gallery !default;
+
+$color-accent: $purple-heart;
+
+// Font Families
+@import url("https://fonts.googleapis.com/css?family=Lora|Raleway|Share+Tech+Mono&display=swap");
+
+$serif-font-family: "Lora", serif !default;
+$sans-serif-font-family: "Raleway", sans-serif !default;
+$monospace-font-family: "Share Tech Mono", monospace !default;
+
+// Dimensions
+$horizontal-padding: 20%;

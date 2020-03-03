@@ -7,6 +7,9 @@
           <li
             v-for="tab in tabs"
             :key="tab.title"
+            v-bind:class="
+              tab.left ? 'header-nav__item--left' : 'header-nav__item--right'
+            "
           >
             <router-link
               tag="a"
@@ -54,3 +57,5 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" src="./sass/main.scss"></style>
