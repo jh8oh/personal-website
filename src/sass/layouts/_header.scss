@@ -2,12 +2,7 @@
 // Contains all styles related to the header of this site
 // ---------------------------------------------------------------------------
 
-// Default height for the header wehn content inside isn't wrapped
-$header-height: 50px;
-
 header {
-  height: $header-height;
-
   // Fills the whole width with the header
   width: 100%;
   top: 0;
@@ -27,18 +22,17 @@ header {
   background-color: $color-background-inverse;
 
   .logo {
-    height: 85%;
+    height: 45px;
     float: left;
     margin-right: 10px;
   }
 
-  nav{
+  nav {
     width: 100%;
   }
 }
 
-.header-nav {
-  height: $header-height;
+.header-ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -61,14 +55,15 @@ header {
         color: $color-accent;
       }
     }
-  }
 
-  // HTML class must be the <li> element
-  &__item--left {
-    float: left;
-  }
+    &.item {
+      &-left {
+        float: left;
+      }
 
-  &__item--right {
-    float: right;
+      &-right {
+        float: right;
+      }
+    }
   }
 }
