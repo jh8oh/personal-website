@@ -1,12 +1,18 @@
 <template>
   <header>
     <img class="logo" src="../assets/img/logo.png" alt="Website Logo" />
-    <nav>
+    <img
+      class="menu-dropdown"
+      alt="Navigate to…"
+      src="../assets/ico/menu-gallery.svg"
+      v-on:click="toggleNavigation()"
+    />
+    <nav v-bind:class="navShown ? 'shown' : ''">
       <ul class="header-ul">
         <li
           v-for="tab in tabs"
           :key="tab.title"
-          v-bind:class="tab.left ? 'item-left' : 'item-right'"
+          v-bind:class="tab.left ? '' : 'item--right'"
         >
           <router-link
             tag="a"
@@ -25,6 +31,7 @@
 export default {
   data() {
     return {
+      navShown: false,
       tabs: [
         {
           title: "Home",
@@ -48,6 +55,11 @@ export default {
         }
       ]
     };
+  },
+  methods: {
+    toggleNavigation() {
+      this.navShown = !this.navShown;
+    }
   }
 };
 </script>

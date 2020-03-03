@@ -2,33 +2,59 @@
 // Contains all styles related to the header of this site
 // ---------------------------------------------------------------------------
 
+$header-img-size: 45px;
+$header-img-vertical-padding: 5px;
+
 header {
-  // Fills the whole width with the header
+  display: flex;
   width: 100%;
   top: 0;
   left: 0;
 
   // Horizontal padding to make sure elements aren't at the edges
-  padding: 0 $horizontal-padding;
-  box-sizing: border-box;
+  @media screen and (min-width: $breakpoint) {
+    padding: 0 $horizontal-padding;
+    box-sizing: border-box;
+  }
 
-  // Center logo
-  display: flex;
-  align-items: center;
-
-  // Make the navigation bar stay at the top of the page
-  position: fixed;
-
+  position: fixed; // Make the navigation bar stay at the top of the page
   background-color: $color-background-inverse;
 
   .logo {
-    height: 45px;
-    float: left;
+    height: $header-img-size;
+    padding: $header-img-vertical-padding 0;
     margin-right: 10px;
+
+    @media screen and (max-width: $breakpoint) {
+      margin-left: 10px;
+    }
+  }
+
+  // Dropdown menu (only shown when the view is smaller than the breakpoint)
+  .menu-dropdown {
+    display: none;
+    height: $header-img-size;
+    padding: $header-img-vertical-padding 0;
+    float: right;
+
+    @media screen and (max-width: $breakpoint) {
+      display: block;
+      margin-right: 10px;
+    }
   }
 
   nav {
     width: 100%;
+
+    @media screen and (max-width: $breakpoint) {
+      &:not(.shown) {
+        display: none;
+      }
+    }
+  }
+
+  @media screen and (max-width: $breakpoint) {
+    display: inline;
   }
 }
 
@@ -41,6 +67,7 @@ header {
   li {
     a {
       display: block;
+      float: left;
       padding: 14px 16px;
       text-align: center;
       text-decoration: none;
@@ -54,15 +81,19 @@ header {
         border-bottom: 3px solid $color-accent;
         color: $color-accent;
       }
+
+      @media screen and (max-width: $breakpoint) {
+        width: 100%;
+        float: none;
+        box-sizing: border-box;
+      }
     }
 
-    &.item {
-      &-left {
-        float: left;
-      }
+    &.item--right {
+      float: right;
 
-      &-right {
-        float: right;
+      @media screen and (max-width: $breakpoint) {
+        float: none;
       }
     }
   }
