@@ -4,7 +4,7 @@
     <img
       class="menu-dropdown"
       alt="Navigate to…"
-      src="../assets/ico/menu-gallery.svg"
+      :src="getDropdownMenuIcon()"
       v-on:click="toggleNavigation()"
     />
     <nav v-bind:class="navShown ? 'shown' : ''">
@@ -59,6 +59,13 @@ export default {
   methods: {
     toggleNavigation() {
       this.navShown = !this.navShown;
+    },
+    getDropdownMenuIcon(){
+      if (this.navShown){
+        return require('../assets/ico/menu-purpleheart.svg');
+      } else{
+        return require('../assets/ico/menu-gallery.svg');
+      }
     }
   }
 };

@@ -50,6 +50,10 @@ header {
       &:not(.shown) {
         display: none;
       }
+
+      &.shown{
+        border-top: 1px solid $tundora;
+      }
     }
   }
 
