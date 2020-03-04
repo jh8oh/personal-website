@@ -9,15 +9,12 @@
     />
     <nav v-bind:class="navShown ? 'shown' : ''">
       <ul class="header-ul">
-        <li
-          v-for="tab in tabs"
-          :key="tab.title"
-          v-bind:class="tab.left ? '' : 'item--right'"
-        >
+        <li v-for="tab in tabs" :key="tab.title">
           <router-link
             tag="a"
             v-bind:to="tab.url"
             v-bind:exact="tab.title === 'Home' ? true : false"
+            v-bind:class="tab.left ? '' : 'item--right'"
           >
             {{ tab.title }}
           </router-link>
@@ -60,11 +57,11 @@ export default {
     toggleNavigation() {
       this.navShown = !this.navShown;
     },
-    getDropdownMenuIcon(){
-      if (this.navShown){
-        return require('../assets/ico/header/menu-purpleheart.svg');
-      } else{
-        return require('../assets/ico/header/menu-gallery.svg');
+    getDropdownMenuIcon() {
+      if (this.navShown) {
+        return require("../assets/ico/header/menu-purpleheart.svg");
+      } else {
+        return require("../assets/ico/header/menu-gallery.svg");
       }
     }
   }
