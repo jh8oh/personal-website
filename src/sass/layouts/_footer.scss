@@ -1,0 +1,32 @@
+footer {
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  position: absolute;
+  padding: 0 $horizontal-padding;
+  box-sizing: border-box;
+  background-color: $tundora;
+
+  p {
+    float: left;
+    margin: 11.5px;
+    color: $gallery;
+  }
+}
+
+ul.footer-links {
+  float: right;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  list-style-type: none;
+
+  li {
+    display: inline-block;
+
+    a {
+      display: block;
+      padding: 5px 5px;
+    }
+  }
+}
