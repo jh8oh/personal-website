@@ -1,0 +1,54 @@
+// ---------------------------------------------------------------------------
+// Contains all styles related to the footer of this site
+// ---------------------------------------------------------------------------
+
+$breakpoint: 520px;
+
+footer {
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  position: absolute;
+  padding: 0 $horizontal-padding;
+  box-sizing: border-box;
+  background-color: $tundora;
+
+  p {
+    float: left;
+    margin: 11.5px;
+    color: $gallery;
+
+    @media screen and (max-width: $breakpoint){
+      display: block;
+      width: 100%;
+      margin: auto;
+    }
+  }
+
+  @media screen and (max-width: $breakpoint){
+    text-align: center;
+  }
+}
+
+ul.footer-links {
+  float: right;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  list-style-type: none;
+
+  li {
+    display: inline-block;
+
+    a {
+      display: block;
+      padding: 5px 5px;
+    }
+  }
+
+  @media screen and (max-width: $breakpoint){
+    display: block;
+    width: 100%;
+    margin: auto;
+  }
+}
