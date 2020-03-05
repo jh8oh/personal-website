@@ -1,3 +1,9 @@
+// ---------------------------------------------------------------------------
+// Contains all styles related to the footer of this site
+// ---------------------------------------------------------------------------
+
+$breakpoint: 520px;
+
 footer {
   width: 100%;
   left: 0;
@@ -11,6 +17,16 @@ footer {
     float: left;
     margin: 11.5px;
     color: $gallery;
+
+    @media screen and (max-width: $breakpoint){
+      display: block;
+      width: 100%;
+      margin: auto;
+    }
+  }
+
+  @media screen and (max-width: $breakpoint){
+    text-align: center;
   }
 }
 
@@ -28,5 +44,11 @@ ul.footer-links {
       display: block;
       padding: 5px 5px;
     }
+  }
+
+  @media screen and (max-width: $breakpoint){
+    display: block;
+    width: 100%;
+    margin: auto;
   }
 }
