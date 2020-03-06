@@ -1,7 +1,7 @@
 <template>
   <footer>
     <p>© 2020 Ji Ho Oh</p>
-    <ul class="footer-links">
+    <ul id="footer-links">
       <li v-for="link in links" :key="link.title">
         <a v-bind:href="link.to">
           <img align="center" v-bind:src="link.icon" />
