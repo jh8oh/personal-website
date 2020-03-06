@@ -1,6 +1,17 @@
-html{
-	@media screen and (min-width: 150px){
-		margin-left: calc(100vw - 100%);
-		margin-right: 0;
-	}
+// ---------------------------------------------------------------------------
+// Contains site-wide layout styles
+// ---------------------------------------------------------------------------
+
+body{
+	margin: 0;
+}
+
+#app{
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+#content{
+	flex: 1 0 auto;
 }
