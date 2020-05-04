@@ -59,9 +59,9 @@ export default {
     },
     getDropdownMenuIcon() {
       if (this.navShown) {
-        return require("../assets/ico/header/menu-purpleheart.svg");
+        return require("../assets/img/header/menu-purpleheart.svg");
       } else {
-        return require("../assets/ico/header/menu-gallery.svg");
+        return require("../assets/img/header/menu-gallery.svg");
       }
     }
   }
