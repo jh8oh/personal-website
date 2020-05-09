@@ -1,0 +1,22 @@
+// ---------------------------------------------------------------------------
+// Contains site-wide layout styles
+// ---------------------------------------------------------------------------
+
+body {
+  margin: 0;
+}
+
+#app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#content {
+  flex: 1 0 auto;
+  margin: 56px 0 0 0;
+}
+
+.background-dark {
+  background-color: $color-background-dark;
+}
