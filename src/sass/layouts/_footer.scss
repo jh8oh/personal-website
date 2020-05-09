@@ -11,10 +11,14 @@ footer {
   box-sizing: border-box;
   background-color: $tundora;
 
-  p {
+  @media screen and (max-width: $breakpoint) {
+    text-align: center;
+  }
+
+  span {
     float: left;
     margin: 11.5px 0;
-    color: $gallery;
+    color: $alabaster;
 
     @media screen and (max-width: $breakpoint) {
       display: block;
@@ -23,30 +27,26 @@ footer {
     }
   }
 
-  @media screen and (max-width: $breakpoint) {
-    text-align: center;
-  }
-}
+  ul {
+    float: right;
+    margin: 3px 0;
+    padding: 0;
+    overflow: hidden;
+    list-style-type: none;
 
-#footer-links {
-  float: right;
-  margin: 3px 0;
-  padding: 0;
-  overflow: hidden;
-  list-style-type: none;
+    @media screen and (max-width: $breakpoint) {
+      display: block;
+      width: 100%;
+      margin: auto;
+    }
 
-  li {
-    display: inline-block;
+    li {
+      display: inline-block;
+    }
 
     a {
       display: block;
       padding: 5px 5px;
     }
-  }
-
-  @media screen and (max-width: $breakpoint) {
-    display: block;
-    width: 100%;
-    margin: auto;
   }
 }

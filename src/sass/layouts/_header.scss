@@ -2,6 +2,8 @@
 // Contains all styles related to the header of this site
 // ---------------------------------------------------------------------------
 header {
+  $breakpoint: 710px;
+
   display: flex;
   width: 100%;
   top: 0;
@@ -12,29 +14,27 @@ header {
   box-sizing: border-box;
 
   position: fixed; // Make the navigation bar stay at the top of the page
-  background-color: $color-background-inverse;
+  background-color: $mineshaft;
 
-  img{
-    height: 40px;
-    padding: 8px 0;
+  @media screen and (max-width: $breakpoint) {
+    display: inline;
+    padding: 0;
   }
 
-  .logo {
-    margin-right: 10px;
-
-    @media screen and (max-width: $breakpoint) {
-      margin-left: 10px;
-    }
+  img {
+    height: 40px;
+    padding: 8px 0;
+    vertical-align: bottom;
+    margin: 0 12px;
   }
 
   // Dropdown menu (only shown when the view is smaller than the breakpoint)
-  .menu-dropdown {
+  #menu-dropdown {
     display: none;
     float: right;
 
     @media screen and (max-width: $breakpoint) {
       display: block;
-      margin-right: 10px;
     }
   }
 
@@ -50,28 +50,21 @@ header {
     }
   }
 
-  @media screen and (max-width: $breakpoint) {
-    display: inline;
+  ul {
+    margin: 0;
     padding: 0;
-  }
-}
+    overflow: hidden;
+    list-style-type: none;
 
-.header-ul {
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  list-style-type: none;
-
-  li {
     a {
       display: block;
       float: left;
       padding: 13.5px;
       text-align: center;
       text-decoration: none;
-      color: $color-text-on-inverse;
+      color: $alabaster;
 
-      &.item--right {
+      &.right {
         float: right;
       }
 

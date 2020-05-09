@@ -5,28 +5,27 @@
 // Colors
 
 // Greyscale
-$mine-shaft: #222 !default;
+$mineshaft: #222 !default;
 $tundora: #444 !default;
 $gallery: #eee !default;
+$alabaster: #f7f7f7 !default;
 
 // Color
 $purple-heart: #8a2be2;
 
 // Semantic
 $color-background: $gallery !default;
-$color-background-inverse: $mine-shaft !default;
+$color-background-light: $alabaster !default;
 $color-text-on-background: $tundora !default;
-$color-text-on-inverse: $gallery !default;
 
 $color-accent: $purple-heart;
 
 // Font Families
-@import url("https://fonts.googleapis.com/css?family=Lora|Raleway|Share+Tech+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Oswald|Raleway|Share+Tech+Mono&display=swap");
 
-$serif-font-family: "Lora", serif !default;
-$sans-serif-font-family: "Raleway", sans-serif !default;
-$monospace-font-family: "Share Tech Mono", monospace !default;
+$heading-font-family: "Oswald", sans-serif !default;
+$body-font-family: "Raleway", sans-serif !default;
+$code-font-family: "Share Tech Mono", monospace !default;
 
 // Dimensions
-$breakpoint: 680px;
 $horizontal-padding: 20%;
