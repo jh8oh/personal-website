@@ -11,7 +11,9 @@
 @import "layouts/header";
 @import "layouts/footer";
 
+// Components
+@import "components/button";
+
 // Page-specific styles
 @import "pages/about";
-
-// Components
+@import "pages/home";

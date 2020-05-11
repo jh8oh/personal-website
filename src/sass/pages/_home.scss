@@ -1,0 +1,16 @@
+// ---------------------------------------------------------------------------
+// This file contains styles that are specific to the "Home" page.
+// ---------------------------------------------------------------------------
+
+#home {
+  background-image: linear-gradient($purple-heart, $mineshaft);
+
+  #greeting {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+  }
+}
