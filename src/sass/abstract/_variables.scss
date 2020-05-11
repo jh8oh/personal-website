@@ -14,9 +14,10 @@ $alabaster: #f7f7f7 !default;
 $purple-heart: #8a2be2;
 
 // Semantic
-$color-background: $gallery !default;
-$color-background-light: $alabaster !default;
+$color-background: $alabaster !default;
+$color-background-dark: $gallery !default;
 $color-text-on-background: $tundora !default;
+$color-text-on-background-dark: $mineshaft !default;
 
 $color-accent: $purple-heart;
 
@@ -28,4 +29,4 @@ $body-font-family: "Raleway", sans-serif !default;
 $code-font-family: "Share Tech Mono", monospace !default;
 
 // Dimensions
-$horizontal-padding: 20%;
+$horizontal-padding: 22%;
