@@ -1,20 +1,22 @@
 <template>
   <header>
-    <img class="logo" src="../assets/img/logo.png" alt="Website Logo" />
+    <router-link tag="a" to="/">
+      <img id="logo" src="../assets/ico/logo.png" alt="Website Logo" />
+    </router-link>
     <img
-      class="menu-dropdown"
+      id="menu-dropdown"
       alt="Navigate to…"
       :src="getDropdownMenuIcon()"
       v-on:click="toggleNavigation()"
     />
     <nav v-bind:class="navShown ? 'shown' : ''">
-      <ul class="header-ul">
+      <ul>
         <li v-for="tab in tabs" :key="tab.title">
           <router-link
             tag="a"
             v-bind:to="tab.url"
             v-bind:exact="tab.title === 'Home' ? true : false"
-            v-bind:class="tab.left ? '' : 'item--right'"
+            v-bind:class="tab.left ? '' : 'right'"
           >
             {{ tab.title }}
           </router-link>
@@ -31,26 +33,21 @@ export default {
       navShown: false,
       tabs: [
         {
-          title: "Home",
-          url: "/",
-          left: true
-        },
-        {
-          title: "Bio",
-          url: "/bio",
-          left: true
+          title: "About",
+          url: "/about",
+          left: true,
         },
         {
           title: "Portfolio",
           url: "/portfolio",
-          left: true
+          left: true,
         },
         {
           title: "Contact Me",
           url: "/contact-me",
-          left: false
-        }
-      ]
+          left: false,
+        },
+      ],
     };
   },
   methods: {
@@ -59,11 +56,11 @@ export default {
     },
     getDropdownMenuIcon() {
       if (this.navShown) {
-        return require("../assets/img/header/menu-purpleheart.svg");
+        return require("../assets/ico/header/menu-curiousblue.svg");
       } else {
-        return require("../assets/img/header/menu-gallery.svg");
+        return require("../assets/ico/header/menu-gallery.svg");
       }
-    }
-  }
+    },
+  },
 };
 </script>

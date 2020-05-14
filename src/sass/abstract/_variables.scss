@@ -2,31 +2,39 @@
 // Contains all site-wide Sass variables
 // ---------------------------------------------------------------------------
 
-// Colors
+// Colors - Greyscale
+$mineshaft: #222;
+$tundora: #444;
+$gray: #777;
+$gallery: #ddd;
+$alabaster: #f7f7f7;
 
-// Greyscale
-$mine-shaft: #222 !default;
-$tundora: #444 !default;
-$gallery: #eee !default;
+// Colors - full color
+$malibu: #6ab7ff;
+$curious-blue: #1E88E5;
+$endeavour: #005cb2;
 
-// Color
-$purple-heart: #8a2be2;
+// Colors - Semantics
+$color-background: $alabaster;
+$color-background-variant: $gallery;
 
-// Semantic
-$color-background: $gallery !default;
-$color-background-inverse: $mine-shaft !default;
-$color-text-on-background: $tundora !default;
-$color-text-on-inverse: $gallery !default;
+$color-base: $tundora;
+$color-base-variant: $mineshaft;
 
-$color-accent: $purple-heart;
+$color-accent: $curious-blue;
+$color-accent-variant: $endeavour;
+
+$color-on-background: $tundora;
+$color-on-background-variant: $mineshaft;
+$color-on-base: $gallery;
+$color-on-base-variant: $gray;
 
 // Font Families
-@import url("https://fonts.googleapis.com/css?family=Lora|Raleway|Share+Tech+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Oswald|Raleway|Share+Tech+Mono&display=swap");
 
-$serif-font-family: "Lora", serif !default;
-$sans-serif-font-family: "Raleway", sans-serif !default;
-$monospace-font-family: "Share Tech Mono", monospace !default;
+$heading-font-family: "Oswald", sans-serif;
+$body-font-family: "Raleway", sans-serif;
+$code-font-family: "Share Tech Mono", monospace;
 
 // Dimensions
-$breakpoint: 680px;
-$horizontal-padding: 20%;
+$horizontal-padding: 22%;

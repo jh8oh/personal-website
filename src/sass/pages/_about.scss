@@ -1,17 +1,17 @@
 // ---------------------------------------------------------------------------
-// Contains site-wide layout styles
+// This file contains styles that are specific to the "About Me" page.
 // ---------------------------------------------------------------------------
 
-body{
-	margin: 0;
-}
+#about {
+  #intro {
+  }
 
-#app{
-	height: 100vh;
-	display: flex;
-	flex-direction: column;
-}
+  #skills {
+  }
 
-#content{
-	flex: 1 0 auto;
+  #experience {
+  }
+
+  #interests {
+  }
 }

@@ -7,10 +7,13 @@
 @import "base/typeface";
 
 // Layout
-@import "layouts/all";
+@import "layouts/content";
 @import "layouts/header";
 @import "layouts/footer";
 
-// Modules
+// Components
+@import "components/button";
 
 // Page-specific styles
+@import "pages/about";
+@import "pages/home";
