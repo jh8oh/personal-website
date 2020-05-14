@@ -1,7 +1,7 @@
 <template>
   <header>
     <router-link tag="a" to="/">
-      <img id="logo" src="../assets/img/logo.png" alt="Website Logo" />
+      <img id="logo" src="../assets/ico/logo.png" alt="Website Logo" />
     </router-link>
     <img
       id="menu-dropdown"
@@ -56,9 +56,9 @@ export default {
     },
     getDropdownMenuIcon() {
       if (this.navShown) {
-        return require("../assets/img/header/menu-curiousblue.svg");
+        return require("../assets/ico/header/menu-curiousblue.svg");
       } else {
-        return require("../assets/img/header/menu-gallery.svg");
+        return require("../assets/ico/header/menu-gallery.svg");
       }
     },
   },
