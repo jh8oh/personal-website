@@ -14,7 +14,7 @@ header {
   box-sizing: border-box;
 
   position: fixed; // Make the navigation bar stay at the top of the page
-  background-color: $mineshaft;
+  background-color: $color-base-variant;
 
   @media screen and (max-width: $breakpoint) {
     display: inline;
@@ -42,8 +42,6 @@ header {
     width: 100%;
 
     @media screen and (max-width: $breakpoint) {
-      border-top: 1px solid $tundora;
-
       &:not(.shown) {
         display: none;
       }

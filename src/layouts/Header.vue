@@ -33,11 +33,6 @@ export default {
       navShown: false,
       tabs: [
         {
-          title: "Home",
-          url: "/",
-          left: true,
-        },
-        {
           title: "About",
           url: "/about",
           left: true,
@@ -61,7 +56,7 @@ export default {
     },
     getDropdownMenuIcon() {
       if (this.navShown) {
-        return require("../assets/img/header/menu-purpleheart.svg");
+        return require("../assets/img/header/menu-curiousblue.svg");
       } else {
         return require("../assets/img/header/menu-gallery.svg");
       }

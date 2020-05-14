@@ -1,15 +1,18 @@
 <template>
-  <button class="button" :class="'class'">
-    <h4>{{ text }}</h4>
-  </button>
+  <a class="button" :class="color" :href="href">
+    {{ text }}
+  </a>
 </template>
 
 <script>
 export default {
   props: {
-    class: {
+    color: {
       type: String,
       default: "",
+    },
+    href: {
+      type: String,
     },
     text: {
       type: String,

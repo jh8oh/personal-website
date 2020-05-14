@@ -9,7 +9,7 @@ footer {
   flex-shrink: 0;
   padding: 0 $horizontal-padding;
   box-sizing: border-box;
-  background-color: $tundora;
+  background-color: $color-base;
 
   @media screen and (max-width: $breakpoint) {
     text-align: center;

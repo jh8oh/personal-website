@@ -1,20 +1,21 @@
 <template>
   <div id="home">
     <div id="greeting">
-      <h4>Hi, I'm</h4><br />
-      <h2>Ji Ho Oh</h2><br />
-      <h4>Programmer, Artist, World-building enthusiast</h4>
-      <Button :text="'Get to know me'"/>
+      <span>Hi, I'm</span>
+      <h2>Ji Ho Oh</h2>
+      <span>Programmer, Artist, World-building enthusiast</span>
+      <br /><br />
+      <Button :href="'/about'" :text="'Get to know me'" />
     </div>
   </div>
 </template>
 
 <script>
-import Button from "../components/Button.vue"
+import Button from "../components/Button.vue";
 
 export default {
   components: {
-    Button
-  }
-}
+    Button,
+  },
+};
 </script>
