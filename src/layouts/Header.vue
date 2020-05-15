@@ -1,7 +1,13 @@
 <template>
   <header>
     <router-link tag="a" to="/">
-      <img id="logo" src="../assets/ico/logo.png" alt="Website Logo" />
+      <img
+        id="logo"
+        @mouseover="logoHovered = true"
+        @mouseleave="logoHovered = false"
+        :src="getLogoIcon()"
+        alt="Website Logo"
+      />
     </router-link>
     <img
       id="menu-dropdown"
@@ -30,6 +36,7 @@
 export default {
   data() {
     return {
+      logoHovered: false,
       navShown: false,
       tabs: [
         {
@@ -51,6 +58,13 @@ export default {
     };
   },
   methods: {
+    getLogoIcon(){
+      if (this.logoHovered){
+        return require("../assets/ico/header/logo-curiousblue.png");
+      } else{
+        return require("../assets/ico/header/logo-gallery.png");
+      }
+    },
     toggleNavigation() {
       this.navShown = !this.navShown;
     },
