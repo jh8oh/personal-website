@@ -15,8 +15,8 @@
     transform: translate(-50%, -50%);
     text-align: center;
 
-    h2 {
-      color: $color-on-base;
+    #name {
+      @include text($heading-font-family, 4rem, 300, 1.2, -0.5px, none, $color-on-base);
     }
 
     span {

@@ -15,6 +15,7 @@ header {
 
   position: fixed; // Make the navigation bar stay at the top of the page
   background-color: $color-base-variant;
+  z-index: 1;
 
   @media screen and (max-width: $breakpoint) {
     display: inline;
@@ -60,10 +61,14 @@ header {
       padding: 13.5px;
       text-align: center;
       text-decoration: none;
-      color: $alabaster;
 
       &.right {
         float: right;
+      }
+
+      &:link,
+      &:visited {
+        color: $color-on-base;
       }
 
       &:hover {

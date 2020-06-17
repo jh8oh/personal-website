@@ -1,8 +1,7 @@
 <template>
   <header>
-    <router-link tag="a" to="/">
+    <router-link id="logo" tag="a" to="/">
       <img
-        id="logo"
         @mouseover="logoHovered = true"
         @mouseleave="logoHovered = false"
         :src="getLogoIcon()"

@@ -8,12 +8,15 @@
   margin: 4px 2px;
   border: 2px solid $color-accent;
   background-color: transparent;
-  color: $color-accent;
   text-align: center;
   text-transform: uppercase;
   text-decoration: none;
   cursor: pointer;
   transition-duration: 0.5s;
+
+  &:link, :visited {
+    color: $color-accent;
+  }
 
   &:hover {
     background-color: $color-accent;
