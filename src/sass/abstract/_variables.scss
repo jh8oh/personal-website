@@ -5,9 +5,9 @@
 // Colors - Greyscale
 $mineshaft: #222;
 $tundora: #444;
-$gray: #777;
-$gallery: #ddd;
-$alabaster: #f7f7f7;
+$gray: #888;
+$gallery: #eee;
+$white: #fff;
 
 // Colors - full color
 $malibu: #6ab7ff;
@@ -15,14 +15,15 @@ $curious-blue: #1E88E5;
 $endeavour: #005cb2;
 
 // Colors - Semantics
-$color-background: $alabaster;
+$color-background: $white;
 $color-background-variant: $gallery;
 
 $color-base: $tundora;
 $color-base-variant: $mineshaft;
 
 $color-accent: $curious-blue;
-$color-accent-variant: $endeavour;
+$color-accent-variant-dark: $endeavour;
+$color-accent-variant-light: $malibu;
 
 $color-on-background: $tundora;
 $color-on-background-variant: $mineshaft;

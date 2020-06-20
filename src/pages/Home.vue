@@ -1,8 +1,8 @@
 <template>
   <div id="home">
     <div id="greeting">
-      <span>Hi, I'm</span>
-      <h2>Ji Ho Oh</h2>
+      <span>Hi, I'm</span><br />
+      <span id="name">Ji Ho Oh</span><br />
       <span>Programmer, Artist, World-building enthusiast</span>
       <br /><br />
       <Button :href="'/about'" :text="'Get to know me'" />

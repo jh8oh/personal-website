@@ -2,7 +2,15 @@
 // Contains everything to do with typeface (headline, body, caption, etc.)
 // ---------------------------------------------------------------------------
 
-@mixin text($font-family, $font-size, $font-weight, $line-height, $letter-spacing) {
+@mixin text(
+  $font-family,
+  $font-size,
+  $font-weight,
+  $line-height,
+  $letter-spacing,
+  $text-transform: none,
+  $color: $color-on-background
+) {
   font-family: $font-family;
   font-size: $font-size;
   font-weight: $font-weight;
@@ -10,27 +18,66 @@
   letter-spacing: $letter-spacing;
   margin-block-start: 0;
   margin-block-end: 0;
-  color: $color-on-background;
+  text-transform: $text-transform;
+  color: $color;
+}
+
+@mixin centered-heading($line-size, $width, $line-color, $vertical-margin) {
+  margin: $vertical-margin 0;
+  text-align: center;
+
+  &:before,
+  &:after {
+    display: inline-block;
+    content: "";
+    border-top: $line-size solid $line-color;
+    width: $width;
+    margin: 0 1rem;
+    transform: translateY(-0.4em);
+  }
 }
 
 h1 {
-  @include text($heading-font-family, 32px, 400, 1.2, -0.25px);
-  margin: 50px 0 25px 0;
-  text-align: center;
+  @include text($heading-font-family, 2.6rem, 400, 1.2, -0.25px, uppercase);
+  @include centered-heading(2px, 4rem, $color-on-background, 2rem);
 }
 
 h2 {
-  @include text($heading-font-family, 64px, 300, 1.2, -0.5px);
+  @include text(
+    $heading-font-family,
+    2rem,
+    300,
+    1.2,
+    -0.5px,
+    uppercase,
+    $color-on-background-variant
+  );
+  @include centered-heading(1px, 3rem, $color-on-background-variant, 0);
 }
 
 h3 {
-  @include text($heading-font-family, 42px, 400, 1.2, 0);
+  @include text($heading-font-family, 1.6rem, 400, 1.2, 0);
 }
 
 h4 {
-  @include text($heading-font-family, 28px, 500, 1.2, 0);
+  @include text($heading-font-family, 1.4rem, 500, 1.2, 0);
 }
 
-body {
-  @include text($body-font-family, 16px, 400, 1.6, 0.5px);
+html {
+  @include text($body-font-family, 18px, 400, 1.5, 0.5px);
+}
+
+a:link {
+  color: $color-accent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: $color-accent-variant-dark;
+  text-decoration: none;
+}
+
+a:hover {
+  color: $color-accent-variant-light;
+  text-decoration: none;
 }

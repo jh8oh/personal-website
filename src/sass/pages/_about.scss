@@ -3,15 +3,62 @@
 // ---------------------------------------------------------------------------
 
 #about {
-  #intro {
+  > section {
+    padding: 48px $horizontal-padding;
   }
 
-  #skills {
+  #intro {
+    display: flex;
+    align-items: center;
+
+    img {
+      max-width: 400px;
+      margin-right: 36px;
+
+      border-radius: 50%;
+    }
   }
 
   #experience {
-  }
 
-  #interests {
+    &-container{
+      display: flex;
+      height: 400px;
+      margin-top: 25px;
+    }
+
+    #timeline {
+      display: inline-block;
+      min-width: 312px;
+      border-left: 1.2px solid $color-on-background;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      list-style-type: none;
+
+      li{
+        margin: 12px 12px;
+        cursor: pointer;
+
+        &:before{
+          position: absolute;
+          height: 6px;
+          width: 6px;
+          background-color: $color-background-variant;
+          border: 1.2px solid $color-on-background;
+          border-radius: 75px;
+          transform: translate(-16px, 10px);
+          content: '';
+        }
+
+        &.active{
+          color: $color-accent;
+
+          &:before{
+            border: 1.2px solid $color-accent;
+          }
+        }
+      }
+    }
   }
 }
