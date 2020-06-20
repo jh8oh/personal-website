@@ -1,6 +1,6 @@
 <template>
   <a class="button" :class="color" :href="href">
-    {{ text }}
+    <strong>{{ text }}</strong>
   </a>
 </template>
 
