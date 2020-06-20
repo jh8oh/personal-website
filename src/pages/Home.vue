@@ -1,5 +1,6 @@
 <template>
   <div id="home">
+    <img id="background-image" src="../assets/img/home/home_background.png" />
     <div id="greeting">
       <span>Hi, I'm</span><br />
       <span id="name">Ji Ho Oh</span><br />

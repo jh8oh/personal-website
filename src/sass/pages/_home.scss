@@ -7,6 +7,15 @@
   width: 100%;
   background-color: $color-base-variant;
 
+  #background-image{
+    height: 700px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.2;
+  }
+
   #greeting {
     margin: 0;
     position: relative;
