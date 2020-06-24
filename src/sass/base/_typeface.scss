@@ -9,7 +9,6 @@
   $line-height,
   $letter-spacing,
   $text-transform: none,
-  $color: $color-on-background
 ) {
   font-family: $font-family;
   font-size: $font-size;
@@ -19,7 +18,6 @@
   margin-block-start: 0;
   margin-block-end: 0;
   text-transform: $text-transform;
-  color: $color;
 }
 
 @mixin centered-heading($line-size, $width, $line-color, $vertical-margin) {
@@ -43,15 +41,7 @@ h1 {
 }
 
 h2 {
-  @include text(
-    $heading-font-family,
-    2rem,
-    300,
-    1.2,
-    -0.5px,
-    uppercase,
-    $color-on-background-variant
-  );
+  @include text($heading-font-family, 2rem, 300, 1.2, -0.5px, uppercase);
   @include centered-heading(1px, 3rem, $color-on-background-variant, 0);
 }
 
@@ -65,6 +55,7 @@ h4 {
 
 html {
   @include text($body-font-family, 18px, 400, 1.5, 0.5px);
+  color: $color-on-background;
 }
 
 a:link {

@@ -25,15 +25,29 @@
           <li
             v-for="(experience, index) in experiences"
             :key="index"
-            v-on:click="shownExperienceIndex = index"
-            v-bind:class="shownExperienceIndex == index ? 'active' : ''"
+            v-on:click="activeExperienceIndex = index"
+            v-bind:class="activeExperienceIndex == index ? 'active' : ''"
           >
-            <strong>
+            <h4>
               {{ experience.employer }}
-            </strong>
+            </h4>
           </li>
         </ul>
-        <ExperienceItem :experience="experiences[shownExperienceIndex]" />
+        <section id="experience-item">
+          <h3>
+            {{ experiences[activeExperienceIndex].position }} @
+            <span>
+              <a v-bind:href="experiences[activeExperienceIndex].website">
+                {{ experiences[activeExperienceIndex].employer }}
+              </a>
+            </span>
+          </h3>
+          <span>{{ experiences[activeExperienceIndex].dates }}</span>
+          <p
+            id="description"
+            v-html="experiences[activeExperienceIndex].description"
+          />
+        </section>
       </section>
     </section>
 
@@ -44,15 +58,10 @@
 </template>
 
 <script>
-import ExperienceItem from "../components/about/ExperienceItem.vue";
-
 export default {
-  components: {
-    ExperienceItem,
-  },
   data() {
     return {
-      shownExperienceIndex: 0,
+      activeExperienceIndex: 0,
       experiences: [
         {
           employer: "DC Canada Education Publishing",
@@ -60,9 +69,10 @@ export default {
           website: "https://www.dc-canada.ca/",
           dates: "January - April 2020",
           description:
-            "<strong>Website Developer:</strong><ul><li>Maintained and developed new content and features on a WordPress powered website.</li><li>Integrated MotionPay into the payment system for the Chinese domain which allowed customers to pay with Alipay and WeChat Pay.</li></ul><strong>Mobile Application Developer:</strong><ul><li>Solo development on an Android eBook reader titled 'One Story a Day'.</li><li>Connects with a <strong><a href=\"https://onestoryaday.ca\">website</a></strong> of the same name.</li></ul>",
+            "This was my first internship/co-op position I took.<br /><strong>Website Developer:</strong><ul><li>Maintained and developed new content and features on a WordPress powered website.</li><li>Integrated MotionPay into the payment system for the Chinese domain which allowed customers to pay with Alipay and WeChat Pay.</li></ul><strong>Mobile Application Developer:</strong><ul><li>Solo development on an Android eBook reader titled 'One Story a Day'.</li><li>Connects with a <strong><a href=\"https://onestoryaday.ca\">website</a></strong> of the same name.</li></ul>",
         },
       ],
+
     };
   },
 };

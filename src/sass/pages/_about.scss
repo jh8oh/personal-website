@@ -20,27 +20,25 @@
   }
 
   #experience {
-
-    &-container{
+    &-container {
       display: flex;
-      height: 400px;
       margin-top: 25px;
     }
 
     #timeline {
       display: inline-block;
-      min-width: 312px;
+      min-width: 350px;
       border-left: 1.2px solid $color-on-background;
       margin: 0;
       padding: 0;
       overflow: hidden;
       list-style-type: none;
 
-      li{
+      li {
         margin: 12px 12px;
         cursor: pointer;
 
-        &:before{
+        &:before {
           position: absolute;
           height: 6px;
           width: 6px;
@@ -48,16 +46,24 @@
           border: 1.2px solid $color-on-background;
           border-radius: 75px;
           transform: translate(-16px, 10px);
-          content: '';
+          content: "";
         }
 
-        &.active{
+        &.active {
           color: $color-accent;
 
-          &:before{
+          &:before {
             border: 1.2px solid $color-accent;
           }
         }
+      }
+    }
+
+    &-item {
+      margin: 16px;
+
+      ul {
+        margin: 0.4rem;
       }
     }
   }
