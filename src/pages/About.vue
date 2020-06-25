@@ -72,7 +72,39 @@ export default {
             "This was my first internship/co-op position I took.<br /><strong>Website Developer:</strong><ul><li>Maintained and developed new content and features on a WordPress powered website.</li><li>Integrated MotionPay into the payment system for the Chinese domain which allowed customers to pay with Alipay and WeChat Pay.</li></ul><strong>Mobile Application Developer:</strong><ul><li>Solo development on an Android eBook reader titled 'One Story a Day'.</li><li>Connects with a <strong><a href=\"https://onestoryaday.ca\">website</a></strong> of the same name.</li></ul>",
         },
       ],
-
+      activeInterstGroupIndex: 0,
+      interestGroups: [
+        {
+          title: "Development",
+          interests: [],
+        },
+        {
+          title: "Video games",
+          interests: [
+            {
+              img: require("../assets/img/about/interests/video-games/nier-automata.jpg"),
+              title: "Nier Automata",
+              description:
+                'Nier Automata is Nietzsche\'s "God is Dead" wrapped in a hack-and-slash bullet-hell JPRG about Androids dressed up in a French maid dress sent to destroy robots. It balances a story of nihilism and the loss of purpose in a world without meaning with the fast-paced light-attack, heavy-attack, dodge-roll, weapon-switchy, combo-chain, rooty-tooty-mcshooty gameplay quite masterfully. One small downside was that it takes quite a while for the story to ratchet up. The first half of the game merely touches on these aspects before the story really delves deep into the abyss of existentialism in the 2nd half. Though the story\'s definitely great, the best aspect of the game comes from its music. It\'s astounding. Not just the <a href="https://www.youtube.com/watch?v=wNWShKuopic">battle music</a> that expresses the pain, despair, and cynicism in an orchestra of violins, piano, and operalike vocals as you fight for your life, but the <a href="https://www.youtube.com/watch?v=DoLCLGx2E08">calm moment-to-moment melodies</a> that conveys the abandonment of the world. Even if you never play the game, the soundtrack is something that you should definitely listen to',
+            },
+            {
+              img: require("../assets/img/about/interests/video-games/red-strings-club.jpg"),
+              title: "Red Strings Club",
+              description:
+                "If I had a nickel for every cyberpunk bartending game I played, I'd have 2 nickels. Which isn't a lot but it's weird that it happened twice. It makes sense if you think about it; cyberpunk deals with some of the best psychological themes and bartending allows for these themes to be explored through dialogue with a variety of characters with different opinions. Red Strings Club tackles the particular question of how far we are willing to go to suppress our worst instincts. What do you think about installing an emotion regulator that makes sure you never feel depression, rage, or anxiety? Would you make it mandatory? Are you <em>really</em> feeling the full spectrum of your emotions then or would you consider yourself neutered? Though the game is short, it really delivers on its characters and dialogue. One particular mechanic that I found interesting is that you are quizzed about a character's nature after a conversation with them, which forces you to pay close attention to any subtexts that come up during the dialogue. All-in-all, Red Strings Club is a short game that leaves a long impression.",
+            },
+            {
+              img: require("../assets/img/about/interests/video-games/disco-elysium.jpg"),
+              title: "Disco Elysium",
+              description: "",
+            },
+          ],
+        },
+        {
+          title: "Worldbuilding",
+          interests: [],
+        },
+      ],
     };
   },
 };
