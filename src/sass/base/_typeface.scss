@@ -46,11 +46,11 @@ h2 {
 }
 
 h3 {
-  @include text($heading-font-family, 1.6rem, 400, 1.2, 0);
+  @include text($heading-font-family, 1.4rem, 400, 1.2, 0);
 }
 
 h4 {
-  @include text($heading-font-family, 1.4rem, 500, 1.2, 0);
+  @include text($heading-font-family, 1.2rem, 500, 1.2, 0);
 }
 
 html {

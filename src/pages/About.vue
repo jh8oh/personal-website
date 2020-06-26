@@ -28,20 +28,18 @@
             v-on:click="activeExperienceIndex = index"
             v-bind:class="activeExperienceIndex == index ? 'active' : ''"
           >
-            <h4>
+            <h3>
               {{ experience.employer }}
-            </h4>
+            </h3>
           </li>
         </ul>
         <section id="experience-item">
-          <h3>
+          <h4>
             {{ experiences[activeExperienceIndex].position }} @
-            <span>
-              <a v-bind:href="experiences[activeExperienceIndex].website">
-                {{ experiences[activeExperienceIndex].employer }}
-              </a>
-            </span>
-          </h3>
+            <a v-bind:href="experiences[activeExperienceIndex].website">
+              {{ experiences[activeExperienceIndex].employer }}
+            </a>
+          </h4>
           <span>{{ experiences[activeExperienceIndex].dates }}</span>
           <p
             id="description"
@@ -60,9 +58,9 @@
           v-on:click="activeInterestGroupIndex = index"
           v-bind:class="activeInterestGroupIndex == index ? 'active' : ''"
         >
-          <h4>
+          <h3>
             {{ interestGroup.title }}
-          </h4>
+          </h3>
         </li>
       </ul>
       <ul id="interest">
