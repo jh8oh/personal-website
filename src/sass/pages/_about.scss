@@ -67,4 +67,50 @@
       }
     }
   }
+
+  #interests {
+    #interest-group {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      list-style-type: none;
+
+      li {
+        display: inline-block;
+        padding: 8px;
+        border: 1px solid $color-on-background;
+        vertical-align: bottom;
+        background-color: $color-background-variant;
+        cursor: pointer;
+
+        &:nth-child(n + 2){
+          margin-left: -1px;
+        }
+
+        &.active{
+          height: 50px;
+          border-bottom: 0px;
+          background-color: $color-background;
+        }
+      }
+    }
+
+    #interest{
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      list-style-type: none;
+
+      li{
+        margin: 24px 0;
+        display: flex;
+        align-items: center;
+      }
+
+      img{
+        height: 150px;
+        border-radius: 50%;
+      }
+    }
+  }
 }

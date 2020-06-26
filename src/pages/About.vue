@@ -53,6 +53,31 @@
 
     <section id="interests">
       <h2>Interests</h2>
+      <ul id="interest-group">
+        <li
+          v-for="(interestGroup, index) in interestGroups"
+          :key="index"
+          v-on:click="activeInterestGroupIndex = index"
+          v-bind:class="activeInterestGroupIndex == index ? 'active' : ''"
+        >
+          <h4>
+            {{ interestGroup.title }}
+          </h4>
+        </li>
+      </ul>
+      <ul id="interest">
+        <li
+          v-for="(interest, index) in interestGroups[activeInterestGroupIndex]
+            .interests"
+          :key="index"
+        >
+          <img v-bind:src="interest.img" v-bind:alt="interest.title" />
+          <div>
+            <h4>{{ interest.title }}</h4>
+            <p v-html="interest.description"></p>
+          </div>
+        </li>
+      </ul>
     </section>
   </div>
 </template>
@@ -72,7 +97,7 @@ export default {
             "This was my first internship/co-op position I took.<br /><strong>Website Developer:</strong><ul><li>Maintained and developed new content and features on a WordPress powered website.</li><li>Integrated MotionPay into the payment system for the Chinese domain which allowed customers to pay with Alipay and WeChat Pay.</li></ul><strong>Mobile Application Developer:</strong><ul><li>Solo development on an Android eBook reader titled 'One Story a Day'.</li><li>Connects with a <strong><a href=\"https://onestoryaday.ca\">website</a></strong> of the same name.</li></ul>",
         },
       ],
-      activeInterstGroupIndex: 0,
+      activeInterestGroupIndex: 0,
       interestGroups: [
         {
           title: "Development",
