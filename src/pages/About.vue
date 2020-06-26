@@ -50,7 +50,7 @@
     </section>
 
     <section id="interests">
-      <h2>Interests</h2>
+      <h2>Interests</h2><br />
       <ul id="interest-group">
         <li
           v-for="(interestGroup, index) in interestGroups"
@@ -108,7 +108,7 @@ export default {
               img: require("../assets/img/about/interests/video-games/nier-automata.jpg"),
               title: "Nier Automata",
               description:
-                'Nier Automata is Nietzsche\'s "God is Dead" wrapped in a hack-and-slash bullet-hell JPRG about Androids dressed up in a French maid dresses sent to destroy robots. The nihilism seeps into every facet of the game, especially the music. Not just the <a href="https://www.youtube.com/watch?v=wNWShKuopic">battle music</a> that expresses such pain in an orchestra of instruments as you fight for your life, but the <a href="https://www.youtube.com/watch?v=DoLCLGx2E08">calm moment-to-moment melodies</a> that conveys the quiet abandonment of the world. Even if you never play the game, the soundtrack is something that you should definitely listen to',
+                'Nier Automata is Nietzsche\'s "God is Dead" wrapped in a hack-and-slash bullet-hell JPRG about Androids dressed up in a French maid dresses sent to destroy robots (oh, Japan). The nihilism seeps into every facet of the game, especially the music. Not just the <a href="https://www.youtube.com/watch?v=wNWShKuopic">battle music</a> that expresses such pain in an orchestra of instruments as you fight for your life, but the <a href="https://www.youtube.com/watch?v=DoLCLGx2E08">calm moment-to-moment melodies</a> that conveys the quiet abandonment of the world. Even if you never play the game, the soundtrack is something that you should definitely listen to.',
             },
             {
               img: require("../assets/img/about/interests/video-games/red-strings-club.jpg"),
