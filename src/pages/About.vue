@@ -26,49 +26,45 @@
             v-for="(experience, index) in experiences"
             :key="index"
             v-on:click="activeExperienceIndex = index"
-            v-bind:class="activeExperienceIndex == index ? 'active' : ''"
+            v-bind:class="{ active: activeExperienceIndex === index }"
           >
             <h3>
               {{ experience.employer }}
             </h3>
           </li>
         </ul>
+
         <section id="experience-item">
           <h4>
-            {{ experiences[activeExperienceIndex].position }} @
-            <a v-bind:href="experiences[activeExperienceIndex].website">
-              {{ experiences[activeExperienceIndex].employer }}
+            {{ getActiveExperience().position }} @
+            <a v-bind:href="getActiveExperience().website">
+              {{ getActiveExperience().employer }}
             </a>
           </h4>
-          <span>{{ experiences[activeExperienceIndex].dates }}</span>
-          <p
-            id="description"
-            v-html="experiences[activeExperienceIndex].description"
-          />
+          <span>{{ getActiveExperience().dates }}</span>
+          <p v-html="getActiveExperience().description" />
         </section>
       </section>
     </section>
 
     <section id="interests">
-      <h2>Interests</h2><br />
+      <h2>Interests</h2>
+      <br />
       <ul id="interest-group">
         <li
           v-for="(interestGroup, index) in interestGroups"
           :key="index"
           v-on:click="activeInterestGroupIndex = index"
-          v-bind:class="activeInterestGroupIndex == index ? 'active' : ''"
+          v-bind:class="{ active: activeInterestGroupIndex === index }"
         >
           <h3>
             {{ interestGroup.title }}
           </h3>
         </li>
       </ul>
+
       <ul id="interest">
-        <li
-          v-for="(interest, index) in interestGroups[activeInterestGroupIndex]
-            .interests"
-          :key="index"
-        >
+        <li v-for="(interest, index) in getActiveInterests()" :key="index">
           <img v-bind:src="interest.img" v-bind:alt="interest.title" />
           <div>
             <h4>{{ interest.title }}</h4>
@@ -81,6 +77,16 @@
 </template>
 
 <script>
+import androidDevelopment from "../assets/img/about/interests/development/android.png";
+import webDevelopment from "../assets/img/about/interests/development/web.png";
+import gameDevelopment from "../assets/img/about/interests/development/game.jpg";
+import nierAutomata from "../assets/img/about/interests/video-games/nier-automata.jpg";
+import redStringsClub from "../assets/img/about/interests/video-games/red-strings-club.jpg";
+import discoElysium from "../assets/img/about/interests/video-games/disco-elysium.jpg";
+import cyberpunk from "../assets/img/about/interests/worldbuilding/cyberpunk.jpg";
+import lovecraftian from "../assets/img/about/interests/worldbuilding/lovecraftian.jpg";
+import shinsekaiYori from "../assets/img/about/interests/worldbuilding/shinsekai-yori.jpg";
+
 export default {
   data() {
     return {
@@ -99,36 +105,83 @@ export default {
       interestGroups: [
         {
           title: "Development",
-          interests: [],
+          interests: [
+            {
+              img: androidDevelopment,
+              title: "Android Development",
+              description:
+                "I got into Android trying to find a GUI for Java since the alternatives (AWT, JavaFX, and Swing) were all going out of style. To be honest, I thought that mobiles apps were all easy-to-make but there is a surprising amount of depth in them, especially regarding intuitivity. Though I'm taking a small break from developing mobile apps for now, I'm definitely coming back.",
+            },
+            {
+              img: webDevelopment,
+              title: "Web Development",
+              description:
+                "My first ever website was a small 'wiki' on Minecraft. I was 13 and it was for an IT class project. It was built on HTML, CSS, and a bit of JavaScript. Ever since I've picked up web development recently, I've realized that there is so much I've missed out on: web stacks, JavaScript frameworks, backend languages, etc. And there's still much to learn. I hope that I can continue building bigger and better sites from now on.",
+            },
+            {
+              img: gameDevelopment,
+              title: "Game Development",
+              description:
+                "Game development is in a weird spot for me. I've made games before but they were purely functional. Nothing wrong with that but I've always wanted to create a game that has story, art, and music alongside the gameplay. There's a small struggle in imagining the game that I want to make and the game that's realistic to make. Nevertheless, games got me into programming and I'm determined to create one if it's the last thing I do.",
+            },
+          ],
         },
         {
           title: "Video games",
           interests: [
             {
-              img: require("../assets/img/about/interests/video-games/nier-automata.jpg"),
+              img: nierAutomata,
               title: "Nier Automata",
               description:
-                'Nier Automata is Nietzsche\'s "God is Dead" wrapped in a hack-and-slash bullet-hell JPRG about Androids dressed up in a French maid dresses sent to destroy robots (oh, Japan). The nihilism seeps into every facet of the game, especially the music. Not just the <a href="https://www.youtube.com/watch?v=wNWShKuopic">battle music</a> that expresses such pain in an orchestra of instruments as you fight for your life, but the <a href="https://www.youtube.com/watch?v=DoLCLGx2E08">calm moment-to-moment melodies</a> that conveys the quiet abandonment of the world. Even if you never play the game, the soundtrack is something that you should definitely listen to.',
+                'Nier Automata is Nietzsche\'s "God is Dead" wrapped in a hack-and-slash bullet-hell JPRG about Androids dressed up in a French maid dresses sent to destroy robots (oh, Japan). The nihilism seeps into every facet of the game, especially the music. Not just the <a href="https://www.youtube.com/watch?v=wNWShKuopic">battle music</a>, but the <a href="https://www.youtube.com/watch?v=DoLCLGx2E08">calm BGM</a> that conveys the quiet abandonment of the world. Even if you never play the game, the soundtrack is something that you should definitely listen to.',
             },
             {
-              img: require("../assets/img/about/interests/video-games/red-strings-club.jpg"),
+              img: redStringsClub,
               title: "Red Strings Club",
               description:
-                "If I had a nickel for every cyberpunk bartending game I played, I'd have 2 nickels, which isn't a lot but it's weird that it happened twice. Red Strings Club tackles the particular question of how far we are willing to go to suppress our worst instincts. Would you be willing to install an emotion regulator that completely suppresses feelings of depression, rage, or anxiety? One particular mechanic I found interesting is that you are quizzed about your conversations which makes you pay close attention to subtexts. Though the game is short, it really delivers on its characters and leaves a lasting impression.",
+                "If I had a nickel for every cyberpunk bartending game I played, I'd have 2 nickels, which isn't a lot but it's weird that it happened twice. Red Strings Club tackles the question of how far we are willing to go to suppress our worst instincts. One particular mechanic I enjoyed is that you are quizzed about your conversation partner afterwards which makes you pay close attention to subtexts. Though the game is short, it really delivers on its characters and leaves a lasting impression.",
             },
             {
-              img: require("../assets/img/about/interests/video-games/disco-elysium.jpg"),
+              img: discoElysium,
               title: "Disco Elysium",
-              description: "",
+              description:
+                '"The mind recoils in horror, unable to communicate with the spinal column." Disco Elysium is a true role-playing game, except the role you play is a dumpster fire of a detective after an amnesia-inducing drug bender. The exact dumpster you\'re setting fire to, however, is up to you. You can be a deranged "superstar cop", a prophet of the coming end, or a free-market capitalist preacher. It is an incredibly intelligent game that shines in the world it creates and the weirdness of its main character.',
             },
           ],
         },
         {
           title: "Worldbuilding",
-          interests: [],
+          interests: [
+            {
+              img: cyberpunk,
+              title: "Cyberpunk",
+              description:
+                "Cyberpunk worlds are always great to immerse yourself into. The entertaining side exhibit the massive conglomerates, artificial body modifications, and techy gadgets. Seeing the possibilities of tech that might just become science-fact. The philosophical side deal people's sense of self, the dangers of unchecked technological leaps, and the capitalist controlled states that we might be heading into. In my opinion, one of the best introduction to both sides is <em>Ghost in the Shell</em> (1995).",
+            },
+            {
+              img: lovecraftian,
+              title: "Lovecraftian",
+              description:
+                "Cosmic horror has always facinated me. It's all about how insignificant we are compared to the vastness of time and space. Whatever impact we make is short-lived and inconsequential. Good cosmic horror is able to get us to come to grips with this concept without throwing us into despair or hedonism. Which might not be such bad ideas, actually. But what do I know?",
+            },
+            {
+              img: shinsekaiYori,
+              title: "Shinsekai Yori",
+              description:
+                "The world of <em>Shinsekai Yori</em> is set in the future after a small population of humanity develop excessively powerful psychic abilities (PK) in the present time. What follows is 1000 years of oppression, war, and power struggles between those with PK and those without. The dystopian world is explored through the eyes of 5 protagonists throughout their lives as they come to terms with the sins of their ancestors and the compromises they have to make.",
+            },
+          ],
         },
       ],
     };
+  },
+  methods: {
+    getActiveExperience() {
+      return this.experiences[this.activeExperienceIndex];
+    },
+    getActiveInterests() {
+      return this.interestGroups[this.activeInterestGroupIndex].interests;
+    },
   },
 };
 </script>
