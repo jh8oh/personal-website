@@ -101,12 +101,12 @@ export default {
             "This was my first internship/co-op position I took.<br /><strong>Website Developer:</strong><ul><li>Maintained and developed new content and features on a WordPress powered website.</li><li>Integrated MotionPay into the payment system for the Chinese domain which allowed customers to pay with Alipay and WeChat Pay.</li></ul><strong>Mobile Application Developer:</strong><ul><li>Solo development on an Android eBook reader titled 'One Story a Day'.</li><li>Connects with a <strong><a href=\"https://onestoryaday.ca\">website</a></strong> of the same name.</li></ul>",
         },
         {
-          employer: "Lorem Ipsum ASDFASDAFSADSCA AS DASDADA",
-          position: "Web and Mobile App Developer",
-          website: "https://www.dc-canada.ca/",
-          dates: "January - April 2020",
+          employer: "Innovapost",
+          position: "iOS/Android App Developer",
+          website: "https://innovapost.com/",
+          dates: "September 2020 - Present",
           description:
-            "This was my first internship/co-op position I took.<br /><strong>Website Developer:</strong><ul><li>Maintained and developed new content and features on a WordPress powered website.</li><li>Integrated MotionPay into the payment system for the Chinese domain which allowed customers to pay with Alipay and WeChat Pay.</li></ul><strong>Mobile Application Developer:</strong><ul><li>Solo development on an Android eBook reader titled 'One Story a Day'.</li><li>Connects with a <strong><a href=\"https://onestoryaday.ca\">website</a></strong> of the same name.</li></ul>",
+            "TO BE ADDED",
         },
       ],
       activeInterestGroupIndex: 0,
