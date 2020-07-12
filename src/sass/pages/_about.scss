@@ -12,7 +12,7 @@
   }
 
   #intro {
-    $breakpoint: 1300px;      // Unique breakpoint for intro
+    $breakpoint: 1300px; // Unique breakpoint for intro
     display: flex;
     align-items: center;
 
@@ -28,9 +28,7 @@
 
       @media screen and (max-width: $breakpoint) {
         display: block;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 24px;
+        margin: 0 auto 24px; // Top margin is 0, horizontal margin is auto, bottom margin is 24px
       }
     }
 
@@ -42,24 +40,46 @@
   }
 
   #experience {
+    $breakpoint: 750px;
+
     &-container {
       display: flex;
-      margin-top: 25px;
+
+      @media screen and (max-width: $breakpoint) {
+        display: block;
+      }
     }
 
     #timeline {
-      border-left: 1.2px solid $color-on-background;
       margin: 0;
       padding: 0;
       list-style-type: none;
+      border-left: 1.2px solid $color-on-background;
+
+      @media screen and (max-width: $breakpoint) {
+        white-space: nowrap;
+        overflow: auto;
+        border-left: 0;
+      }
 
       li {
         position: relative;
-        margin: 12px 12px;
+        margin: 6px 12px;
         cursor: pointer;
 
+        @media screen and (max-width: $breakpoint) {
+          display: inline-block;
+          margin: 0;
+          padding: 4px 6px;
+          vertical-align: bottom;
+          border-bottom: 2px solid $color-on-background;
+
+          &:before {
+            display: none;
+          }
+        }
+
         &:before {
-          display: block;
           position: absolute;
           height: 6px;
           width: 6px;
@@ -73,6 +93,11 @@
 
         &.active {
           color: $color-accent;
+
+          @media screen and (max-width: $breakpoint) {
+            padding-bottom: 12px;
+            border-color: $color-accent;
+          }
 
           &:before {
             border-color: $color-accent;

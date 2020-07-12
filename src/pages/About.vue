@@ -20,6 +20,7 @@
 
     <section id="experience" class="background-dark">
       <h2>Experience</h2>
+      <br />
       <section id="experience-container">
         <ul id="timeline">
           <li
