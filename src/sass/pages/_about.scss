@@ -12,42 +12,33 @@
   }
 
   #intro {
-    $breakpoint: 1300px; // Unique breakpoint for intro
     display: flex;
     align-items: center;
-
-    @media screen and (max-width: $breakpoint) {
-      display: block;
-    }
 
     img {
       width: 80%;
       max-width: 400px;
       margin-right: 36px;
       border-radius: 50%;
+    }
 
-      @media screen and (max-width: $breakpoint) {
+    @media screen and (max-width: 1300px) {
+      display: block;
+
+      img {
         display: block;
         margin: 0 auto 24px; // Top margin is 0, horizontal margin is auto, bottom margin is 24px
       }
-    }
 
-    p {
-      @media screen and (max-width: $breakpoint) {
+      p {
         text-align: center;
       }
     }
   }
 
   #experience {
-    $breakpoint: 750px;
-
     &-container {
       display: flex;
-
-      @media screen and (max-width: $breakpoint) {
-        display: block;
-      }
     }
 
     #timeline {
@@ -56,28 +47,10 @@
       list-style-type: none;
       border-left: 1.2px solid $color-on-background;
 
-      @media screen and (max-width: $breakpoint) {
-        white-space: nowrap;
-        overflow: auto;
-        border-left: 0;
-      }
-
       li {
         position: relative;
         margin: 6px 12px;
         cursor: pointer;
-
-        @media screen and (max-width: $breakpoint) {
-          display: inline-block;
-          margin: 0;
-          padding: 4px 6px;
-          vertical-align: bottom;
-          border-bottom: 2px solid $color-on-background;
-
-          &:before {
-            display: none;
-          }
-        }
 
         &:before {
           position: absolute;
@@ -94,11 +67,6 @@
         &.active {
           color: $color-accent;
 
-          @media screen and (max-width: $breakpoint) {
-            padding-bottom: 12px;
-            border-color: $color-accent;
-          }
-
           &:before {
             border-color: $color-accent;
           }
@@ -106,28 +74,51 @@
       }
     }
 
-    &-item {
+    #description {
       margin: 16px;
 
       ul {
-        margin: 0.4rem;
+        margin: 0;
+        padding-left: 24px;
+      }
+    }
+
+    @media screen and (max-width: 750px) {
+      &-container {
+        display: block;
+      }
+
+      #timeline {
+        white-space: nowrap;
+        overflow: auto;
+        border-left: 0;
+
+        li {
+          display: inline-block;
+          margin: 0;
+          padding: 4px 6px;
+          vertical-align: bottom;
+          border-bottom: 2px solid $color-on-background;
+
+          &:before {
+            display: none;
+          }
+
+          &.active {
+            padding-bottom: 12px;
+            border-color: $color-accent;
+          }
+        }
       }
     }
   }
 
   #interests {
-    $breakpoint: 600px;
-
     #interest-group {
       margin: 0;
       padding: 0;
       overflow: auto;
       list-style-type: none;
-
-      @media screen and (max-width: $breakpoint){
-        white-space: nowrap;
-        text-align: center;
-      }
 
       @mixin interest-group-bottom-borders($width, $max-width) {
         display: inline-block;
@@ -136,10 +127,6 @@
         vertical-align: bottom;
         border-bottom: 1px solid $color-on-background;
         content: "";
-
-        @media screen and (max-width: $breakpoint){
-          width: 24px;
-        }
       }
 
       &:before {
@@ -182,10 +169,6 @@
         display: flex;
         align-items: center;
 
-        @media screen and (max-width: $breakpoint){
-          display: block;
-        }
-
         &:not(:last-child) {
           border-bottom: 1px solid $color-background-variant;
         }
@@ -196,8 +179,24 @@
         max-width: 150px;
         border-radius: 50%;
         margin-right: 32px;
+      }
+    }
 
-        @media screen and (max-width: $breakpoint){
+    @media screen and (max-width: 600px) {
+      #interest-group {
+        white-space: nowrap;
+        text-align: center;
+
+        &:before,
+        &:after {
+          width: 24px;
+        }
+      }
+
+      #interest{
+        display: block;
+
+        img{
           display: none;
         }
       }

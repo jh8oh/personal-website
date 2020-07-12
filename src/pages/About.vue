@@ -35,7 +35,7 @@
           </li>
         </ul>
 
-        <section id="experience-item">
+        <section id="description">
           <h4>
             {{ getActiveExperience().position }} @
             <a v-bind:href="getActiveExperience().website">
