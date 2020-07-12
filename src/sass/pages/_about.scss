@@ -116,26 +116,38 @@
   }
 
   #interests {
+    $breakpoint: 600px;
+
     #interest-group {
       margin: 0;
       padding: 0;
-      overflow: hidden;
+      overflow: auto;
       list-style-type: none;
 
-      @mixin interest-group-bottom-borders($width) {
+      @media screen and (max-width: $breakpoint){
+        white-space: nowrap;
+        text-align: center;
+      }
+
+      @mixin interest-group-bottom-borders($width, $max-width) {
         display: inline-block;
-        vertical-align: bottom;
-        content: "";
-        border-bottom: 1px solid $color-on-background;
         width: $width;
+        max-width: $max-width;
+        vertical-align: bottom;
+        border-bottom: 1px solid $color-on-background;
+        content: "";
+
+        @media screen and (max-width: $breakpoint){
+          width: 24px;
+        }
       }
 
       &:before {
-        @include interest-group-bottom-borders(32px);
+        @include interest-group-bottom-borders(5%, 32px);
       }
 
       &:after {
-        @include interest-group-bottom-borders(144px);
+        @include interest-group-bottom-borders(15%, 144px);
       }
 
       li {
@@ -170,6 +182,10 @@
         display: flex;
         align-items: center;
 
+        @media screen and (max-width: $breakpoint){
+          display: block;
+        }
+
         &:not(:last-child) {
           border-bottom: 1px solid $color-background-variant;
         }
@@ -180,6 +196,10 @@
         max-width: 150px;
         border-radius: 50%;
         margin-right: 32px;
+
+        @media screen and (max-width: $breakpoint){
+          display: none;
+        }
       }
     }
   }
