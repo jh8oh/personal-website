@@ -42,8 +42,8 @@
     }
 
     #timeline {
-      margin: 0;
       padding: 0;
+      margin: 0;
       list-style-type: none;
       border-left: 1.2px solid $color-on-background;
 
@@ -78,8 +78,8 @@
       margin: 16px;
 
       ul {
-        margin: 0;
         padding-left: 24px;
+        margin: 0;
       }
     }
 
@@ -95,10 +95,11 @@
 
         li {
           display: inline-block;
-          margin: 0;
           padding: 4px 6px;
+          margin: 8px 0 0;
           vertical-align: bottom;
           border-bottom: 2px solid $color-on-background;
+          transition: padding-bottom 0.2s ease-out, margin-top 0.2s ease-out;
 
           &:before {
             display: none;
@@ -106,6 +107,7 @@
 
           &.active {
             padding-bottom: 12px;
+            margin-top: 0;
             border-color: $color-accent;
           }
         }
@@ -115,8 +117,8 @@
 
   #interests {
     #interest-group {
-      margin: 0;
       padding: 0;
+      margin: 0;
       overflow: auto;
       list-style-type: none;
 
@@ -140,10 +142,12 @@
       li {
         display: inline-block;
         padding: 8px;
+        margin-top: 24px;
         border: 1px solid $color-on-background;
         vertical-align: bottom;
         background-color: $color-background-variant;
         cursor: pointer;
+        transition: padding-bottom 0.2s ease-out, margin-top 0.2s ease-out;
 
         &:nth-child(n + 2) {
           margin-left: -1px;
@@ -151,7 +155,8 @@
 
         &.active {
           color: $color-accent;
-          height: 50px;
+          padding-bottom: 24px;
+          margin-top: 0;
           border-bottom: 0px;
           background-color: $color-background;
         }
@@ -159,8 +164,8 @@
     }
 
     #interest {
-      margin: 0;
       padding: 0;
+      margin: 0;
       overflow: hidden;
       list-style-type: none;
 
