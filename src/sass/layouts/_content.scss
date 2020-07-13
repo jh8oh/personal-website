@@ -13,9 +13,9 @@ body {
 }
 
 #content {
-  min-height: calc(100vh - 100px);    // Screen height - header height (52px) - footer height (48px)
+  min-height: calc(100vh - 106px);    // Screen height - (header height (56px) + footer height (50px))
   flex: 1 0 auto;
-  margin: 52px 0 0 0;
+  margin: 56px 0 0 0;
   background-color: $color-background;
 }
 
