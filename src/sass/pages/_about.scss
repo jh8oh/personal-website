@@ -60,7 +60,7 @@
       border-left: 1.2px solid $color-on-background;
 
       @media screen and (max-width: $breakpoint) {
-        min-height: none;
+        min-height: 0;
         max-width: none;
         white-space: nowrap;
         overflow: auto;
