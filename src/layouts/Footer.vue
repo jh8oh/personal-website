@@ -12,29 +12,29 @@
 </template>
 
 <script>
+import github from "../assets/ico/footer/github.png";
+import linkedIn from "../assets/ico/footer/linkedin.png";
+import resumeIcon from "../assets/ico/footer/resume.png";
+import resume from "../assets/doc/resume.pdf";
+
 export default {
   data() {
     return {
       links: [
         {
           title: "GitHub",
-          icon: require("../assets/ico/footer/github.png"),
+          icon: github,
           to: "https://github.com/jh8oh",
         },
         {
           title: "LinkedIn",
-          icon: require("../assets/ico/footer/linkedin.png"),
+          icon: linkedIn,
           to: "https://www.linkedin.com/in/ji-ho-oh-63b590191/",
         },
         {
           title: "Resume",
-          icon: require("../assets/ico/footer/resume.png"),
-          to: "https://google.com",
-        },
-        {
-          title: "Email",
-          icon: require("../assets/ico/footer/email.png"),
-          to: "https://google.com",
+          icon: resumeIcon,
+          to: resume,
         },
       ],
     };
