@@ -12,33 +12,43 @@
   }
 
   #intro {
+    $breakpoint: 1300px;
+
     display: flex;
     align-items: center;
+
+    @media screen and (max-width: $breakpoint) {
+      display: block;
+    }
 
     img {
       width: 80%;
       max-width: 400px;
       margin-right: 36px;
       border-radius: 50%;
-    }
 
-    @media screen and (max-width: 1300px) {
-      display: block;
-
-      img {
+      @media screen and (max-width: $breakpoint) {
         display: block;
         margin: 0 auto 24px; // Top margin is 0, horizontal margin is auto, bottom margin is 24px
       }
+    }
 
-      p {
+    p {
+      @media screen and (max-width: $breakpoint) {
         text-align: center;
       }
     }
   }
 
   #experience {
+    $breakpoint: 750px;
+
     &-container {
       display: flex;
+
+      @media screen and (max-width: $breakpoint) {
+        display: block;
+      }
     }
 
     #timeline {
@@ -49,10 +59,27 @@
       list-style-type: none;
       border-left: 1.2px solid $color-on-background;
 
+      @media screen and (max-width: $breakpoint) {
+        min-height: none;
+        max-width: none;
+        white-space: nowrap;
+        overflow: auto;
+        border-left: 0;
+      }
+
       li {
         position: relative;
         margin: 6px 12px;
         cursor: pointer;
+
+        @media screen and (max-width: $breakpoint) {
+          display: inline-block;
+          padding: 4px 6px;
+          margin: 8px 0 0;
+          vertical-align: bottom;
+          border-bottom: 2px solid $color-on-background;
+          transition: padding-bottom 0.2s ease-out, margin-top 0.2s ease-out;
+        }
 
         &:before {
           position: absolute;
@@ -64,10 +91,20 @@
           border: 1.2px solid $color-on-background;
           border-radius: 75px;
           content: "";
+
+          @media screen and (max-width: $breakpoint) {
+            display: none;
+          }
         }
 
         &.active {
           color: $color-accent;
+
+          @media screen and (max-width: $breakpoint) {
+            padding-bottom: 12px;
+            margin-top: 0;
+            border-color: $color-accent;
+          }
 
           &:before {
             border-color: $color-accent;
@@ -84,47 +121,21 @@
         margin: 0;
       }
     }
-
-    @media screen and (max-width: 750px) {
-      &-container {
-        display: block;
-      }
-
-      #timeline {
-        min-height: none;
-        max-width: none;
-        white-space: nowrap;
-        overflow: auto;
-        border-left: 0;
-
-        li {
-          display: inline-block;
-          padding: 4px 6px;
-          margin: 8px 0 0;
-          vertical-align: bottom;
-          border-bottom: 2px solid $color-on-background;
-          transition: padding-bottom 0.2s ease-out, margin-top 0.2s ease-out;
-
-          &:before {
-            display: none;
-          }
-
-          &.active {
-            padding-bottom: 12px;
-            margin-top: 0;
-            border-color: $color-accent;
-          }
-        }
-      }
-    }
   }
 
   #interests {
+    $breakpoint: 600px;
+
     #interest-group {
       padding: 0;
       margin: 0;
       overflow: auto;
       list-style-type: none;
+
+      @media screen and (max-width: $breakpoint) {
+        white-space: nowrap;
+        text-align: center;
+      }
 
       @mixin interest-group-bottom-borders($width, $max-width) {
         display: inline-block;
@@ -133,6 +144,10 @@
         vertical-align: bottom;
         border-bottom: 1px solid $color-on-background;
         content: "";
+
+        @media screen and (max-width: $breakpoint) {
+          width: 24px;
+        }
       }
 
       &:before {
@@ -188,24 +203,8 @@
         max-width: 150px;
         border-radius: 50%;
         margin-right: 32px;
-      }
-    }
 
-    @media screen and (max-width: 600px) {
-      #interest-group {
-        white-space: nowrap;
-        text-align: center;
-
-        &:before,
-        &:after {
-          width: 24px;
-        }
-      }
-
-      #interest{
-        display: block;
-
-        img{
+        @media screen and (max-width: $breakpoint) {
           display: none;
         }
       }
