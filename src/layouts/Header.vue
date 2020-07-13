@@ -49,6 +49,11 @@ export default {
           left: true,
         },
         {
+          title: "Blog",
+          url: "/blog",
+          left: true,
+        },
+        {
           title: "Contact Me",
           url: "/contact-me",
           left: false,
@@ -57,10 +62,10 @@ export default {
     };
   },
   methods: {
-    getLogoIcon(){
-      if (this.logoHovered){
+    getLogoIcon() {
+      if (this.logoHovered) {
         return require("../assets/ico/header/logo-curiousblue.png");
-      } else{
+      } else {
         return require("../assets/ico/header/logo-gallery.png");
       }
     },

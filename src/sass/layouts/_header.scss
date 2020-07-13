@@ -2,7 +2,7 @@
 // Contains all styles related to the header of this site
 // ---------------------------------------------------------------------------
 header {
-  $breakpoint: 710px;
+  $breakpoint: 600px;
 
   display: flex;
   width: 100%;
@@ -16,6 +16,10 @@ header {
   position: fixed; // Make the navigation bar stay at the top of the page
   background-color: $color-base-variant;
   z-index: 1;
+
+  @media screen and (max-width: $breakpoint-tablet){
+    padding: 0 $horizontal-padding-small;
+  }
 
   @media screen and (max-width: $breakpoint) {
     display: inline;
@@ -58,7 +62,7 @@ header {
     a {
       display: block;
       float: left;
-      padding: 13.5px;
+      padding: 12.5px;
       text-align: center;
       text-decoration: none;
 
