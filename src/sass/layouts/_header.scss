@@ -85,12 +85,16 @@ header {
         bottom: 0;
         left: 0;
         right: 0;
-        margin: auto;
+        margin: 0 auto;
         height: 4px;
         width: 0px;
         background: transparent;
         transition: width 0.3s ease, background-color 0.3s ease;
         content: "";
+
+        @media screen and (max-width: $breakpoint-mobile){
+          top: 46px;
+        }
       }
 
       &.router-link-active {
@@ -103,6 +107,7 @@ header {
       }
 
       @media screen and (max-width: $breakpoint) {
+        display: block;
         width: 100%;
         float: none;
         box-sizing: border-box;
