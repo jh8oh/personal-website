@@ -2,7 +2,7 @@
 // This file contains all styles related to the "button" component.
 // ---------------------------------------------------------------------------
 
-.button {
+button {
   display: inline-block;
   padding: 12px 24px;
   margin: 4px 2px;
@@ -11,12 +11,14 @@
   text-align: center;
   text-transform: uppercase;
   text-decoration: none;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
   cursor: pointer;
+  color: $color-accent;
   transition-duration: 0.5s;
-
-  &:link, :visited {
-    color: $color-accent;
-  }
 
   &:hover {
     background-color: $color-accent;

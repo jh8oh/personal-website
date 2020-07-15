@@ -6,7 +6,7 @@
       <span id="name">Ji Ho Oh</span><br />
       <span>Programmer, Artist, World-building enthusiast</span>
       <br /><br />
-      <Button :href="'/about'" :text="'Get to know me'" />
+      <Button :href="'/about'" :text="'Get to know me'" @emitClick="goToAbout()" />
     </div>
   </div>
 </template>
@@ -18,5 +18,10 @@ export default {
   components: {
     Button,
   },
+  methods: {
+    goToAbout(){
+      this.$router.push('/about');
+    }
+  }
 };
 </script>

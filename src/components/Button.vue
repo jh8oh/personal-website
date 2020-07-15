@@ -1,7 +1,7 @@
 <template>
-  <a class="button" :class="color" :href="href">
+  <button :class="color" v-on:click="emitClick()">
     <strong>{{ text }}</strong>
-  </a>
+  </button>
 </template>
 
 <script>
@@ -11,11 +11,14 @@ export default {
       type: String,
       default: "",
     },
-    href: {
-      type: String,
-    },
     text: {
       type: String,
+      required: true,
+    },
+  },
+  methods: {
+    emitClick() {
+      this.$emit("clicked");
     },
   },
 };
