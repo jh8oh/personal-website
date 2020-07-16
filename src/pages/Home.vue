@@ -6,7 +6,7 @@
       <span id="name">Ji Ho Oh</span><br />
       <span>Programmer, Artist, World-building enthusiast</span>
       <br /><br />
-      <Button :href="'/about'" :text="'Get to know me'" @emitClick="goToAbout()" />
+      <Button :text="'Get to know me'" @clicked="goToAbout()" />
     </div>
   </div>
 </template>
