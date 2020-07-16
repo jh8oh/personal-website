@@ -1,33 +1,36 @@
 <template>
   <div id="contact">
-    <p>
-      I'm not currently looking for any new work opportunities right now, but if
-      you want to get in touch, just send me a message by using the form below
-      or by emailing me directly at
-      <a href="mailto: ohjiho.ca@gmail.com">ohjiho.ca@gmail.com</a>.
-    </p>
-    <form id="contact-form">
-      <input
-        name="name"
-        type="text"
-        placeholder="Your Name (required)"
-        required
-      />
-      <input
-        name="email"
-        type="email"
-        placeholder="Your Email (required)"
-        required
-      />
-      <input name="subject" type="text" placeholder="Subject" />
-      <textarea
-        name="message"
-        rows="6"
-        placeholder="Your Message (required)"
-        required
-      ></textarea>
-    </form>
-    <Button :text="'SEND'" @clicked="sendEmail()" />
+    <h1>Contact Me</h1>
+    <div id="contact-content">
+      <p>
+        I'm not currently looking for any new work opportunities right now, but
+        if you want to get in touch, just send me a message by using the form
+        below or by emailing me directly at
+        <a href="mailto: ohjiho.ca@gmail.com">ohjiho.ca@gmail.com</a>.
+      </p>
+      <form id="contact-form">
+        <input
+          name="name"
+          type="text"
+          placeholder="Your Name (required)"
+          required
+        />
+        <input
+          name="email"
+          type="email"
+          placeholder="Your Email (required)"
+          required
+        />
+        <input name="subject" type="text" placeholder="Subject" />
+        <textarea
+          name="message"
+          rows="10"
+          placeholder="Your Message (required)"
+          required
+        ></textarea>
+      </form>
+      <Button :text="'SEND'" @clicked="sendEmail()" />
+    </div>
   </div>
 </template>
 

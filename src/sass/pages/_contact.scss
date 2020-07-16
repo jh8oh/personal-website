@@ -3,15 +3,14 @@
 // ---------------------------------------------------------------------------
 
 #contact {
-  height: 70%;
-  width: 85%;
-  max-width: 700px;
-  display: flex;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  flex-flow: column;
-  transform: translate(-50%, -50%);
+
+  &-content{
+    display: flex;
+    width: 85%;
+    max-width: 700px;
+    margin: 32px auto;
+    flex-flow: column;
+  }
 
   p {
     flex: 0 1 auto;
