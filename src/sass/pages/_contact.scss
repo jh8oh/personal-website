@@ -1,0 +1,51 @@
+// ---------------------------------------------------------------------------
+// This file contains styles that are specific to the "Contact Me" page.
+// ---------------------------------------------------------------------------
+
+#contact {
+  height: 70%;
+  width: 85%;
+  max-width: 700px;
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  flex-flow: column;
+  transform: translate(-50%, -50%);
+
+  p {
+    flex: 0 1 auto;
+    text-align: center;
+  }
+
+  form {
+    display: flex;
+    flex-flow: column;
+    flex: 1 1 auto;
+
+    input {
+      padding: 10px 6px;
+      margin: 4px 0;
+      flex: 0 1 auto;
+      font-family: inherit;
+      font-size: inherit;
+    }
+
+    textarea {
+      padding: 10px 6px;
+      margin: 6px 0;
+      flex: 1 1 auto;
+      resize: none;
+      font-family: inherit;
+      font-size: inherit;
+    }
+  }
+
+  button {
+    width: 20%;
+    min-width: 100px;
+    max-width: 250px;
+    margin: auto;
+    flex: 0 1 auto;
+  }
+}

@@ -34,7 +34,7 @@ const routes = [
     path: "/contact-me",
     name: "Contact Me",
     component: () =>
-      import(/* webpackChunkName: "contact-me" */ "../pages/ContactMe.vue"),
+      import(/* webpackChunkName: "contact-me" */ "../pages/Contact.vue"),
   },
 ];
 
