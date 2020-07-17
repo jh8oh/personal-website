@@ -31,17 +31,18 @@
       </form>
       <Button :text="'SEND'" @clicked="sendEmail()" />
     </div>
+    <Footer />
   </div>
 </template>
 
 <script>
 import emailjs from "emailjs-com";
+
+import Footer from "../layouts/Footer.vue";
 import Button from "../components/Button.vue";
 
 export default {
-  components: {
-    Button,
-  },
+  components: { Footer, Button },
   methods: {
     sendEmail() {
       emailjs

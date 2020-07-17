@@ -21,7 +21,7 @@
 }
 
 @mixin centered-heading($line-size, $width, $line-color, $vertical-margin) {
-  margin: $vertical-margin 0;
+  padding: $vertical-margin 0;
   text-align: center;
 
   &:before,

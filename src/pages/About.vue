@@ -74,10 +74,14 @@
         </li>
       </ul>
     </section>
+    <SocialLinks />
+    <Footer />
   </div>
 </template>
 
 <script>
+import Footer from "../layouts/Footer.vue";
+
 import androidDevelopment from "../assets/img/about/interests/development/android.png";
 import webDevelopment from "../assets/img/about/interests/development/web.png";
 import gameDevelopment from "../assets/img/about/interests/development/game.jpg";
@@ -89,6 +93,7 @@ import lovecraftian from "../assets/img/about/interests/worldbuilding/lovecrafti
 import shinsekaiYori from "../assets/img/about/interests/worldbuilding/shinsekai-yori.jpg";
 
 export default {
+  components: { Footer },
   data() {
     return {
       activeExperienceIndex: 0,
@@ -106,8 +111,7 @@ export default {
           position: "iOS/Android App Developer",
           website: "https://innovapost.com/",
           dates: "September 2020 - Present",
-          description:
-            "TO BE ADDED",
+          description: "TO BE ADDED",
         },
       ],
       activeInterestGroupIndex: 0,
