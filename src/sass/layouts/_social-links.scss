@@ -4,7 +4,7 @@
 
 #social-links {
   position: fixed;
-  bottom: 16px;
+  bottom: 32px;
   right: 2.5%;
 
   @media screen and (max-width: $breakpoint-mobile) {
@@ -23,12 +23,16 @@
     }
 
     li {
-      margin: 12px 0;
+      margin: 6px 0;
 
       @media screen and(max-width: $breakpoint-mobile) {
         display: inline-block;
-        margin: 0 6px;
+        margin: 0 2px;
       }
+    }
+
+    img {
+      width: 32px;
     }
   }
 }
