@@ -7,14 +7,28 @@
   bottom: 16px;
   right: 2.5%;
 
+  @media screen and (max-width: $breakpoint-mobile) {
+    position: static;
+  }
+
   ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
     list-style-type: none;
 
+    @media screen and (max-width: $breakpoint-mobile) {
+	  margin: 8px 0;
+	  text-align: center;
+    }
+
     li {
       margin: 12px 0;
+
+      @media screen and(max-width: $breakpoint-mobile) {
+        display: inline-block;
+        margin: 0 6px;
+      }
     }
   }
 }
