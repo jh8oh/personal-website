@@ -12,6 +12,7 @@ $duration: 0.3s;
   top: 56px;
 }
 
+// Page slides in from the left side.
 .slide-left {
   &-enter-active {
     @extend %enter-leave-active;
@@ -35,6 +36,7 @@ $duration: 0.3s;
   }
 }
 
+// Page slides back out the left side.
 .slide-right {
   &-enter-active {
     @extend %enter-leave-active;
