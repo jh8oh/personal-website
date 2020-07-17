@@ -2,58 +2,8 @@
 // Contains all styles related to the footer of this site
 // ---------------------------------------------------------------------------
 
-$breakpoint: 520px;
-
 footer {
-  width: 100%;
-  padding: 0 $horizontal-padding;
-  box-sizing: border-box;
-  background-color: $color-base;
-
-  @media screen and (max-width: $breakpoint) {
-    text-align: center;
-  }
-
-  span {
-    float: left;
-    margin: 11.5px 0;
-    color: $color-on-base;
-
-    @media screen and (max-width: $breakpoint) {
-      width: 100%;
-      margin: 4px 0;
-    }
-  }
-
-  ul {
-    float: right;
-    margin: 3px 0;
-    padding: 0;
-    overflow: hidden;
-    list-style-type: none;
-
-    @media screen and (max-width: $breakpoint) {
-      width: 100%;
-      margin: 0;
-    }
-
-    li {
-      display: inline-block;
-    }
-
-    a {
-      display: block;
-      padding: 5px;
-
-      @media screen and (max-width: $breakpoint-mobile){
-        padding: 2px;
-      }
-    }
-
-    img {
-      @media screen and (max-width: $breakpoint-mobile) {
-        height: 28px;
-      }
-    }
-  }
+  margin-bottom: 12px;
+  font-size: 14px;
+  text-align: center;
 }

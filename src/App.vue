@@ -4,16 +4,23 @@
     <div id="content">
       <router-view />
     </div>
-    <Footer v-if="!['Home'].includes(this.$route.name)" />
+    <SocialLinks v-if="!isHomePage()" />
+    <Footer v-if="!isHomePage()" />
   </div>
 </template>
 
 <script>
 import Header from "./layouts/Header.vue";
+import SocialLinks from "./layouts/SocialLinks.vue";
 import Footer from "./layouts/Footer.vue";
 
 export default {
-  components: { Header, Footer },
+  components: { Header, SocialLinks, Footer },
+  methods: {
+    isHomePage() {
+      return this.$route.name === "Home";
+    },
+  },
 };
 </script>
 
