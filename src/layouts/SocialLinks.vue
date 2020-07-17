@@ -1,7 +1,7 @@
 <template>
   <nav id="social-links">
     <ul>
-      <li v-for="link in links" :key="link.title">
+      <li v-for="link in links" :key="link.title" v-bind:title="link.title">
         <a v-bind:href="link.to">
           <img align="center" v-bind:src="link.icon" />
         </a>
