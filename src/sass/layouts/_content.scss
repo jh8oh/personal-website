@@ -6,22 +6,11 @@ body {
   margin: 0;
 }
 
-#app {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
 #content {
-  min-height: calc(100vh - 89px);    // Screen height - (header height (56px) + footer height (33px))
-  flex: 1 0 auto;
-  margin: 56px 0 0 0;
+  position: relative;
+  min-height: calc(100vh - 56px); // Screen height - header height (56px)
+  margin-top: 56px;
   background-color: $color-background;
-
-  @media screen and (max-width: $breakpoint-mobile){
-    // At breakpoint-mobile, footer height increases since the social links move to the bottom
-    min-height: calc(100vh - 133px);     // Screen height - (header height (56px) + footer height (77px))
-  }
 }
 
 .background-dark {
