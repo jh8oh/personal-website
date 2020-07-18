@@ -3,25 +3,38 @@
 // ---------------------------------------------------------------------------
 
 button {
-  display: inline-block;
-  padding: 12px 24px;
-  margin: 4px 2px;
+  // Layout
+  padding: 12px 42px;
   border: 2px solid $color-accent;
+  border-radius: 4px;
+
+  // Color
+  color: $color-accent;
   background-color: transparent;
-  text-align: center;
-  text-transform: uppercase;
-  text-decoration: none;
+
+  // Text
   font-family: inherit;
-  font-size: inherit;
+  font-size: 16px; // Smaller font than body
   font-weight: inherit;
   line-height: inherit;
-  letter-spacing: inherit;
+  letter-spacing: 2px; // Larger letter spacing than body
+  text-transform: uppercase;
+
   cursor: pointer;
-  color: $color-accent;
-  transition-duration: 0.5s;
+  transition-duration: 0.3s;
 
   &:hover {
     background-color: $color-accent;
-    color: $color-background;
+    color: $color-on-accent;
+  }
+
+  @keyframes push {
+    50% {
+      transform: scale(0.8);
+    }
+  }
+
+  &:focus {
+    animation: push 0.3s ease-in-out 1;
   }
 }
