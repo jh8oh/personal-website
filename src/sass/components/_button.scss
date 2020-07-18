@@ -20,7 +20,10 @@ button {
   letter-spacing: 2px; // Larger letter spacing than body
   text-transform: uppercase;
 
+  // Interaction
   cursor: pointer;
+
+  // Animation
   transition-duration: 0.3s;
 
   &:hover {

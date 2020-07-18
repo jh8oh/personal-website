@@ -4,17 +4,18 @@
 header {
   $breakpoint: 600px;
 
+  // Layout
   display: flex;
+  position: fixed; // Make the navigation bar stay at the top of the page
   width: 100%;
   top: 0;
   left: 0;
-
-  // Horizontal padding to make sure elements aren't at the edges
   padding: 0 $horizontal-padding;
   box-sizing: border-box;
 
-  position: fixed; // Make the navigation bar stay at the top of the page
+  // Color
   background-color: $color-base-variant;
+
   z-index: 1;
 
   @media screen and (max-width: $breakpoint-tablet) {
