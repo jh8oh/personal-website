@@ -1,6 +1,6 @@
 <template>
   <header>
-    <router-link id="logo" tag="a" to="/">
+    <router-link tag="a" to="/">
       <img
         @mouseover="logoHovered = true"
         @mouseleave="logoHovered = false"
@@ -12,7 +12,7 @@
       id="menu-dropdown"
       alt="Navigate to…"
       :src="getDropdownMenuIcon()"
-      v-on:click="toggleNavigation()"
+      v-on:click="navShown = !navShown"
     />
     <nav v-bind:class="navShown ? 'shown' : ''">
       <ul>
@@ -32,6 +32,11 @@
 </template>
 
 <script>
+import logoIcon from "../assets/ico/header/logo-gallery.png";
+import logoHoveredIcon from "../assets/ico/header/logo-curiousblue.png";
+import navIcon from "../assets/ico/header/menu-gallery.svg";
+import navClickedIcon from "../assets/ico/header/menu-curiousblue.svg";
+
 export default {
   data() {
     return {
@@ -63,21 +68,10 @@ export default {
   },
   methods: {
     getLogoIcon() {
-      if (this.logoHovered) {
-        return require("../assets/ico/header/logo-curiousblue.png");
-      } else {
-        return require("../assets/ico/header/logo-gallery.png");
-      }
-    },
-    toggleNavigation() {
-      this.navShown = !this.navShown;
+      return this.logoHovered? logoHoveredIcon : logoIcon;
     },
     getDropdownMenuIcon() {
-      if (this.navShown) {
-        return require("../assets/ico/header/menu-curiousblue.svg");
-      } else {
-        return require("../assets/ico/header/menu-gallery.svg");
-      }
+      return this.navShown? navClickedIcon : navIcon;
     },
   },
 };

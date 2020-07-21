@@ -8,7 +8,7 @@ body {
 
 #content {
   position: relative;
-  min-height: calc(100vh - 56px); // Screen height - header height (56px)
+  min-height: $content-height;
   margin-top: 56px;
   background-color: $color-background;
 }

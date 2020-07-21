@@ -2,7 +2,7 @@
 // Contains all styles related to the header of this site
 // ---------------------------------------------------------------------------
 header {
-  $breakpoint: 600px;
+  $breakpoint: 500px;
 
   // Layout
   display: flex;
@@ -12,11 +12,11 @@ header {
   left: 0;
   padding: 0 $horizontal-padding;
   box-sizing: border-box;
+  align-items: center;
+  z-index: 3; // Header on top of animation
 
   // Color
   background-color: $color-base-variant;
-
-  z-index: 1;
 
   @media screen and (max-width: $breakpoint-tablet) {
     padding: 0 $horizontal-padding-small;
@@ -24,14 +24,19 @@ header {
 
   @media screen and (max-width: $breakpoint) {
     display: inline;
-    padding: 0;
+    padding: 0; // Padding needs to be at 0 so that the bottom-border in the nav bar reaches the sides
   }
 
+  // Logo & menu-dropdown
   img {
+    display: block;
     height: 42px;
-    padding: 7px 0;
-    vertical-align: bottom;
-    margin: 0 12px;
+    margin-right: 12px;
+
+    @media screen and (max-width: $breakpoint) {
+      display: inline-block;
+      margin: 8px $horizontal-padding-small 0;
+    }
   }
 
   // Dropdown menu (only shown when the view is smaller than the breakpoint)
@@ -61,11 +66,20 @@ header {
     list-style-type: none;
 
     a {
-      position: relative;
+      // Layout
+      position: relative;     // Required for :after to be limited to the link
       float: left;
       padding: 14.5px;
+
+      // Text
       text-align: center;
       text-decoration: none;
+
+      @media screen and (max-width: $breakpoint) {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;   // Needed to keep links centered
+      }
 
       &.right {
         float: right;
@@ -80,38 +94,39 @@ header {
         color: $color-accent;
       }
 
+      // Simulates a bottom border
       &:after {
+        content: "";
+
+        // Layout
         position: absolute;
+        height: 4px;
+        width: 0px;
         top: 52px;
         bottom: 0;
         left: 0;
         right: 0;
         margin: 0 auto;
-        height: 4px;
-        width: 0px;
-        background: transparent;
-        transition: width 0.3s ease, background-color 0.3s ease;
-        content: "";
 
-        @media screen and (max-width: $breakpoint-mobile){
-          top: 46px;
+        // Color
+        background: transparent;
+
+        //Animation
+        transition: width 0.3s ease, background-color 0.3s ease;
+
+        @media screen and (max-width: $breakpoint-mobile) {
+          top: 46px;  // The vertical nav requires a smaller top offset in order to accomodate the last link (contact me)
         }
       }
 
       &.router-link-active {
         color: $color-accent;
 
+        // When active, bottom border increases width
         &:after {
           width: 100%;
           background-color: $color-accent;
         }
-      }
-
-      @media screen and (max-width: $breakpoint) {
-        display: block;
-        width: 100%;
-        float: none;
-        box-sizing: border-box;
       }
     }
   }

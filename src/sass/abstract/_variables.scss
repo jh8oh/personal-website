@@ -43,5 +43,6 @@ $breakpoint-tablet: 768px;
 $breakpoint-laptop: 1200px;
 
 // Dimensions
+$content-height: calc(100vh - 56px); 					// Screen height - header height (56px)
 $horizontal-padding: 20%;
 $horizontal-padding-small: 5%;

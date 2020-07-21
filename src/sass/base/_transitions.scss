@@ -4,7 +4,7 @@
 
 %transition-active {
   position: fixed;
-  min-height: calc(100vh - 56px);
+  min-height: $content-height;
   width: 100%;
   background: white;
   top: 56px;
