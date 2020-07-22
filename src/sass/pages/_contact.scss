@@ -13,19 +13,16 @@
   }
 
   p {
-    flex: 0 1 auto;
     text-align: center;
   }
 
   form {
     display: flex;
     flex-flow: column;
-    flex: 1 1 auto;
 
     input {
       padding: 10px 6px;
       margin: 4px 0;
-      flex: 0 1 auto;
       font-family: inherit;
       font-size: inherit;
     }
@@ -33,7 +30,6 @@
     textarea {
       padding: 10px 6px;
       margin: 6px 0;
-      flex: 1 1 auto;
       resize: none;
       font-family: inherit;
       font-size: inherit;
@@ -45,6 +41,5 @@
     min-width: 100px;
     max-width: 250px;
     margin: auto;
-    flex: 0 1 auto;
   }
 }
