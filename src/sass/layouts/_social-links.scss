@@ -9,6 +9,7 @@
   z-index: 3;
 
   @media screen and (max-width: $breakpoint-mobile) {
+    // Links are now locked above the footer
     position: static;
   }
 
@@ -26,6 +27,7 @@
     li {
       margin: 6px 0;
 
+      // Links are now horizontal
       @media screen and(max-width: $breakpoint-mobile) {
         display: inline-block;
         margin: 0 2px;

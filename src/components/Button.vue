@@ -18,7 +18,7 @@ export default {
   },
   methods: {
     emitClick() {
-      this.$emit("clicked");
+      setTimeout(() => this.$emit("clicked"), 100);
     },
   },
 };

@@ -2,53 +2,46 @@
 // Contains everything to do with page transitions
 // ---------------------------------------------------------------------------
 
-$duration: 0.3s;
-
-%enter-leave-active {
+%transition-active {
   position: fixed;
-  min-height: calc(100vh - 56px);
+  min-height: $content-height;
   width: 100%;
   background: white;
   top: 56px;
 }
 
-.slide-left {
-  &-enter-active {
-    @extend %enter-leave-active;
-    transition: transform $duration ease-in-out;
+@mixin page-transition($enter-active-transform) {
+  &-enter-active,
+  &-enter-to {
     z-index: 2;
-    transform: translateX(100%);
+  }
+
+  &-enter-active {
+    @extend %transition-active;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX($enter-active-transform);
   }
 
   &-enter-to {
-    z-index: 2;
     transform: translateX(0%);
   }
 
-  &-leave-active {
-    @extend %enter-leave-active;
+  &-leave-active,
+  &-leave-to {
     z-index: -1;
   }
 
-  &-leave-to {
-    z-index: -1;
+  &-leave-active {
+    @extend %transition-active;
   }
 }
 
+// Page slides in from the left side
+.slide-left {
+  @include page-transition(100%);
+}
+
+// Page slides in from the right side
 .slide-right {
-  &-enter-active {
-    @extend %enter-leave-active;
-  }
-
-  &-leave-active {
-    @extend %enter-leave-active;
-    transition: transform $duration ease-in-out;
-    z-index: 2;
-    transform: translateX(0%);
-  }
-
-  &-leave-to {
-    z-index: 2;
-    transform: translateX(100%);
-  }
+  @include page-transition(-100%);
 }

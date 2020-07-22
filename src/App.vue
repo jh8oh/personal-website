@@ -41,7 +41,7 @@ export default {
         this.transition.mode = "in-out";
       } else if (toId < fromId) {
         this.transition.name = "slide-right";
-        this.transition.mode = "";
+        this.transition.mode = "in-out";
       } else {
         this.transition.name = "";
         this.transition.mode = "";
