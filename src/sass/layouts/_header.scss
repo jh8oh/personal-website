@@ -96,23 +96,7 @@ header {
 
       // Simulates a bottom border
       &:after {
-        content: "";
-
-        // Layout
-        position: absolute;
-        height: 4px;
-        width: 0px;
-        top: 52px;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        margin: 0 auto;
-
-        // Color
-        background: transparent;
-
-        //Animation
-        transition: width 0.3s ease, background-color 0.3s ease;
+        @include shutter-border-vertical(4px, 52px);
 
         @media screen and (max-width: $breakpoint-mobile) {
           top: 46px;  // The vertical nav requires a smaller top offset in order to accomodate the last link (contact me)
@@ -125,7 +109,6 @@ header {
         // When active, bottom border increases width
         &:after {
           width: 100%;
-          background-color: $color-accent;
         }
       }
     }

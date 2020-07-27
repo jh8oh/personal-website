@@ -3,4 +3,72 @@
 // ---------------------------------------------------------------------------
 
 #about {
+  section {
+    min-height: $content-height;
+    margin: 0 $horizontal-padding;
+  }
+
+  #intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: auto;
+
+      img {
+        max-width: 450px;
+        border-radius: 50%;
+      }
+
+      p {
+        position: relative; // So that the :after and :before in animation can find parent
+        display: flex; // Ensures the animation opens from the center outwards
+        flex-direction: column;
+        justify-content: center;
+        max-height: 0;
+        max-width: 600px;
+        overflow: hidden;
+        text-align: center;
+
+        // Animation
+        @keyframes grow-max-height {
+          from {
+            max-height: 0;
+          }
+          to {
+            max-height: 100vh;
+          }
+        }
+
+        animation: grow-max-height 3s;
+        animation-delay: 0.5s;
+        animation-fill-mode: forwards;
+
+        // Width grows to max quickly, stays that way, before shrinking quickly
+        @keyframes grow-shrink-width {
+          75% {
+            width: 100%;
+          }
+        }
+
+        &:before {
+          @include shutter-border-vertical(2px, 0);
+          animation: grow-shrink-width 1.5s;
+        }
+
+        &:after {
+          @include shutter-border-vertical(2px, calc(100% - 2px));
+          animation: grow-shrink-width 1.5s;
+        }
+      }
+    }
+
+    #next-section-button {
+      align-self: flex-end;
+    }
+  }
 }
