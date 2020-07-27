@@ -1,9 +1,9 @@
 <template>
-  <nav id="social-links">
+  <nav id="sidebar-links">
     <ul>
-      <li v-for="link in links" :key="link.title" v-bind:title="link.title">
-        <a v-bind:href="link.to">
-          <img align="center" v-bind:src="link.icon" />
+      <li v-for="link in links" :key="link.title" :title="link.title">
+        <a :href="link.to">
+          <img :src="link.icon" />
         </a>
       </li>
     </ul>
@@ -11,15 +11,21 @@
 </template>
 
 <script>
-import githubDarkIcon from "../assets/ico/social-links/github-dark.png";
-import linkedinDarkIcon from "../assets/ico/social-links/linkedin-dark.png";
-import resumeDarkIcon from "../assets/ico/social-links/resume-dark.png";
+import arrowUpDarkIcon from "../assets/ico/sidebar-links/arrow-up-dark.png";
+import githubDarkIcon from "../assets/ico/sidebar-links/github-dark.png";
+import linkedinDarkIcon from "../assets/ico/sidebar-links/linkedin-dark.png";
+import resumeDarkIcon from "../assets/ico/sidebar-links/resume-dark.png";
 import resume from "../assets/doc/resume.pdf";
 
 export default {
   data() {
     return {
       links: [
+        {
+          title: "To Top",
+          icon: arrowUpDarkIcon,
+          to: "#top",
+        },
         {
           title: "GitHub",
           icon: githubDarkIcon,

@@ -10,11 +10,12 @@
 // Layout
 @import "layouts/content";
 @import "layouts/header";
-@import "layouts/social-links";
+@import "layouts/sidebar-links";
 @import "layouts/footer";
 
 // Components
 @import "components/button";
+@import "components/nextsectionbutton";
 
 // Page-specific styles
 @import "pages/about";

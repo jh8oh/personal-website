@@ -6,16 +6,16 @@
         <router-view />
       </transition>
     </div>
-    <SocialLinks v-if="!(this.$route.name === 'Home')" />
+    <SidebarLinks v-if="!(this.$route.name === 'Home')" />
   </div>
 </template>
 
 <script>
 import Header from "./layouts/Header.vue";
-import SocialLinks from "./layouts/SocialLinks.vue";
+import SidebarLinks from "./layouts/SidebarLinks.vue";
 
 export default {
-  components: { Header, SocialLinks },
+  components: { Header, SidebarLinks },
   data() {
     return {
       transition: {
