@@ -2,15 +2,16 @@
 // Contains all site-wide Sass mixins
 // ---------------------------------------------------------------------------
 
-@mixin shutter-border-vertical($height, $top) {
+// Pseudo-border(-top/-bottom) that expands and contracts from the center
+@mixin shutter-border-vertical($height, $top, $width: 0) {
   content: "";
   position: absolute;
   height: $height;
   width: 0;
   top: $top;
   left: 0;
-  right: 0;
+  right: 0; // requires both left and right to center shutter
   margin: 0 auto;
   background-color: $color-accent;
-  transition: width 0.3s ease, background-color 0.3s ease;
+  transition: width 0.3s ease;
 }

@@ -1,5 +1,5 @@
 <template>
-  <div id="home">
+  <div id="home" class="page">
     <img id="background-image" src="../assets/img/home/home_background.png" />
     <div id="greeting">
       <span>Hi, I'm</span><br />

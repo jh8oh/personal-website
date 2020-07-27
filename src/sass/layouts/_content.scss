@@ -17,6 +17,12 @@ body {
   background-color: $color-background;
 }
 
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: $content-height;
+}
+
 .background-dark {
   background-color: $color-background-variant;
 }

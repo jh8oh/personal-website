@@ -1,6 +1,6 @@
 <template>
   <div id="about">
-    <section id="intro">
+    <section id="intro" class="page">
       <h1>About Me</h1>
       <div id="intro-content">
         <img src="../assets/img/about/profile-pic.jpg" alt="Profile Picture" />

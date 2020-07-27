@@ -1,7 +1,8 @@
 // ---------------------------------------------------------------------------
-// Contains everything to do with page transitions
+// Contains everything to do with transitions
 // ---------------------------------------------------------------------------
 
+// Sliding in transition (object slides in on top of previous object)
 %transition-active {
   position: fixed;
   min-height: $content-height;
@@ -10,7 +11,7 @@
   top: 56px;
 }
 
-@mixin page-transition($enter-active-transform) {
+@mixin slide($enter-active-transform) {
   &-enter-active,
   &-enter-to {
     z-index: 2;
@@ -36,12 +37,12 @@
   }
 }
 
-// Page slides in from the left side
+// Slides in from the left side
 .slide-left {
-  @include page-transition(100%);
+  @include slide(100%);
 }
 
-// Page slides in from the right side
+// Slides in from the right side
 .slide-right {
-  @include page-transition(-100%);
+  @include slide(-100%);
 }

@@ -4,7 +4,6 @@
 header {
   $breakpoint: 500px;
 
-  // Layout
   display: flex;
   position: fixed; // Make the navigation bar stay at the top of the page
   width: 100%;
@@ -14,8 +13,6 @@ header {
   box-sizing: border-box;
   align-items: center;
   z-index: 3; // Header on top of animation
-
-  // Color
   background-color: $color-base-variant;
 
   @media screen and (max-width: $breakpoint-tablet) {
@@ -66,19 +63,16 @@ header {
     list-style-type: none;
 
     a {
-      // Layout
-      position: relative;     // Required for :after to be limited to the link
+      position: relative;     // :after is limited to the link
       float: left;
       padding: 14.5px;
-
-      // Text
       text-align: center;
       text-decoration: none;
 
       @media screen and (max-width: $breakpoint) {
         display: block;
         width: 100%;
-        box-sizing: border-box;   // Needed to keep links centered
+        box-sizing: border-box;   // Keeps links centered
       }
 
       &.right {
@@ -94,19 +88,17 @@ header {
         color: $color-accent;
       }
 
-      // Simulates a bottom border
       &:after {
         @include shutter-border-vertical(4px, 52px);
 
         @media screen and (max-width: $breakpoint-mobile) {
-          top: 46px;  // The vertical nav requires a smaller top offset in order to accomodate the last link (contact me)
+          top: 46px;  // smaller top offset in order to accomodate the last link (contact me)
         }
       }
 
       &.router-link-active {
         color: $color-accent;
 
-        // When active, bottom border increases width
         &:after {
           width: 100%;
         }
