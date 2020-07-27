@@ -19,6 +19,7 @@
       margin: auto;
 
       img {
+        width: 80%;
         max-width: 450px;
         border-radius: 50%;
       }
@@ -29,7 +30,8 @@
         flex-direction: column;
         justify-content: center;
         max-height: 0;
-        max-width: 650px;
+        max-width: 750px;
+        margin: 14px $horizontal-padding-small;
         overflow: hidden;
         text-align: center;
 
