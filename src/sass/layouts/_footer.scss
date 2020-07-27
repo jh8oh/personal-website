@@ -3,13 +3,10 @@
 // ---------------------------------------------------------------------------
 
 footer {
-  // Layout
   position: absolute;
   bottom: 12px;
   left: 0;
   right: 0;
-
-  // Text
-  font-size: 14px;
+  font-size: 14px;  // Smaller text size by default
   text-align: center;
 }
