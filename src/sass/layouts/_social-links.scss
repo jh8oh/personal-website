@@ -1,11 +1,11 @@
 // ---------------------------------------------------------------------------
-// Contains all styles related to the links in the sidebar
+// Contains all styles related to the social links in the sidebar
 // ---------------------------------------------------------------------------
 
-#sidebar-links {
+#social-links {
   position: fixed;
   bottom: 32px;
-  right: 2.5%;
+  left: 2.5%;
   z-index: 3;
 
   @media screen and (max-width: $breakpoint-mobile) {

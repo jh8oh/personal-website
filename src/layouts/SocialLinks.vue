@@ -1,5 +1,5 @@
 <template>
-  <nav id="sidebar-links">
+  <nav id="social-links">
     <ul>
       <li v-for="link in links" :key="link.title" :title="link.title">
         <a :href="link.to">
@@ -11,21 +11,15 @@
 </template>
 
 <script>
-import arrowUpDarkIcon from "../assets/ico/sidebar-links/arrow-up-dark.png";
-import githubDarkIcon from "../assets/ico/sidebar-links/github-dark.png";
-import linkedinDarkIcon from "../assets/ico/sidebar-links/linkedin-dark.png";
-import resumeDarkIcon from "../assets/ico/sidebar-links/resume-dark.png";
+import githubDarkIcon from "../assets/ico/social-links/github-dark.png";
+import linkedinDarkIcon from "../assets/ico/social-links/linkedin-dark.png";
+import resumeDarkIcon from "../assets/ico/social-links/resume-dark.png";
 import resume from "../assets/doc/resume.pdf";
 
 export default {
   data() {
     return {
       links: [
-        {
-          title: "To Top",
-          icon: arrowUpDarkIcon,
-          to: "#top",
-        },
         {
           title: "GitHub",
           icon: githubDarkIcon,

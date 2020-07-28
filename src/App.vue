@@ -6,16 +6,18 @@
         <router-view />
       </transition>
     </div>
-    <SidebarLinks v-if="!(this.$route.name === 'Home')" />
+    <SocialLinks v-if="!isHome()" />
+    <ScrollToTop v-if="!isHome()" />
   </div>
 </template>
 
 <script>
 import Header from "./layouts/Header.vue";
-import SidebarLinks from "./layouts/SidebarLinks.vue";
+import SocialLinks from "./layouts/SocialLinks.vue";
+import ScrollToTop from "./layouts/ScrollToTop.vue";
 
 export default {
-  components: { Header, SidebarLinks },
+  components: { Header, SocialLinks, ScrollToTop },
   data() {
     return {
       transition: {
@@ -23,6 +25,11 @@ export default {
         mode: "in-out",
       },
     };
+  },
+  methods: {
+    isHome() {
+      return this.$route.name === "Home";
+    },
   },
   watch: {
     $route(to, from) {
