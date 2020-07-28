@@ -1,7 +1,6 @@
 <template>
-  <a :href="href">
+  <a id="next-section-button" :href="href">
     <img
-      id="next-section-button"
       @mouseover="chevronHovered = true"
       @mouseleave="chevronHovered = false"
       :src="getChevron()"

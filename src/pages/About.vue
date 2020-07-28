@@ -18,7 +18,11 @@
       </div>
       <NextSectionButton :href="'#experience'" />
     </section>
-    <section id="experience"></section>
+    <section id="experience" class="background-alt">
+      <h2>Experiences</h2>
+      <NextSectionButton :href="'#interests'" />
+    </section>
+    <section id="interests"></section>
     <Footer />
   </div>
 </template>
