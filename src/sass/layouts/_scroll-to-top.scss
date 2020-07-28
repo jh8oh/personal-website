@@ -1,0 +1,14 @@
+// ---------------------------------------------------------------------------
+// Contains all styles related to the scroll-to-top button
+// ---------------------------------------------------------------------------
+
+#scroll-to-top {
+  position: fixed;
+  bottom: 32px;
+  right: 2.5%;
+  z-index: 3;
+
+  img {
+    width: 32px;
+  }
+}
