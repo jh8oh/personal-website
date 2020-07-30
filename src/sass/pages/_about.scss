@@ -22,8 +22,21 @@
 
       img {
         width: 80%;
-        max-width: 450px;
+        max-width: 900px;
         border-radius: 50%;
+
+        @keyframes shrink {
+          from {
+            max-width: 800px;
+          }
+
+          to {
+            max-width: 450px;
+          }
+        }
+
+        animation: shrink 1s;
+        animation-fill-mode: forwards;
       }
 
       p {
@@ -39,9 +52,6 @@
 
         // Animation
         @keyframes grow-max-height {
-          from {
-            max-height: 0;
-          }
           to {
             max-height: 100vh;
           }
@@ -72,6 +82,5 @@
   }
 
   #experience {
-
   }
 }
