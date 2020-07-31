@@ -19,7 +19,22 @@
       <NextSectionButton :href="'#experience'" />
     </section>
     <section id="experience" class="background-alt">
-      <h2>Experiences</h2>
+      <div id="experience-container">
+        <h2>Experiences</h2>
+        <div id="experience-content">
+          <ul id="timeline">
+            <li
+              v-for="experience in experiences"
+              :key="experience.id"
+              @click="activeExperienceId = experience.id"
+              :class="{ active: activeExperienceId === experience.id }"
+            >
+              <h3>{{ experience.employer }}</h3>
+            </li>
+          </ul>
+          <ExperienceCard :experience="experiences[activeExperienceId]" />
+        </div>
+      </div>
       <NextSectionButton :href="'#interests'" />
     </section>
     <section id="interests"></section>
@@ -29,9 +44,18 @@
 
 <script>
 import NextSectionButton from "../components/NextSectionButton.vue";
+import ExperienceCard from "../components/about/ExperienceCard.vue";
 import Footer from "../layouts/Footer.vue";
 
+import experiences from "../assets/json/about/experiences.json";
+
 export default {
-  components: { NextSectionButton, Footer },
+  components: { NextSectionButton, ExperienceCard, Footer },
+  data() {
+    return {
+      activeExperienceId: 0,
+      experiences: experiences,
+    };
+  },
 };
 </script>

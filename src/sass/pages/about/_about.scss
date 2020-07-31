@@ -1,0 +1,15 @@
+// ---------------------------------------------------------------------------
+// This file styles the "About Me" page general layout.
+// ---------------------------------------------------------------------------
+
+#about {
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: $content-height;
+    padding-top: 56px;
+    margin-top: -56px;
+    background-clip: content-box;
+  }
+}

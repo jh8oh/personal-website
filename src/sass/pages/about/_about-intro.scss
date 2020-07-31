@@ -1,19 +1,8 @@
 // ---------------------------------------------------------------------------
-// This file contains styles that are specific to the "About Me" page.
+// This file styles the intro section in the "About Me" page.
 // ---------------------------------------------------------------------------
 
-#about {
-  section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: $content-height;
-    padding-top: 56px;
-    margin-top: -56px;
-    background-clip: content-box;
-  }
-
-  #intro {
+#about #intro {
     &-content {
       display: flex;
       flex-direction: column;
@@ -80,7 +69,3 @@
       }
     }
   }
-
-  #experience {
-  }
-}

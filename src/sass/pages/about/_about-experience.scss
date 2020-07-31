@@ -1,0 +1,98 @@
+// ---------------------------------------------------------------------------
+// This file styles the experience section in the "About Me" page.
+// ---------------------------------------------------------------------------
+
+#about #experience {
+  // Includes the heading
+  &-container {
+    width: 80%;
+    max-width: 1200px;
+    margin: auto $horizontal-padding; //Center div
+
+    h2 {
+      margin-bottom: 40px;
+    }
+  }
+
+  #next-section-button {
+    // Margin-top cannot be auto, otherwise margins are split between container and next-section-button, and container is no longer centered
+    margin-top: 0;
+  }
+
+  // Horizontal content
+  &-content {
+    display: flex;
+  }
+
+  #timeline {
+    min-height: 500px;
+    min-width: 164px;
+    max-width: 300px;
+    padding: 0;
+    margin: 0;
+    margin-right: 12px;
+    list-style-type: none;
+    border-left: 2px solid $color-on-background;
+
+    li {
+      position: relative;
+      margin: 12px 24px;
+      cursor: pointer;
+
+      &:before {
+        content: "";
+        position: absolute;
+        height: 6px;
+        width: 6px;
+        left: -30px;
+        top: calc(50% - 4px);
+        background-color: $color-background-variant;
+        border: 2px solid $color-on-background;
+        border-radius: 75px;
+      }
+
+      &.active {
+        color: $color-accent;
+
+        &:before {
+          border-color: $color-accent;
+        }
+      }
+    }
+  }
+
+  // When screen is smaller than breakpoint (750px), then timeline moves to the top
+  @media screen and (max-width: 750px) {
+    &-content {
+      display: block;
+    }
+
+    #timeline {
+      min-height: 0;
+      max-width: none;
+      margin-bottom: 16px;
+      white-space: nowrap;
+      overflow: auto;
+      border-left: 0;
+
+      li {
+        display: inline-block;
+        padding: 4px 6px;
+        margin: 8px 0 0;
+        vertical-align: bottom;
+        border-bottom: 2px solid $color-on-background;
+        transition: padding-bottom 0.2s ease-out, margin-top 0.2s ease-out;
+      }
+
+      &:before {
+        display: none;
+      }
+
+      &.active {
+        padding-bottom: 12px;
+        margin-top: 0;
+        border-color: $color-accent;
+      }
+    }
+  }
+}
