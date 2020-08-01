@@ -2,8 +2,32 @@
 // Contains everything to do with transitions
 // ---------------------------------------------------------------------------
 
+// -enter/-leave: Starting state of entering/leaving object
+// -enter-to/-leave-to: Ending state of entering/leaving object
+// -enter-active/leave-active: Active state of entering/leaving object (Persists throughout the entire phase)
+
 // Sliding in transition (object slides in on top of previous object)
-%transition-active {
+@mixin page-slide($timing, $translateX) {
+  &-enter {
+    transform: translateX($translateX);
+
+    &-to {
+      transform: translateX(0%);
+    }
+
+    &-active {
+      transition: transform $timing ease-in-out;
+      z-index: 2;
+    }
+  }
+
+  &-leave-active {
+    z-index: -1;
+  }
+}
+
+// Page transitions
+%page-transition {
   position: fixed;
   min-height: $content-height;
   width: 100%;
@@ -11,38 +35,46 @@
   top: 56px;
 }
 
-@mixin slide($enter-active-transform) {
+.page-slide-left {
+  @include page-slide(0.4s, 100%);
+
   &-enter-active,
-  &-enter-to {
-    z-index: 2;
-  }
-
-  &-enter-active {
-    @extend %transition-active;
-    transition: transform 0.3s ease-in-out;
-    transform: translateX($enter-active-transform);
-  }
-
-  &-enter-to {
-    transform: translateX(0%);
-  }
-
-  &-leave-active,
-  &-leave-to {
-    z-index: -1;
-  }
-
   &-leave-active {
-    @extend %transition-active;
+    @extend %page-transition;
   }
 }
 
-// Slides in from the left side
-.slide-left {
-  @include slide(100%);
+.page-slide-right {
+  @include page-slide(0.4s, -100%);
+
+  &-enter-active,
+  &-leave-active {
+    @extend %page-transition;
+  }
 }
 
-// Slides in from the right side
-.slide-right {
-  @include slide(-100%);
+// Sliding in while fading in/out
+@mixin fade-slide($timing, $translateX) {
+  &-enter-active,
+  &-leave-active {
+    transition: all $timing;
+  }
+
+  &-enter {
+    transform: translateX($translateX);
+    opacity: 0;
+  }
+
+  &-leave-to {
+    transform: translateX(-$translateX);
+    opacity: 0;
+  }
+}
+
+.fade-slide-left {
+  @include fade-slide(0.2s, 20px);
+}
+
+.fade-slide-right {
+  @include fade-slide(0.2s, -20px);
 }

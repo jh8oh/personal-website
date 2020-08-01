@@ -2,7 +2,7 @@
   <div id="app">
     <Header />
     <div id="content">
-      <transition :name="transition.name" :mode="transition.mode">
+      <transition :name="transition.name" mode="in-out">
         <router-view />
       </transition>
     </div>
@@ -21,8 +21,7 @@ export default {
   data() {
     return {
       transition: {
-        name: "slide-left",
-        mode: "in-out",
+        name: "",
       },
     };
   },
@@ -44,14 +43,9 @@ export default {
       const fromId = routeIdMap[from.name];
 
       if (toId > fromId) {
-        this.transition.name = "slide-left";
-        this.transition.mode = "in-out";
-      } else if (toId < fromId) {
-        this.transition.name = "slide-right";
-        this.transition.mode = "in-out";
+        this.transition.name = "page-slide-left";
       } else {
-        this.transition.name = "";
-        this.transition.mode = "";
+        this.transition.name = "page-slide-right";
       }
     },
   },

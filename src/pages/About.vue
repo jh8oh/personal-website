@@ -32,7 +32,12 @@
               <h3>{{ experience.employer }}</h3>
             </li>
           </ul>
-          <ExperienceCard :experience="experiences[activeExperienceId]" />
+          <transition name="fade-slide-left" mode="out-in">
+            <ExperienceCard
+              :key="activeExperienceId"
+              :experience="experiences[activeExperienceId]"
+            />
+          </transition>
         </div>
       </div>
       <NextSectionButton :href="'#interests'" />
