@@ -10,7 +10,7 @@
     margin: auto $horizontal-padding; //Center div
 
     h2 {
-      margin-bottom: 40px;
+      margin: 40px 0;
     }
   }
 
@@ -25,12 +25,12 @@
   }
 
   #timeline {
-    min-height: 500px;
-    min-width: 164px;
-    max-width: 300px;
+    min-height: 450px;
+    width: 264px;
     padding: 0;
     margin: 0;
     margin-right: 12px;
+    flex-shrink: 0;
     list-style-type: none;
     border-left: 2px solid $color-on-background;
 
@@ -69,6 +69,7 @@
 
     #timeline {
       min-height: 0;
+      width: auto;
       max-width: none;
       margin-bottom: 16px;
       white-space: nowrap;
@@ -82,16 +83,16 @@
         vertical-align: bottom;
         border-bottom: 2px solid $color-on-background;
         transition: padding-bottom 0.2s ease-out, margin-top 0.2s ease-out;
-      }
 
-      &:before {
-        display: none;
-      }
+        &:before {
+          display: none;
+        }
 
-      &.active {
-        padding-bottom: 12px;
-        margin-top: 0;
-        border-color: $color-accent;
+        &.active {
+          padding-bottom: 12px;
+          margin-top: 0;
+          border-color: $color-accent;
+        }
       }
     }
   }
