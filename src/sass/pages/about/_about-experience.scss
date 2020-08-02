@@ -36,26 +36,30 @@
 
     li {
       position: relative;
-      margin: 12px 24px;
+      margin: 12px 12px;
       cursor: pointer;
+      transition: margin-left 0.2s;
 
       &:before {
         content: "";
         position: absolute;
         height: 6px;
         width: 6px;
-        left: -30px;
+        left: -18px;
         top: calc(50% - 4px);
         background-color: $color-background-variant;
         border: 2px solid $color-on-background;
         border-radius: 75px;
+        transition: left 0.2s;
       }
 
       &.active {
+        margin-left: 24px;
         color: $color-accent;
 
         &:before {
           border-color: $color-accent;
+          left: -30px;
         }
       }
     }
@@ -91,6 +95,7 @@
         &.active {
           padding-bottom: 12px;
           margin-top: 0;
+          margin-left: 0;
           border-color: $color-accent;
         }
       }
