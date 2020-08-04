@@ -12,4 +12,10 @@
     margin-top: -56px;
     background-clip: content-box;
   }
+
+  .container {
+    width: 80%;
+    max-width: 1200px;
+    margin: auto $horizontal-padding; //Center div
+  }
 }

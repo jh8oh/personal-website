@@ -3,17 +3,6 @@
 // ---------------------------------------------------------------------------
 
 #about #experience {
-  // Includes the heading
-  &-container {
-    width: 80%;
-    max-width: 1200px;
-    margin: auto $horizontal-padding; //Center div
-
-    h2 {
-      margin: 40px 0;
-    }
-  }
-
   #next-section-button {
     // Margin-top cannot be auto, otherwise margins are split between container and next-section-button, and container is no longer centered
     margin-top: 0;
