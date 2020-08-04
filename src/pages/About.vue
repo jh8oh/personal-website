@@ -62,6 +62,7 @@ import ExperienceCard from "../components/about/ExperienceCard.vue";
 import Footer from "../layouts/Footer.vue";
 
 import experiences from "../assets/json/about/experiences.json";
+import interests from "../assets/json/about/interests.json";
 
 export default {
   components: { NextSectionButton, ExperienceCard, Footer },
@@ -69,6 +70,7 @@ export default {
     return {
       activeExperienceId: 0,
       experiences: experiences,
+      interests: interests,
     };
   },
 };
