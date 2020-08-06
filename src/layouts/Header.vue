@@ -54,11 +54,6 @@ export default {
           left: true,
         },
         {
-          title: "Blog",
-          url: "/blog",
-          left: true,
-        },
-        {
           title: "Contact Me",
           url: "/contact-me",
           left: false,
