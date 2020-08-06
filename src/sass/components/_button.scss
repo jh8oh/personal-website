@@ -30,7 +30,7 @@ button {
   }
 
   // Continues after click (Needed for animation to continue after clicking)
-  &:focus {
-    animation: push 0.3s ease-in-out 1;
+  &:active {
+    animation: push 0.1s ease-in-out 1;
   }
 }
