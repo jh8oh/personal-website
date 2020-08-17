@@ -50,6 +50,19 @@
     <section id="interests">
       <div class="container">
         <h2>Interests</h2>
+        <ul>
+          <li
+            v-for="interestGroup in interestGroups"
+            :key="interestGroup.id"
+            @click="activeInterestGroupId = interestGroup.id"
+            :class="{ active: activeInterestGroupId === interestGroup.id }"
+          >
+            <h3>{{ interestGroup.name }}</h3>
+          </li>
+        </ul>
+        <InterestGroupCard
+          :interestGroup="interestGroups[activeInterestGroupId]"
+        />
       </div>
     </section>
     <Footer />
@@ -59,18 +72,20 @@
 <script>
 import NextSectionButton from "../components/NextSectionButton.vue";
 import ExperienceCard from "../components/about/ExperienceCard.vue";
+import InterestGroupCard from "../components/about/InterestGroupCard.vue";
 import Footer from "../layouts/Footer.vue";
 
 import experiences from "../assets/json/about/experiences.json";
 import interests from "../assets/json/about/interests.json";
 
 export default {
-  components: { NextSectionButton, ExperienceCard, Footer },
+  components: { NextSectionButton, ExperienceCard, InterestGroupCard, Footer },
   data() {
     return {
       activeExperienceId: 0,
       experiences: experiences,
-      interests: interests,
+      activeInterestGroupId: 0,
+      interestGroups: interests,
     };
   },
 };

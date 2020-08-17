@@ -1,7 +1,7 @@
 <template>
   <div id="slideshow-gallery">
     <img :src="leftIcon" @click="back()" />
-    <slot />
+    <slot></slot>
     <img :src="rightIcon" @click="next()" />
   </div>
 </template>
@@ -22,7 +22,7 @@ export default {
   methods: {
     back() {
       this.leftIcon = arrowLeftAccent;
-      setTimeout(() => this.$emit("back"), 100);
+      setTimeout(() => this.$emit("prev"), 100);
       this.leftIcon = arrowLeftDark;
     },
     next() {
