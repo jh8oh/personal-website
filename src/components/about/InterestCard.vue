@@ -1,8 +1,10 @@
 <template>
-  <div>
-    <h4>{{ interest.title }}</h4>
+  <div id="interest-card">
     <img :src="getImg()" :alt="interest.title" />
-    <p v-html="interest.description" />
+    <div id="interest-card-text">
+      <h4>{{ interest.title }}</h4>
+      <p v-html="interest.description" />
+    </div>
   </div>
 </template>
 
