@@ -1,0 +1,9 @@
+// ---------------------------------------------------------------------------
+// This file styles the interests section in the "About Me" page.
+// ---------------------------------------------------------------------------
+
+#about #interests{
+	&-selector{
+		@include horizontal-selector;
+	}
+}

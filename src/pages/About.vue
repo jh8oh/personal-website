@@ -50,7 +50,7 @@
     <section id="interests">
       <div class="container">
         <h2>Interests</h2>
-        <ul>
+        <ul id="interests-selector">
           <li
             v-for="interestGroup in interestGroups"
             :key="interestGroup.id"
