@@ -18,10 +18,12 @@
 // Components
 @import "components/button";
 @import "components/next-section-button";
+@import "components/slideshow-gallery";
 
 // Page-specific styles
 @import "pages/home";
 @import "pages/about/about";
 @import "pages/about/about-intro";
 @import "pages/about/about-experience";
+@import "pages/about/about-interests";
 @import "pages/contact";

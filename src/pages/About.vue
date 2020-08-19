@@ -25,7 +25,7 @@
     </section>
     <section id="experience" class="background-alt">
       <div class="container">
-        <h2>Experiences</h2>
+        <h2>Experience</h2>
         <div id="experience-content">
           <ul id="timeline">
             <li

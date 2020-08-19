@@ -1,8 +1,22 @@
 <template>
   <div id="slideshow-gallery">
-    <img :src="leftIcon" @click="back()" />
     <slot></slot>
-    <img :src="rightIcon" @click="next()" />
+    <img
+      title="Next"
+      class="navigation-buttons"
+      :src="getNextIcon()"
+      @mouseover="nextHovered = true"
+      @mouseleave="nextHovered = false"
+      @click="next()"
+    />
+    <img
+      title="Prev"
+      class="navigation-buttons"
+      :src="getPrevIcon()"
+      @mouseover="prevHovered = true"
+      @mouseleave="prevHovered = false"
+      @click="prev()"
+    />
   </div>
 </template>
 
@@ -15,20 +29,22 @@ import arrowRightAccent from "../assets/ico/components/slideshow-gallery/arrow-r
 export default {
   data() {
     return {
-      leftIcon: arrowLeftDark,
-      rightIcon: arrowRightDark,
+      prevHovered: false,
+      nextHovered: false,
     };
   },
   methods: {
-    back() {
-      this.leftIcon = arrowLeftAccent;
+    getPrevIcon() {
+      return this.prevHovered ? arrowLeftAccent : arrowLeftDark;
+    },
+    prev() {
       setTimeout(() => this.$emit("prev"), 100);
-      this.leftIcon = arrowLeftDark;
+    },
+    getNextIcon() {
+      return this.nextHovered ? arrowRightAccent : arrowRightDark;
     },
     next() {
-      this.rightIcon = arrowRightAccent;
       setTimeout(() => this.$emit("next"), 100);
-      this.rightIcon = arrowRightDark;
     },
   },
 };
