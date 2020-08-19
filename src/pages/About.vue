@@ -60,9 +60,12 @@
             <h3>{{ interestGroup.name }}</h3>
           </li>
         </ul>
-        <InterestGroupCard
-          :interestGroup="interestGroups[activeInterestGroupId]"
-        />
+        <transition name="fade-slide-up" mode="out-in">
+          <InterestGroupCard
+            :key="activeInterestGroupId"
+            :interestGroup="interestGroups[activeInterestGroupId]"
+          />
+        </transition>
       </div>
     </section>
     <Footer />

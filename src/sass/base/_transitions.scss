@@ -54,27 +54,35 @@
 }
 
 // Sliding in while fading in/out
-@mixin fade-slide($timing, $translateX) {
+@mixin fade-slide($timing, $translateX, $translateY) {
   &-enter-active,
   &-leave-active {
     transition: all $timing;
   }
 
   &-enter {
-    transform: translateX($translateX);
+    transform: translate($translateX, $translateY);
     opacity: 0;
   }
 
   &-leave-to {
-    transform: translateX(-$translateX);
+    transform: translate(-$translateX, -$translateY);
     opacity: 0;
   }
 }
 
 .fade-slide-left {
-  @include fade-slide(0.2s, 20px);
+  @include fade-slide(0.2s, 20px, 0px);
 }
 
 .fade-slide-right {
-  @include fade-slide(0.2s, -20px);
+  @include fade-slide(0.2s, -20px, 0px);
+}
+
+.fade-slide-up {
+  @include fade-slide(0.2s, 0px, 20px);
+}
+
+.fade-slide-down {
+  @include fade-slide(0.2s, 0px, -20px);
 }
