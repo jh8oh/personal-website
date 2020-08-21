@@ -44,7 +44,7 @@ export default {
       navShown: false,
       tabs: [
         {
-          title: "About",
+          title: "About Me",
           url: "/about",
           left: true,
         },

@@ -1,0 +1,24 @@
+// ---------------------------------------------------------------------------
+// This file styles the interests section in the "About Me" page.
+// ---------------------------------------------------------------------------
+
+#about #interests {
+  &-selector {
+    @include horizontal-selector;
+  }
+
+  #interest-card {
+	display: flex;
+
+    &-text {
+      margin: auto;
+    }
+
+    img {
+      width: 25%;
+      max-width: 250px;
+      border-radius: 50%;
+      margin-right: 32px;
+    }
+  }
+}

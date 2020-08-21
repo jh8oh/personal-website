@@ -1,0 +1,81 @@
+// ---------------------------------------------------------------------------
+// This file styles the experience section in the "About Me" page.
+// ---------------------------------------------------------------------------
+
+#about #experience {
+  #next-section-button {
+    // Margin-top cannot be auto, otherwise margins are split between container and next-section-button, and container is no longer centered
+    margin-top: 0;
+  }
+
+  // Horizontal content
+  &-content {
+    display: flex;
+  }
+
+  #timeline {
+    min-height: 450px;
+    width: 264px;
+    padding: 0;
+    margin: 0;
+    margin-right: 12px;
+    flex-shrink: 0;
+    list-style-type: none;
+    border-left: 2px solid $color-on-background;
+
+    li {
+      position: relative;
+      margin: 12px 12px;
+      cursor: pointer;
+      transition: margin-left 0.2s;
+
+      &:before {
+        content: "";
+        position: absolute;
+        height: 6px;
+        width: 6px;
+        left: -18px;
+        top: calc(50% - 4px);
+        background-color: $color-background-variant;
+        border: 2px solid $color-on-background;
+        border-radius: 75px;
+        transition: left 0.2s;
+      }
+
+      &.active {
+        margin-left: 24px;
+        color: $color-accent;
+
+        &:before {
+          border-color: $color-accent;
+          left: -30px;
+        }
+      }
+    }
+  }
+
+  // When screen is smaller than breakpoint (750px), then timeline moves to the top
+  @media screen and (max-width: 750px) {
+    &-content {
+      display: block;
+    }
+
+    #timeline {
+      @include horizontal-selector;
+      min-height: 0;
+      width: auto;
+      max-width: none;
+      border-left: 0;
+
+      li {
+        &:before {
+          display: none;
+        }
+
+        &.active {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}

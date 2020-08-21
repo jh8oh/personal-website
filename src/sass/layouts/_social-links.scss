@@ -1,15 +1,15 @@
 // ---------------------------------------------------------------------------
-// Contains all styles related to the social media links on this site
+// Contains all styles related to the social links in the sidebar
 // ---------------------------------------------------------------------------
 
 #social-links {
   position: fixed;
   bottom: 32px;
-  right: 2.5%;
+  left: 2.5%;
   z-index: 3;
 
   @media screen and (max-width: $breakpoint-mobile) {
-    // Links are now locked above the footer
+    // Links are now locked below the footer
     position: static;
   }
 
@@ -20,7 +20,6 @@
     list-style-type: none;
 
     @media screen and (max-width: $breakpoint-mobile) {
-      margin: 8px 0;
       text-align: center;
     }
 

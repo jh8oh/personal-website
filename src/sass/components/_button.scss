@@ -3,27 +3,19 @@
 // ---------------------------------------------------------------------------
 
 button {
-  // Layout
   padding: 12px 42px;
   border: 2px solid $color-accent;
   border-radius: 4px;
-
-  // Color
   color: $color-accent;
   background-color: transparent;
-
-  // Text
+  // Fonts need to be inherited
   font-family: inherit;
   font-size: inherit;
   font-weight: inherit;
   line-height: inherit;
   letter-spacing: 2px; // Larger letter spacing than body
   text-transform: uppercase;
-
-  // Interaction
   cursor: pointer;
-
-  // Animation
   transition-duration: 0.3s;
 
   &:hover {
@@ -37,7 +29,8 @@ button {
     }
   }
 
-  &:focus {
-    animation: push 0.3s ease-in-out 1;
+  // Continues after click (Needed for animation to continue after clicking)
+  &:active {
+    animation: push 0.1s ease-in-out 1;
   }
 }

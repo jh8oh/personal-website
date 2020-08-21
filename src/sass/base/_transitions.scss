@@ -1,8 +1,33 @@
 // ---------------------------------------------------------------------------
-// Contains everything to do with page transitions
+// Contains everything to do with transitions
 // ---------------------------------------------------------------------------
 
-%transition-active {
+// -enter/-leave: Starting state of entering/leaving object
+// -enter-to/-leave-to: Ending state of entering/leaving object
+// -enter-active/leave-active: Active state of entering/leaving object (Persists throughout the entire phase)
+
+// Sliding in transition (object slides in on top of previous object)
+@mixin page-slide($timing, $translateX) {
+  &-enter {
+    transform: translateX($translateX);
+
+    &-to {
+      transform: translateX(0%);
+    }
+
+    &-active {
+      transition: transform $timing ease-in-out;
+      z-index: 2;
+    }
+  }
+
+  &-leave-active {
+    z-index: -1;
+  }
+}
+
+// Page transitions
+%page-transition {
   position: fixed;
   min-height: $content-height;
   width: 100%;
@@ -10,38 +35,54 @@
   top: 56px;
 }
 
-@mixin page-transition($enter-active-transform) {
+.page-slide-left {
+  @include page-slide(0.4s, 100%);
+
   &-enter-active,
-  &-enter-to {
-    z-index: 2;
-  }
-
-  &-enter-active {
-    @extend %transition-active;
-    transition: transform 0.3s ease-in-out;
-    transform: translateX($enter-active-transform);
-  }
-
-  &-enter-to {
-    transform: translateX(0%);
-  }
-
-  &-leave-active,
-  &-leave-to {
-    z-index: -1;
-  }
-
   &-leave-active {
-    @extend %transition-active;
+    @extend %page-transition;
   }
 }
 
-// Page slides in from the left side
-.slide-left {
-  @include page-transition(100%);
+.page-slide-right {
+  @include page-slide(0.4s, -100%);
+
+  &-enter-active,
+  &-leave-active {
+    @extend %page-transition;
+  }
 }
 
-// Page slides in from the right side
-.slide-right {
-  @include page-transition(-100%);
+// Sliding in while fading in/out
+@mixin fade-slide($timing, $translateX, $translateY) {
+  &-enter-active,
+  &-leave-active {
+    transition: all $timing;
+  }
+
+  &-enter {
+    transform: translate($translateX, $translateY);
+    opacity: 0;
+  }
+
+  &-leave-to {
+    transform: translate(-$translateX, -$translateY);
+    opacity: 0;
+  }
+}
+
+.fade-slide-left {
+  @include fade-slide(0.2s, 20px, 0px);
+}
+
+.fade-slide-right {
+  @include fade-slide(0.2s, -20px, 0px);
+}
+
+.fade-slide-up {
+  @include fade-slide(0.2s, 0px, 20px);
+}
+
+.fade-slide-down {
+  @include fade-slide(0.2s, 0px, -20px);
 }

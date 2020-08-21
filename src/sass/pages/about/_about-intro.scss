@@ -1,0 +1,71 @@
+// ---------------------------------------------------------------------------
+// This file styles the intro section in the "About Me" page.
+// ---------------------------------------------------------------------------
+
+#about #intro {
+    &-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: auto;
+
+      img {
+        width: 80%;
+        max-width: 900px;
+        border-radius: 50%;
+
+        @keyframes shrink {
+          from {
+            max-width: 800px;
+          }
+
+          to {
+            max-width: 450px;
+          }
+        }
+
+        animation: shrink 1s;
+        animation-fill-mode: forwards;
+      }
+
+      p {
+        position: relative; // So that the :after and :before in animation can find parent
+        display: flex; // Ensures the animation opens from the center outwards
+        flex-direction: column;
+        justify-content: center;
+        max-height: 0;
+        max-width: 750px;
+        margin: 14px $horizontal-padding-small;
+        overflow: hidden;
+        text-align: center;
+
+        // Animation
+        @keyframes grow-max-height {
+          to {
+            max-height: 100vh;
+          }
+        }
+
+        animation: grow-max-height 3s;
+        animation-delay: 0.5s;
+        animation-fill-mode: forwards;
+
+        // Width grows to max quickly, stays that way, before shrinking quickly
+        @keyframes grow-shrink-width {
+          75% {
+            width: 100%;
+          }
+        }
+
+        &:before {
+          @include shutter-border-vertical(2px, 0);
+          animation: grow-shrink-width 1.5s;
+        }
+
+        &:after {
+          @include shutter-border-vertical(2px, calc(100% - 2px));
+          animation: grow-shrink-width 1.5s;
+        }
+      }
+    }
+  }

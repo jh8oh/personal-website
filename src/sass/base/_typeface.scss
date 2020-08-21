@@ -34,25 +34,29 @@
     width: $width;
     margin: 0 1rem;
     transform: translateY(-0.4em);
+
+    @media screen and (max-width: $breakpoint-mobile) {
+      display: none;
+    }
   }
 }
 
 h1 {
   @include text($heading-font-family, 2.6rem, 400, 1.2, -0.25px, uppercase);
-  @include centered-heading(2px, 4rem, $color-on-background, 2%);
+  @include centered-heading(4px, 4rem, $color-on-background, 3%);
 }
 
 h2 {
-  @include text($heading-font-family, 2rem, 300, 1.2, -0.5px, uppercase);
-  @include centered-heading(1px, 3rem, $color-on-background-variant, 0);
+  @include text($heading-font-family, 2.2rem, 300, 1.2, -0.5px, uppercase);
+  @include centered-heading(2px, 3rem, $color-on-background-variant, 3%);
 }
 
 h3 {
-  @include text($heading-font-family, 1.4rem, 400, 1.2, 0);
+  @include text($heading-font-family, 1.6rem, 400, 1.2, 0);
 }
 
 h4 {
-  @include text($heading-font-family, 1.2rem, 500, 1.2, 0);
+  @include text($heading-font-family, 1.4rem, 500, 1.2, 0);
 }
 
 html {

@@ -1,0 +1,74 @@
+[
+  {
+    "id": 0,
+    "name": "Development",
+    "description": "",
+    "activeInterestId": 0,
+    "interestAmount": 3,
+    "interests": [
+      {
+        "img": "development/android.png",
+        "title": "Android Development",
+        "description": "I got into Android trying to find a GUI for Java since the alternatives (AWT, JavaFX, and Swing) were all going out of style. It's thanks to Android that I got into creating user-facing applications (and discovered how much better Kotlin is to Java). Due to its lightweight nature as well as how easy it is to design using XML, you can go from conception to minimum viable product (MVP) in a couple of days. Being able to churn out applications quickly enables you to constantly challenge yourself to make each one better than the last. Android's ease-of-build cements it as my go-to for creating any application."
+      },
+      {
+        "img": "development/web.png",
+        "title": "Web Development",
+        "description": "I created my first website when I was 13 for an IT class project. It was a small 'wiki' on Minecraft and was built on HTML, CSS, and a bit of JavaScript. Honestly, it wasn't bad for a website on that scale, but ever since I've picked up web development recently, I've realized that there is so much I've missed out on: web stacks, JavaScript frameworks, backend languages, deployment, CSS preprocessors, databases, and <em>so</em> much more. The sheer amount of things you need to learn to master both front and back end gives me a massive amount of respect for all the full-stack developers out there."
+      },
+      {
+        "img": "development/game.jpg",
+        "title": "Game Development",
+        "description": "So far, I've only created purely functional games. There's nothing wrong with that but I've always wanted to create an indie game; one with a story, art, music alongside the gameplay. I have a lot of vague ideas for many different games but it's hard trying to restrain it to something realistic to create. It's a struggle imagining the game that I want to make and the game that's realistic to make on my own. Nevertheless, I'm determined to create one if it's the last thing I do."
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "name": "Video Games",
+    "description": "",
+    "activeInterestId": 0,
+    "interestAmount": 3,
+    "interests": [
+      {
+        "img": "video-games/nier-automata.jpg",
+        "title": "Nier Automata",
+        "description": "Nier Automata is Nietzsche's \"God is Dead\" wrapped in a hack-and-slash bullet-hell JPRG about Androids dressed up in a French maid dresses sent to destroy robots which have taken over the Earth (oh, Japan). Though the story is good, it's the music that really distinguishes this game. I love the music in this game; not just the <a href=\"https://www.youtube.com/watch?v=wNWShKuopic\">battle music</a>, but the <a href=\"https://www.youtube.com/watch?v=DoLCLGx2E08\">calm BGM</a> that conveys the quiet abandonment of the world. Even if you never play the game, the soundtrack is something that you should definitely listen to."
+      },
+      {
+        "img": "video-games/red-strings-club.jpg",
+        "title": "Red Strings Club",
+        "description": "If I had a nickel for every cyberpunk bartending game I played, I'd have 2 nickels, which isn't a lot but it's weird that it happened twice. Though I did enjoy the other one (VA-11 Hall-A) more, Red String Club has some innovative ideas that are seriously impressive. One particular mechanic I enjoyed is that you are quizzed about your conversation partner afterwards which makes you pay close attention to subtexts. Though the game is short, it really delivers on its characters and leaves a lasting impression."
+      },
+      {
+        "img": "video-games/disco-elysium.jpg",
+        "title": "Disco Elysium",
+        "description": "\"The mind recoils in horror, unable to communicate with the spinal column.\" Disco Elysium is a role-playing game, except the role you play is a trash-fire of a detective after an amnesia-inducing alcohol bender. The exact trash you're setting fire to, however, is up to you. You can be a deranged \"superstar cop\", a prophet of the coming end, or a free-market capitalist preacher. It is an incredibly intelligent game that shines in the decrepit world it creates and the weirdness of its main character."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Worldbuilding",
+    "description": "",
+    "activeInterestId": 0,
+    "interestAmount": 3,
+    "interests": [
+      {
+        "img": "worldbuilding/cyberpunk.jpg",
+        "title": "Cyberpunk",
+        "description": "Cyberpunk worlds are always great to immerse yourself into. On the one hand, it showcases the massive monopolistic conglomerates, artificial body modifications, and techy gadgets that might just become science-fact. On the other, it explores themes of loss of the sense of self, the dangers of unchecked technological leaps, and the capitalist controlled states that we might be heading into. I find one of the best introduction to both hands is <em>Ghost in the Shell</em> (1995)."
+      },
+      {
+        "img": "worldbuilding/lovecraftian.jpg",
+        "title": "Lovecraftian",
+        "description": "Cosmic horror has always facinated me. Maybe it's my nihilism talking but the concept how insignificant we are compared to the vastness of time and space, and whatever impact we make being short-lived and inconsequential is so damn liberating. Ever think about how in about 3 or 4 generations you'd be forgottten forever? Bet you didn't expect to have an identity crisis reading a personal website, did you? Also, haha, big octopus man go <strong>\"Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn\"</strong>."
+      },
+      {
+        "img": "worldbuilding/shinsekai-yori.jpg",
+        "title": "Shinsekai Yori",
+        "description": "The world of <em>Shinsekai Yori</em> is a quiet dystopia. Vanishing children, speciest struggles, and haunting urban legends are all swept under the rug. This world is explored through the eyes of our 5 protagonists throughout their lives, as they discover the sins of their ancestors and the hideous truth behind their quaint little village. As they peel away the layers of unspoken truth, you get to see the human nature in all its digusting glory, filled with fear, distrust and selfishness."
+      }
+    ]
+  }
+]

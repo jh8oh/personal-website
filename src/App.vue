@@ -2,27 +2,33 @@
   <div id="app">
     <Header />
     <div id="content">
-      <transition :name="transition.name" :mode="transition.mode">
+      <transition :name="transition.name" mode="in-out">
         <router-view />
       </transition>
     </div>
-    <SocialLinks v-if="!(this.$route.name === 'Home')" />
+    <SocialLinks v-if="!isHome()" />
+    <ScrollToTop v-if="!isHome()" />
   </div>
 </template>
 
 <script>
 import Header from "./layouts/Header.vue";
 import SocialLinks from "./layouts/SocialLinks.vue";
+import ScrollToTop from "./layouts/ScrollToTop.vue";
 
 export default {
-  components: { Header, SocialLinks },
+  components: { Header, SocialLinks, ScrollToTop },
   data() {
     return {
       transition: {
-        name: "slide-left",
-        mode: "in-out",
+        name: "",
       },
     };
+  },
+  methods: {
+    isHome() {
+      return this.$route.name === "Home";
+    },
   },
   watch: {
     $route(to, from) {
@@ -37,14 +43,9 @@ export default {
       const fromId = routeIdMap[from.name];
 
       if (toId > fromId) {
-        this.transition.name = "slide-left";
-        this.transition.mode = "in-out";
-      } else if (toId < fromId) {
-        this.transition.name = "slide-right";
-        this.transition.mode = "in-out";
+        this.transition.name = "page-slide-left";
       } else {
-        this.transition.name = "";
-        this.transition.mode = "";
+        this.transition.name = "page-slide-right";
       }
     },
   },
