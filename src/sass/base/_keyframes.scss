@@ -1,0 +1,10 @@
+// ---------------------------------------------------------------------------
+// Contains general keyframes (animations)
+// ---------------------------------------------------------------------------
+
+// Shrinks slightly before popping back out.
+@keyframes push {
+  50% {
+    transform: scale(0.8);
+  }
+}

@@ -6,27 +6,7 @@
 // -enter-to/-leave-to: Ending state of entering/leaving object
 // -enter-active/leave-active: Active state of entering/leaving object (Persists throughout the entire phase)
 
-// Sliding in transition (object slides in on top of previous object)
-@mixin page-slide($timing, $translateX) {
-  &-enter {
-    transform: translateX($translateX);
-
-    &-to {
-      transform: translateX(0%);
-    }
-
-    &-active {
-      transition: transform $timing ease-in-out;
-      z-index: 2;
-    }
-  }
-
-  &-leave-active {
-    z-index: -1;
-  }
-}
-
-// Page transitions
+// Page transitions (Page slides in on top of previous page)
 %page-transition {
   position: fixed;
   min-height: $content-height;
@@ -35,54 +15,65 @@
   top: 56px;
 }
 
-.page-slide-left {
-  @include page-slide(0.4s, 100%);
+@mixin page-slide-transition($translateX) {
+  &-enter {
+    transform: translateX($translateX);
 
-  &-enter-active,
+    &-to {
+      transform: translateX(0%);
+    }
+
+    &-active {
+      @extend %page-transition;
+      transition: transform 0.4s ease-in-out;
+      z-index: 2;
+    }
+  }
+
   &-leave-active {
     @extend %page-transition;
+    z-index: -1;
   }
+}
+
+.page-slide-left {
+  @include page-slide-transition(100%);
 }
 
 .page-slide-right {
-  @include page-slide(0.4s, -100%);
-
-  &-enter-active,
-  &-leave-active {
-    @extend %page-transition;
-  }
+  @include page-slide-transition(-100%);
 }
 
-// Sliding in while fading in/out
-@mixin fade-slide($timing, $translateX, $translateY) {
+// Sliding in/out while fading in/out
+@mixin fade-slide($translateX, $translateY) {
   &-enter-active,
   &-leave-active {
-    transition: all $timing;
+    transition: all 0.2s;
   }
 
   &-enter {
-    transform: translate($translateX, $translateY);
     opacity: 0;
+    transform: translate($translateX, $translateY);
   }
 
   &-leave-to {
-    transform: translate(-$translateX, -$translateY);
     opacity: 0;
+    transform: translate(-$translateX, -$translateY);
   }
 }
 
 .fade-slide-left {
-  @include fade-slide(0.2s, 20px, 0px);
+  @include fade-slide(20px, 0px);
 }
 
 .fade-slide-right {
-  @include fade-slide(0.2s, -20px, 0px);
+  @include fade-slide(-20px, 0px);
 }
 
 .fade-slide-up {
-  @include fade-slide(0.2s, 0px, 20px);
+  @include fade-slide(0px, 20px);
 }
 
 .fade-slide-down {
-  @include fade-slide(0.2s, 0px, -20px);
+  @include fade-slide(0px, -20px);
 }
