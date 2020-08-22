@@ -2,7 +2,11 @@
 // Contains all styles related to the header of this site
 // ---------------------------------------------------------------------------
 header {
-  $breakpoint: 500px;
+  @mixin breakpoint {
+    @media screen and (max-width: 500px) {
+      @content;
+    }
+  }
 
   position: fixed; // Make the navigation bar stay at the top of the page
   display: flex;
@@ -14,11 +18,11 @@ header {
   z-index: 3; // Header on top of animation
   background-color: $color-base-variant;
 
-  @media screen and (max-width: $breakpoint-tablet) {
+  @include breakpoint-tablet {
     padding: 0 $horizontal-padding-small;
   }
 
-  @media screen and (max-width: $breakpoint) {
+  @include breakpoint {
     display: inline;
     padding: 0; // Padding needs to be at 0 so that the bottom-border in the nav bar reaches the sides
   }
@@ -28,7 +32,7 @@ header {
     display: block;
     height: 42px;
 
-    @media screen and (max-width: $breakpoint) {
+    @include breakpoint {
       display: inline-block;
       margin: 8px $horizontal-padding-small 0;
     }
@@ -39,7 +43,7 @@ header {
     display: none;
     float: right;
 
-    @media screen and (max-width: $breakpoint) {
+    @include breakpoint {
       display: block;
     }
   }
@@ -48,7 +52,7 @@ header {
     flex-grow: 1;
     margin-left: 16px;
 
-    @media screen and (max-width: $breakpoint) {
+    @include breakpoint {
       margin-left: 0;
 
       &:not(.shown) {
@@ -70,7 +74,7 @@ header {
       text-align: center;
       text-decoration: none;
 
-      @media screen and (max-width: $breakpoint) {
+      @include breakpoint {
         display: block;
         width: 100%;
         box-sizing: border-box; // Keeps links centered
@@ -92,7 +96,7 @@ header {
       &:after {
         @include shutter-border-vertical(4px, 52px);
 
-        @media screen and (max-width: $breakpoint-mobile) {
+        @include breakpoint-mobile {
           top: 46px; // smaller top offset in order to accomodate the last link (contact me)
         }
       }

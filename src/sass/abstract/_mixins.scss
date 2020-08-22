@@ -2,6 +2,25 @@
 // Contains all site-wide SCSS mixins
 // ---------------------------------------------------------------------------
 
+// Breakpoint mixins
+@mixin breakpoint-mobile {
+  @media screen and (max-width: $breakpoint-mobile) {
+    @content;
+  }
+}
+
+@mixin breakpoint-tablet {
+  @media screen and (max-width: $breakpoint-tablet) {
+    @content;
+  }
+}
+
+@mixin breakpoint-laptop {
+  @media screen and (max-width: $breakpoint-laptop) {
+    @content;
+  }
+}
+
 @mixin horizontal-selector {
   padding: 0;
   margin: 0 0 16px;

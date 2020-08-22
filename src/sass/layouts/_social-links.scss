@@ -8,7 +8,7 @@
   left: 2.5%;
   z-index: 3;
 
-  @media screen and (max-width: $breakpoint-mobile) {
+  @include breakpoint-mobile {
     // Links are now locked below the footer
     position: static;
   }
@@ -19,7 +19,7 @@
     overflow: hidden;
     list-style-type: none;
 
-    @media screen and (max-width: $breakpoint-mobile) {
+    @include breakpoint-mobile {
       text-align: center;
     }
 
@@ -27,7 +27,7 @@
       margin: 6px 0;
 
       // Links are now horizontal
-      @media screen and(max-width: $breakpoint-mobile) {
+      @include breakpoint-mobile {
         display: inline-block;
         margin: 0 2px;
       }
