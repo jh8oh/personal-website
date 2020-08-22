@@ -21,6 +21,15 @@
   }
 }
 
+// Transition mixin
+@mixin transition($args...) {
+  transition: $args;
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+}
+
 // Animation mixin
 @mixin animation($args) {
   animation: $args;
@@ -45,7 +54,7 @@
     vertical-align: bottom;
     border-bottom: 2px solid $color-on-background;
     cursor: pointer;
-    transition: padding-bottom 0.2s ease-out, margin-top 0.2s ease-out;
+    @include transition(padding-bottom 0.2s ease-out, margin-top 0.2s ease-out);
 
     &.active {
       padding-bottom: 12px;
@@ -67,5 +76,5 @@
   right: 0; // requires both left and right to center shutter
   margin: 0 auto;
   background-color: $color-accent;
-  transition: width 0.3s ease;
+  @include transition(width 0.3s ease);
 }
