@@ -1,10 +1,9 @@
 // ---------------------------------------------------------------------------
-// This file contains all styles related to the "NextSectionButton" component.
+// This file contains all styles related to the "Next Section Button" component.
 // ---------------------------------------------------------------------------
 
 #next-section-button {
-  margin: auto;
-  margin-bottom: 6px;
+  margin: auto auto 12px;   // margin-bottom: 12px
 
   img {
     height: 36px;

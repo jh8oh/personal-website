@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------
-// This file contains all styles related to the "button" component.
+// This file contains all styles related to the "Button" component.
 // ---------------------------------------------------------------------------
 
 button {
@@ -10,28 +10,17 @@ button {
   color: $color-accent;
   background-color: transparent;
   // Fonts need to be inherited
-  font-family: inherit;
-  font-size: inherit;
-  font-weight: inherit;
-  line-height: inherit;
-  letter-spacing: 2px; // Larger letter spacing than body
-  text-transform: uppercase;
+  @include text(inherit, inherit, inherit, inherit, 2px, uppercase);
   cursor: pointer;
   transition-duration: 0.3s;
 
   &:hover {
-    background-color: $color-accent;
     color: $color-on-accent;
-  }
-
-  @keyframes push {
-    50% {
-      transform: scale(0.8);
-    }
+    background-color: $color-accent;
   }
 
   // Continues after click (Needed for animation to continue after clicking)
   &:active {
-    animation: push 0.1s ease-in-out 1;
+    animation: push 0.1s ease-in-out;
   }
 }
