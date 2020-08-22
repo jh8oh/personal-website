@@ -2,6 +2,27 @@
 // Contains general keyframes (animations)
 // ---------------------------------------------------------------------------
 
+// Change maximum size animation
+@mixin changeMaxSize(
+  $name,
+  $from-max-height: none,
+  $to-max-height: none,
+  $from-max-width: none,
+  $to-max-width: none
+) {
+  @keyframes #{$name} {
+    from {
+      max-height: $from-max-height;
+      max-width: $from-max-width;
+    }
+
+    to {
+      max-height: $to-max-height;
+      max-width: $to-max-width;
+    }
+  }
+}
+
 // Shrinks slightly before popping back out.
 @keyframes push {
   50% {

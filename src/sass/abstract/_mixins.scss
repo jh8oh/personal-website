@@ -32,7 +32,7 @@
   content: "";
   position: absolute;
   height: $height;
-  width: 0;
+  width: $width;
   top: $top;
   left: 0;
   right: 0; // requires both left and right to center shutter
