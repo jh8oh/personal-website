@@ -2,6 +2,33 @@
 // Contains general keyframes (animations)
 // ---------------------------------------------------------------------------
 
+// Mixin for keyframes
+@mixin keyframes($animation-name) {
+  @keyframes #{$animation-name} {
+    @content;
+  }
+
+  // Chrome/Safari
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+
+  // Firefox
+  @-moz-keyframes #{$animation-name} {
+    @content;
+  }
+
+  // Internet explorer
+  @-ms-keyframes #{$animation-name} {
+    @content;
+  }
+
+  // Opera
+  @-o-keyframes #{$animation-name} {
+    @content;
+  }
+}
+
 // Change maximum size animation
 @mixin changeMaxSize(
   $name,
@@ -10,7 +37,7 @@
   $from-max-width: none,
   $to-max-width: none
 ) {
-  @keyframes #{$name} {
+  @include keyframes($name) {
     from {
       max-height: $from-max-height;
       max-width: $from-max-width;
@@ -24,7 +51,7 @@
 }
 
 // Shrinks slightly before popping back out.
-@keyframes push {
+@include keyframes(push) {
   50% {
     transform: scale(0.8);
   }
