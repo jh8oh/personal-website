@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------
-// Contains all site-wide Sass variables
+// Contains all site-wide SCSS variables
 // ---------------------------------------------------------------------------
 
 // Colors - Greyscale
@@ -11,7 +11,7 @@ $white: #fff;
 
 // Colors - full color
 $malibu: #6ab7ff;
-$curious-blue: #1E88E5;
+$curious-blue: #1e88e5;
 $endeavour: #005cb2;
 
 // Colors - Semantics
@@ -43,6 +43,6 @@ $breakpoint-tablet: 768px;
 $breakpoint-laptop: 1200px;
 
 // Dimensions
-$content-height: calc(100vh - 56px); 					// Screen height - header height (56px)
+$content-height: calc(100vh - 56px); // Screen height - header height (56px)
 $horizontal-padding: 20%;
 $horizontal-padding-small: 5%;

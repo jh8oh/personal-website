@@ -1,12 +1,12 @@
 // ---------------------------------------------------------------------------
-// Contains all site-wide Sass mixins
+// Contains all site-wide SCSS mixins
 // ---------------------------------------------------------------------------
 
 @mixin horizontal-selector {
   padding: 0;
   margin: 0 0 16px;
-  white-space: nowrap;
   overflow: auto;
+  white-space: nowrap;
   list-style-type: none;
 
   li {
