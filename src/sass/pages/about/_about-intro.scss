@@ -21,12 +21,8 @@
       border-radius: 50%;
 
       // Animation
-      @include changeMaxSize(
-        "shrink-profile-pic",
-        $from-max-width: 680px,
-        $to-max-width: 450px
-      );
-      animation: shrink-profile-pic 1s #{$animation-delay - 0.5s} forwards;
+      @include changeMaxSize("shrink-profile-pic", $from-max-width: 680px, $to-max-width: 450px);
+      @include animation(shrink-profile-pic 1s #{$animation-delay - 0.5s} forwards);
     }
 
     p {
@@ -39,13 +35,13 @@
 
       // Animation
       @include changeMaxSize("grow-intro-summary", 0, 100vh, 750px, 750px);
-      animation: grow-intro-summary 4s $animation-delay forwards;
+      @include animation(grow-intro-summary 4s $animation-delay forwards);
 
       // :before and :after (shutter effect during animation)
       @mixin summary-shutter-border($top) {
         @include shutter-border-vertical(2px, $top, 100%);
-        @include changeMaxSize("shrink-shutter-border", $from-max-width:100vw, $to-max-width: 0);
-        animation: shrink-shutter-border 2s $animation-delay forwards;
+        @include changeMaxSize("shrink-shutter-border", $from-max-width: 100vw, $to-max-width: 0);
+        @include animation(shrink-shutter-border 2s $animation-delay forwards);
       }
 
       &:before {

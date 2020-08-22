@@ -21,6 +21,15 @@
   }
 }
 
+// Animation mixin
+@mixin animation($args) {
+  animation: $args;
+  -webkit-animation: $args;
+  -moz-animation: $args;
+  -ms-animation: $args;
+  -o-animation: $args;
+}
+
 // Horizontal selector of items
 @mixin horizontal-selector {
   padding: 0;

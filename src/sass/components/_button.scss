@@ -21,6 +21,6 @@ button {
 
   // Continues after click (Needed for animation to continue after clicking)
   &:active {
-    animation: push 0.1s ease-in-out;
+    @include animation(push 0.1s ease-in-out);
   }
 }
