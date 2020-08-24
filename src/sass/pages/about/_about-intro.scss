@@ -49,7 +49,7 @@
       }
 
       &:after {
-        @include summary-shutter-border(calc(100% - 2px));
+        @include summary-shutter-border(calc(100% - 6px));
       }
     }
   }
