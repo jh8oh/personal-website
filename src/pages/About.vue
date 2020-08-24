@@ -4,26 +4,26 @@
       <div class="container">
         <h1>About Me</h1>
         <div id="intro-content">
-          <img
-            src="../assets/img/about/profile-pic.jpg"
-            alt="Profile Picture"
-          />
+          <img src="../assets/img/about/profile-pic.jpg" alt="Profile Picture" />
           <p>
-            Hello! I'm Ji Ho Oh (오지호), or Jay if that's easier to pronounce,
-            and I'm a 2nd-year student at the University of Waterloo. I like
-            making user-facing software, though the user's me most of the time.
-            This has led to me building websites, Android applications, and
-            games. I also enjoy learning new technologies and expanding my
-            repertoire of libraries, frameworks, and languages. Aside from
-            coding, my hobbies include playing video games, reading manga, and
-            world-building. One of my goals is to learn how to compose music,
+            Hello! I'm Ji Ho Oh (오지호), or Jay if that's easier to pronounce, and I'm a 2nd-year student at the
+            University of Waterloo. I like making user-facing software, though the user's me most of the time. This has
+            led to me building websites, Android applications, and games. I also enjoy learning new technologies and
+            expanding my repertoire of libraries, frameworks, and languages. Aside from coding, my hobbies include
+            playing video games, reading manga, and world-building. One of my goals is to learn how to compose music,
             specifically BGM for video games.
           </p>
         </div>
       </div>
       <NextSectionButton :href="'#experience'" />
     </section>
-    <section id="experience" class="background-alt">
+    <section id="abilities" class="background-alt">
+      <div class="container">
+        <h1>What I do</h1>
+      </div>
+      <NextSectionButton :href="'#experience'" />
+    </section>
+    <section id="experience">
       <div class="container">
         <h2>Experience</h2>
         <div id="experience-content">
@@ -38,34 +38,9 @@
             </li>
           </ul>
           <transition name="fade-slide-left" mode="out-in">
-            <ExperienceCard
-              :key="activeExperienceId"
-              :experience="experiences[activeExperienceId]"
-            />
+            <ExperienceCard :key="activeExperienceId" :experience="experiences[activeExperienceId]" />
           </transition>
         </div>
-      </div>
-      <NextSectionButton :href="'#interests'" />
-    </section>
-    <section id="interests">
-      <div class="container">
-        <h2>Interests</h2>
-        <ul id="interests-selector">
-          <li
-            v-for="interestGroup in interestGroups"
-            :key="interestGroup.id"
-            @click="activeInterestGroupId = interestGroup.id"
-            :class="{ active: activeInterestGroupId === interestGroup.id }"
-          >
-            <h3>{{ interestGroup.name }}</h3>
-          </li>
-        </ul>
-        <transition name="fade-slide-up" mode="out-in">
-          <InterestGroupCard
-            :key="activeInterestGroupId"
-            :interestGroup="interestGroups[activeInterestGroupId]"
-          />
-        </transition>
       </div>
     </section>
     <Footer />
@@ -75,20 +50,16 @@
 <script>
 import NextSectionButton from "../components/NextSectionButton.vue";
 import ExperienceCard from "../components/about/ExperienceCard.vue";
-import InterestGroupCard from "../components/about/InterestGroupCard.vue";
 import Footer from "../layouts/Footer.vue";
 
 import experiences from "../assets/json/about/experiences.json";
-import interests from "../assets/json/about/interests.json";
 
 export default {
-  components: { NextSectionButton, ExperienceCard, InterestGroupCard, Footer },
+  components: { NextSectionButton, ExperienceCard, Footer },
   data() {
     return {
       activeExperienceId: 0,
       experiences: experiences,
-      activeInterestGroupId: 0,
-      interestGroups: interests,
     };
   },
 };
