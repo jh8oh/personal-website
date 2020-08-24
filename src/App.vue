@@ -2,7 +2,7 @@
   <div id="app">
     <Header />
     <div id="content">
-      <transition :name="transition.name" mode="in-out">
+      <transition :name="transitionName" mode="in-out">
         <router-view />
       </transition>
     </div>
@@ -20,9 +20,7 @@ export default {
   components: { Header, SocialLinks, ScrollToTop },
   data() {
     return {
-      transition: {
-        name: "",
-      },
+      transitionName: "",
     };
   },
   methods: {
@@ -43,9 +41,9 @@ export default {
       const fromId = routeIdMap[from.name];
 
       if (toId > fromId) {
-        this.transition.name = "page-slide-left";
+        this.transitionName = "page-slide-left";
       } else {
-        this.transition.name = "page-slide-right";
+        this.transitionName = "page-slide-right";
       }
     },
   },

@@ -1,0 +1,9 @@
+// ---------------------------------------------------------------------------
+// Contains all site-wide SCSS functions
+// ---------------------------------------------------------------------------
+
+// Returns the pixel size in rem
+@function calculateRem($px){
+	$rem: $px / 18px;
+	@return $rem * 1rem;
+}

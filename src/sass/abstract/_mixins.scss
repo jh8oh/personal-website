@@ -1,12 +1,50 @@
 // ---------------------------------------------------------------------------
-// Contains all site-wide Sass mixins
+// Contains all site-wide SCSS mixins
 // ---------------------------------------------------------------------------
 
+// Breakpoint mixins
+@mixin breakpoint-mobile {
+  @media screen and (max-width: $breakpoint-mobile) {
+    @content;
+  }
+}
+
+@mixin breakpoint-tablet {
+  @media screen and (max-width: $breakpoint-tablet) {
+    @content;
+  }
+}
+
+@mixin breakpoint-laptop {
+  @media screen and (max-width: $breakpoint-laptop) {
+    @content;
+  }
+}
+
+// Transition mixin
+@mixin transition($args...) {
+  transition: $args;
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+}
+
+// Animation mixin
+@mixin animation($args) {
+  animation: $args;
+  -webkit-animation: $args;
+  -moz-animation: $args;
+  -ms-animation: $args;
+  -o-animation: $args;
+}
+
+// Horizontal selector of items
 @mixin horizontal-selector {
   padding: 0;
   margin: 0 0 16px;
-  white-space: nowrap;
   overflow: auto;
+  white-space: nowrap;
   list-style-type: none;
 
   li {
@@ -16,7 +54,7 @@
     vertical-align: bottom;
     border-bottom: 2px solid $color-on-background;
     cursor: pointer;
-    transition: padding-bottom 0.2s ease-out, margin-top 0.2s ease-out;
+    @include transition(padding-bottom 0.2s ease-out, margin-top 0.2s ease-out);
 
     &.active {
       padding-bottom: 12px;
@@ -32,11 +70,11 @@
   content: "";
   position: absolute;
   height: $height;
-  width: 0;
+  width: $width;
   top: $top;
   left: 0;
   right: 0; // requires both left and right to center shutter
   margin: 0 auto;
   background-color: $color-accent;
-  transition: width 0.3s ease;
+  @include transition(width 0.3s ease);
 }

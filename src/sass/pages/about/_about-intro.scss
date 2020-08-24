@@ -3,69 +3,54 @@
 // ---------------------------------------------------------------------------
 
 #about #intro {
-    &-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin: auto;
+  .container {
+    margin-top: 0; // Keeps the top heading at the top (as opposed to the default center)
+  }
 
-      img {
-        width: 80%;
-        max-width: 900px;
-        border-radius: 50%;
+  &-content {
+    $animation-delay: 1s;
 
-        @keyframes shrink {
-          from {
-            max-width: 800px;
-          }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
 
-          to {
-            max-width: 450px;
-          }
-        }
+    img {
+      width: 80%;
+      max-width: 680px;
+      border-radius: 50%;
 
-        animation: shrink 1s;
-        animation-fill-mode: forwards;
+      // Animation
+      @include changeMaxSize("shrink-profile-pic", $from-max-width: 680px, $to-max-width: 450px);
+      @include animation(shrink-profile-pic 1s #{$animation-delay - 0.5s} forwards);
+    }
+
+    p {
+      position: relative; // So that the :after and :before in animation can find parent
+      max-height: 0;
+      max-width: 750px;
+      margin: 28px $horizontal-padding-small 0;
+      overflow: hidden;
+      text-align: center;
+
+      // Animation
+      @include changeMaxSize("grow-intro-summary", 0, 100vh, 750px, 750px);
+      @include animation(grow-intro-summary 4s $animation-delay forwards);
+
+      // :before and :after (shutter effect during animation)
+      @mixin summary-shutter-border($top) {
+        @include shutter-border-vertical(2px, $top, 100%);
+        @include changeMaxSize("shrink-shutter-border", $from-max-width: 100vw, $to-max-width: 0);
+        @include animation(shrink-shutter-border 2s $animation-delay forwards);
       }
 
-      p {
-        position: relative; // So that the :after and :before in animation can find parent
-        display: flex; // Ensures the animation opens from the center outwards
-        flex-direction: column;
-        justify-content: center;
-        max-height: 0;
-        max-width: 750px;
-        margin: 14px $horizontal-padding-small;
-        overflow: hidden;
-        text-align: center;
+      &:before {
+        @include summary-shutter-border(0);
+      }
 
-        // Animation
-        @keyframes grow-max-height {
-          to {
-            max-height: 100vh;
-          }
-        }
-
-        animation: grow-max-height 3s;
-        animation-delay: 0.5s;
-        animation-fill-mode: forwards;
-
-        // Width grows to max quickly, stays that way, before shrinking quickly
-        @keyframes grow-shrink-width {
-          75% {
-            width: 100%;
-          }
-        }
-
-        &:before {
-          @include shutter-border-vertical(2px, 0);
-          animation: grow-shrink-width 1.5s;
-        }
-
-        &:after {
-          @include shutter-border-vertical(2px, calc(100% - 2px));
-          animation: grow-shrink-width 1.5s;
-        }
+      &:after {
+        @include summary-shutter-border(calc(100% - 2px));
       }
     }
   }
+}

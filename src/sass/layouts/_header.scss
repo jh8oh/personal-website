@@ -2,24 +2,27 @@
 // Contains all styles related to the header of this site
 // ---------------------------------------------------------------------------
 header {
-  $breakpoint: 500px;
+  @mixin breakpoint {
+    @media screen and (max-width: 500px) {
+      @content;
+    }
+  }
 
-  display: flex;
   position: fixed; // Make the navigation bar stay at the top of the page
+  display: flex;
   width: 100%;
   top: 0;
-  left: 0;
   padding: 0 $horizontal-padding;
   box-sizing: border-box;
   align-items: center;
   z-index: 3; // Header on top of animation
   background-color: $color-base-variant;
 
-  @media screen and (max-width: $breakpoint-tablet) {
+  @include breakpoint-tablet {
     padding: 0 $horizontal-padding-small;
   }
 
-  @media screen and (max-width: $breakpoint) {
+  @include breakpoint {
     display: inline;
     padding: 0; // Padding needs to be at 0 so that the bottom-border in the nav bar reaches the sides
   }
@@ -28,9 +31,8 @@ header {
   img {
     display: block;
     height: 42px;
-    margin-right: 12px;
 
-    @media screen and (max-width: $breakpoint) {
+    @include breakpoint {
       display: inline-block;
       margin: 8px $horizontal-padding-small 0;
     }
@@ -41,15 +43,18 @@ header {
     display: none;
     float: right;
 
-    @media screen and (max-width: $breakpoint) {
+    @include breakpoint {
       display: block;
     }
   }
 
   nav {
-    width: 100%;
+    flex-grow: 1;
+    margin-left: 16px;
 
-    @media screen and (max-width: $breakpoint) {
+    @include breakpoint {
+      margin-left: 0;
+
       &:not(.shown) {
         display: none;
       }
@@ -57,22 +62,22 @@ header {
   }
 
   ul {
-    margin: 0;
     padding: 0;
+    margin: 0;
     overflow: hidden;
     list-style-type: none;
 
     a {
-      position: relative;     // :after is limited to the link
+      position: relative; // :after is limited to the link
       float: left;
       padding: 14.5px;
       text-align: center;
       text-decoration: none;
 
-      @media screen and (max-width: $breakpoint) {
+      @include breakpoint {
         display: block;
         width: 100%;
-        box-sizing: border-box;   // Keeps links centered
+        box-sizing: border-box; // Keeps links centered
       }
 
       &.right {
@@ -91,8 +96,8 @@ header {
       &:after {
         @include shutter-border-vertical(4px, 52px);
 
-        @media screen and (max-width: $breakpoint-mobile) {
-          top: 46px;  // smaller top offset in order to accomodate the last link (contact me)
+        @include breakpoint-mobile {
+          top: 46px; // smaller top offset in order to accomodate the last link (contact me)
         }
       }
 

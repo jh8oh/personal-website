@@ -2,7 +2,7 @@
 // Contains everything to do with typeface (headline, body, caption, etc.)
 // ---------------------------------------------------------------------------
 
-// General mixin for text
+// Mixin for text
 @mixin text(
   $font-family,
   $font-size,
@@ -11,13 +11,13 @@
   $letter-spacing,
   $text-transform: none
 ) {
+  margin: 0;
   font-family: $font-family;
-  font-size: $font-size;
+  font-size: $font-size;    // Fallback to pixels if rem is not supported
+  font-size: calculateRem($font-size);
   font-weight: $font-weight;
   line-height: $line-height;
   letter-spacing: $letter-spacing;
-  margin-block-start: 0;
-  margin-block-end: 0;
   text-transform: $text-transform;
 }
 
@@ -28,11 +28,11 @@
 
   &:before,
   &:after {
-    display: inline-block;
     content: "";
-    border-top: $line-size solid $line-color;
+    display: inline-block;
     width: $width;
     margin: 0 1rem;
+    border-top: $line-size solid $line-color;
     transform: translateY(-0.4em);
 
     @media screen and (max-width: $breakpoint-mobile) {
@@ -41,24 +41,26 @@
   }
 }
 
+// Headings
 h1 {
-  @include text($heading-font-family, 2.6rem, 400, 1.2, -0.25px, uppercase);
+  @include text($heading-font-family, 48px, 400, 1.2, -0.25px, uppercase);
   @include centered-heading(4px, 4rem, $color-on-background, 3%);
 }
 
 h2 {
-  @include text($heading-font-family, 2.2rem, 300, 1.2, -0.5px, uppercase);
+  @include text($heading-font-family, 40px, 300, 1.2, -0.5px, uppercase);
   @include centered-heading(2px, 3rem, $color-on-background-variant, 3%);
 }
 
 h3 {
-  @include text($heading-font-family, 1.6rem, 400, 1.2, 0);
+  @include text($heading-font-family, 28px, 400, 1.2, 0);
 }
 
 h4 {
-  @include text($heading-font-family, 1.4rem, 500, 1.2, 0);
+  @include text($heading-font-family, 24px, 500, 1.2, 0);
 }
 
+// Body
 html {
   @include text($body-font-family, 18px, 400, 1.5, 0.5px);
   color: $color-on-background;
@@ -68,6 +70,7 @@ html {
   }
 }
 
+// Links
 a {
   text-decoration: none;
 
