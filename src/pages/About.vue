@@ -20,6 +20,11 @@
     <section id="abilities" class="background-alt">
       <div class="container">
         <h1>What I do</h1>
+        <ul>
+          <li v-for="ability in abilities" :key="ability.id">
+            <AbilityCard :ability="ability" />
+          </li>
+        </ul>
       </div>
       <NextSectionButton :href="'#experience'" />
     </section>
@@ -49,15 +54,18 @@
 
 <script>
 import NextSectionButton from "../components/NextSectionButton.vue";
+import AbilityCard from "../components/about/AbilityCard.vue";
 import ExperienceCard from "../components/about/ExperienceCard.vue";
 import Footer from "../layouts/Footer.vue";
 
+import abilities from "../assets/json/about/abilities.json";
 import experiences from "../assets/json/about/experiences.json";
 
 export default {
-  components: { NextSectionButton, ExperienceCard, Footer },
+  components: { NextSectionButton, AbilityCard, ExperienceCard, Footer },
   data() {
     return {
+      abilities: abilities,
       activeExperienceId: 0,
       experiences: experiences,
     };
