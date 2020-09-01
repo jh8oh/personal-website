@@ -1,0 +1,83 @@
+// ---------------------------------------------------------------------------
+// This file styles the experience section in the "About Me" page.
+// ---------------------------------------------------------------------------
+
+#about #abilities {
+  .container {
+    max-width: 1350px;
+  }
+
+  &-content {
+    display: flex;
+    justify-content: center;
+  }
+
+  #ability {
+    display: inline-block;
+    margin: 24px 32px;
+
+    &-container {
+      display: flex;
+      align-items: center;
+    }
+
+    &-title {
+      display: inline-block;
+      text-align: center;
+
+      img {
+        width: 380px;
+        border-radius: 50%;
+      }
+    }
+
+    &-description {
+      position: relative;
+      display: inline-block;
+      padding: 24px 12px;
+      margin-left: 32px;
+      border-left: 1px solid $color-on-background;
+
+      &:before {
+        content: "";
+        position: absolute;
+        height: 0;
+        width: 0;
+        left: -32px;
+        top: calc(50% - 8px);
+        border: 16px solid transparent;
+        border-right-color: $color-on-background;
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        height: 0;
+        width: 0;
+        left: -31px;
+        top: calc(50% - 8px);
+        border: 16px solid transparent;
+        border-right-color: $color-background-variant;
+      }
+
+      ul {
+        display: inline;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+
+        li {
+          display: inline;
+
+          &:after {
+            content: ", ";
+          }
+
+          &:last-child:after {
+            content: "";
+          }
+        }
+      }
+    }
+  }
+}

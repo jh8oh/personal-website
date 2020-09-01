@@ -19,12 +19,15 @@
     </section>
     <section id="abilities" class="background-alt">
       <div class="container">
-        <h1>What I do</h1>
-        <ul>
-          <li v-for="ability in abilities" :key="ability.id">
-            <AbilityCard :ability="ability" />
-          </li>
-        </ul>
+        <h2>What I do</h2>
+        <div id="abilities-content">
+          <AbilityCard
+            v-for="ability in activeAbilities"
+            :key="ability.id"
+            :ability="ability"
+            @toggleExpand="abilityExpanded = !abilityExpanded"
+          />
+        </div>
       </div>
       <NextSectionButton :href="'#experience'" />
     </section>
@@ -66,9 +69,19 @@ export default {
   data() {
     return {
       abilities: abilities,
-      activeExperienceId: 0,
+      abilityExpanded: false,
       experiences: experiences,
+      activeExperienceId: 0,
     };
+  },
+  computed: {
+    activeAbilities: function() {
+      return this.abilityExpanded
+        ? this.abilities.filter(function(ability) {
+            return ability.isExpanded;
+          })
+        : this.abilities;
+    },
   },
 };
 </script>
