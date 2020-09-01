@@ -25,9 +25,20 @@
       display: inline-block;
       text-align: center;
 
-      img {
-        width: 380px;
+      #img-container {
+        display: inline-block;
+        margin-bottom: 18px;
+        border: 2px solid $color-on-background;
         border-radius: 50%;
+
+        &:hover {
+          border-color: $color-accent;
+        }
+      }
+
+      img {
+        width: 10vw;
+        margin: 5vw;
       }
     }
 
