@@ -30,15 +30,26 @@
         margin-bottom: 18px;
         border: 2px solid $color-on-background;
         border-radius: 50%;
-
-        &:hover {
-          border-color: $color-accent;
-        }
+        cursor: pointer;
       }
 
       img {
         width: 10vw;
         margin: 5vw;
+      }
+
+      h3 {
+        cursor: pointer;
+      }
+
+      &:hover {
+        #img-container {
+          border-color: $color-accent;
+        }
+
+        h3 {
+          color: $color-accent;
+        }
       }
     }
 
