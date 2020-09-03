@@ -25,12 +25,16 @@
       @include animation(shrink-profile-pic 1s #{$animation-delay - 0.5s} forwards);
     }
 
+    #summary-container{
+      margin-top: 28px;
+      overflow: hidden;
+    }
+
     p {
       position: relative; // So that the :after and :before in animation can find parent
       max-height: 0;
-      max-width: 750px;
-      margin: 28px $horizontal-padding-small 0;
-      overflow: hidden;
+      max-width: 700px;
+      margin: 0;
       text-align: center;
 
       // Animation
@@ -49,7 +53,7 @@
       }
 
       &:after {
-        @include summary-shutter-border(calc(100% - 6px));
+        @include summary-shutter-border(calc(100% - 2px));
       }
     }
   }
