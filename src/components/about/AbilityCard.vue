@@ -1,18 +1,18 @@
 <template>
-  <div id="ability">
-    <div id="ability-container">
+  <div class="ability">
+    <div class="ability-container">
       <div
-        id="ability-title"
+        class="ability-title"
         @click="toggleDescription()"
         @mouseover="imgHovered = true"
         @mouseleave="imgHovered = false"
       >
-        <div id="img-container">
+        <div class="img-container">
           <img :src="getImg()" :alt="ability.name" />
         </div>
         <h3 v-if="!ability.isExpanded">{{ ability.name }}</h3>
       </div>
-      <div id="ability-description" v-if="ability.isExpanded">
+      <div class="ability-description" v-if="ability.isExpanded">
         <h3>{{ ability.name }}</h3>
         <p v-html="ability.description" />
         <h5>Skills:</h5>
