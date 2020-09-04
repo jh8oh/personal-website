@@ -17,7 +17,7 @@
         <p v-html="ability.description" />
         <h5>Skills:</h5>
         <ul>
-          <li v-for="skill in ability.skills" :key="skill">{{ skill }}</li>
+          <li v-for="skill in ability.skills" :key="skill" class="skill-item">{{ skill }}</li>
         </ul>
       </div>
     </div>

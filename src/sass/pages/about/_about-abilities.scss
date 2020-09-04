@@ -7,9 +7,15 @@
     max-width: 1350px;
   }
 
-  &-content {
-    display: flex;
-    justify-content: center;
+  // Affects both the AbilityCard and the skils list in the AbilityCard
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    li {
+      display: inline;
+    }
   }
 
   #ability {
@@ -82,22 +88,13 @@
         border-right-color: $color-background-variant;
       }
 
-      ul {
-        display: inline;
-        padding: 0;
-        margin: 0;
-        list-style: none;
+      .skill-item {
+        &:after {
+          content: ", ";
+        }
 
-        li {
-          display: inline;
-
-          &:after {
-            content: ", ";
-          }
-
-          &:last-child:after {
-            content: "";
-          }
+        &:last-child:after {
+          content: "";
         }
       }
     }

@@ -5,6 +5,7 @@
 #about #experience {
   .container {
     max-width: 1100px;
+    align-items: normal; // Ensures that the content doesn't get shifted to middle if content is too small
   }
 
   @mixin breakpoint {
