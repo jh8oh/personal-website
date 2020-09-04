@@ -1,5 +1,5 @@
 <template>
-  <a id="next-section-button" :href="href">
+  <a class="next-section-button" :href="href">
     <img
       @mouseover="chevronHovered = true"
       @mouseleave="chevronHovered = false"

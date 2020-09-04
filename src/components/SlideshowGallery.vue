@@ -1,5 +1,5 @@
 <template>
-  <div id="slideshow-gallery">
+  <div class="slideshow-gallery">
     <slot></slot>
     <img
       title="Next"
