@@ -6,12 +6,12 @@
         <img id="profile-pic" src="../assets/img/about/profile-pic.jpg" alt="Profile Picture" />
         <div id="summary-container">
           <p id="summary">
-            Hello! I'm Ji Ho Oh (오지호), or Jay if that's easier to pronounce, and I'm a 2nd-year student at the
-            University of Waterloo. I like making user-facing software, though the user's me most of the time. This has
-            led to me building websites, Android applications, and games. I also enjoy learning new technologies and
-            expanding my repertoire of libraries, frameworks, and languages. Aside from coding, my hobbies include
-            playing video games, reading manga, and world-building. One of my goals is to learn how to compose music,
-            specifically BGM for video games.
+            Hello! My name's Ji Ho Oh (오지호) but I also go by Jay. I'm a 2nd-year Math Honours student at the
+            University of Waterloo. I like making user-facing software, because I want the things I make to look
+            <em>æ s t h e t i c</em>, so I mostly focus on building websites, Android applications, and games. I also
+            enjoy learning new technologies, preferring to learn a little about a lot of things over dedicating myself
+            to one specific thing. Aside from coding, my hobbies include playing video games, reading manga, and
+            world-building.
           </p>
         </div>
       </div>
