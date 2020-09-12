@@ -1,0 +1,102 @@
+// ---------------------------------------------------------------------------
+// This file styles the experience section in the "About Me" page.
+// ---------------------------------------------------------------------------
+
+#about #abilities {
+  .container {
+    max-width: 1350px;
+  }
+
+  // Affects both the AbilityCard and the skils list in the AbilityCard
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    li {
+      display: inline;
+    }
+  }
+
+  .ability {
+    display: inline-block;
+    margin: 24px 32px;
+
+    &-container {
+      display: flex;
+      align-items: center;
+    }
+
+    &-title {
+      display: inline-block;
+      text-align: center;
+
+      .img-container {
+        display: inline-block;
+        margin-bottom: 18px;
+        border: 2px solid $color-on-background;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+
+      img {
+        width: 10vw;
+        margin: 5vw;
+      }
+
+      h3 {
+        cursor: pointer;
+      }
+
+      &:hover {
+        .img-container {
+          border-color: $color-accent;
+        }
+
+        h3 {
+          color: $color-accent;
+        }
+      }
+    }
+
+    &-description {
+      position: relative;
+      display: inline-block;
+      padding: 24px 12px;
+      margin-left: 32px;
+      border-left: 1px solid $color-on-background;
+
+      &:before {
+        content: "";
+        position: absolute;
+        height: 0;
+        width: 0;
+        left: -32px;
+        top: calc(50% - 8px);
+        border: 16px solid transparent;
+        border-right-color: $color-on-background;
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        height: 0;
+        width: 0;
+        left: -31px;
+        top: calc(50% - 8px);
+        border: 16px solid transparent;
+        border-right-color: $color-background-variant;
+      }
+
+      .skill-item {
+        &:after {
+          content: ", ";
+        }
+
+        &:last-child:after {
+          content: "";
+        }
+      }
+    }
+  }
+}

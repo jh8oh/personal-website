@@ -7,50 +7,47 @@
     margin-top: 0; // Keeps the top heading at the top (as opposed to the default center)
   }
 
-  &-content {
-    $animation-delay: 1s;
+  $animation-delay: 1s;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: auto;
+  #profile-pic {
+    width: 80%;
+    max-width: 680px;
+    border-radius: 50%;
 
-    img {
-      width: 80%;
-      max-width: 680px;
-      border-radius: 50%;
+    // Animation
+    @include changeMaxSize("shrink-profile-pic", $from-max-width: 680px, $to-max-width: 450px);
+    @include animation(shrink-profile-pic 1s #{$animation-delay - 0.5s} forwards);
+  }
 
-      // Animation
-      @include changeMaxSize("shrink-profile-pic", $from-max-width: 680px, $to-max-width: 450px);
-      @include animation(shrink-profile-pic 1s #{$animation-delay - 0.5s} forwards);
+  #summary-container {
+    margin-top: 28px;
+    overflow: hidden;
+  }
+
+  #summary {
+    position: relative; // So that the :after and :before in animation can find parent
+    max-height: 0;
+    max-width: 700px;
+    margin: 0;
+    text-align: center;
+
+    // Animation
+    @include changeMaxSize("grow-intro-summary", 0, 100vh, 750px, 750px);
+    @include animation(grow-intro-summary 4s $animation-delay forwards);
+
+    // :before and :after (shutter effect during animation)
+    @mixin summary-shutter-border($top) {
+      @include shutter-border-vertical(2px, $top, 100%);
+      @include changeMaxSize("shrink-shutter-border", $from-max-width: 100vw, $to-max-width: 0);
+      @include animation(shrink-shutter-border 2s $animation-delay forwards);
     }
 
-    p {
-      position: relative; // So that the :after and :before in animation can find parent
-      max-height: 0;
-      max-width: 750px;
-      margin: 28px $horizontal-padding-small 0;
-      overflow: hidden;
-      text-align: center;
+    &:before {
+      @include summary-shutter-border(0);
+    }
 
-      // Animation
-      @include changeMaxSize("grow-intro-summary", 0, 100vh, 750px, 750px);
-      @include animation(grow-intro-summary 4s $animation-delay forwards);
-
-      // :before and :after (shutter effect during animation)
-      @mixin summary-shutter-border($top) {
-        @include shutter-border-vertical(2px, $top, 100%);
-        @include changeMaxSize("shrink-shutter-border", $from-max-width: 100vw, $to-max-width: 0);
-        @include animation(shrink-shutter-border 2s $animation-delay forwards);
-      }
-
-      &:before {
-        @include summary-shutter-border(0);
-      }
-
-      &:after {
-        @include summary-shutter-border(calc(100% - 2px));
-      }
+    &:after {
+      @include summary-shutter-border(calc(100% - 2px));
     }
   }
 }
