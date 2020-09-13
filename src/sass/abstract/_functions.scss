@@ -3,7 +3,10 @@
 // ---------------------------------------------------------------------------
 
 // Returns the pixel size in rem
-@function calculateRem($px){
-	$rem: $px / 18px;
-	@return $rem * 1rem;
+@function calculateRem($px) {
+  @if (type-of($px) == "number") {
+    $rem: $px / 16px;
+    @return $rem * 1rem;
+  }
+  @return $px;
 }
