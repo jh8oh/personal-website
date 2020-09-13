@@ -3,7 +3,7 @@
     <ul>
       <li v-for="link in links" :key="link.title" :title="link.title">
         <a :href="link.to">
-          <img :src="link.icon" />
+          <img :src="getImg(link)" />
         </a>
       </li>
     </ul>
@@ -11,10 +11,13 @@
 </template>
 
 <script>
-import githubDarkIcon from "../assets/ico/social-links/github-dark.png";
-import linkedinDarkIcon from "../assets/ico/social-links/linkedin-dark.png";
-import resumeDarkIcon from "../assets/ico/social-links/resume-dark.png";
-import resume from "../assets/doc/resume.pdf";
+import githubDark from "@/assets/ico/social-links/github-dark.png";
+import githubLight from "@/assets/ico/social-links/github-light.png";
+import linkedinDark from "@/assets/ico/social-links/linkedin-dark.png";
+import linkedinLight from "@/assets/ico/social-links/linkedin-light.png";
+import resumeDark from "@/assets/ico/social-links/resume-dark.png";
+import resumeLight from "@/assets/ico/social-links/resume-light.png";
+import resume from "@/assets/doc/resume.pdf";
 
 export default {
   data() {
@@ -22,21 +25,29 @@ export default {
       links: [
         {
           title: "GitHub",
-          icon: githubDarkIcon,
+          iconDark: githubDark,
+          iconLight: githubLight,
           to: "https://github.com/jh8oh",
         },
         {
           title: "LinkedIn",
-          icon: linkedinDarkIcon,
+          iconDark: linkedinDark,
+          iconLight: linkedinLight,
           to: "https://www.linkedin.com/in/ji-ho-oh-63b590191/",
         },
         {
           title: "Resume",
-          icon: resumeDarkIcon,
+          iconDark: resumeDark,
+          iconLight: resumeLight,
           to: resume,
         },
       ],
     };
+  },
+  methods: {
+    getImg(link) {
+      return this.$store.getters.isLightTheme ? link.iconDark : link.iconLight;
+    },
   },
 };
 </script>

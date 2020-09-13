@@ -15,10 +15,10 @@
 </template>
 
 <script>
-import Header from "./layouts/Header.vue";
-import ToggleThemeButton from "./layouts/ToggleThemeButton";
-import SocialLinks from "./layouts/SocialLinks.vue";
-import ScrollToTop from "./layouts/ScrollToTop.vue";
+import Header from "@/layouts/Header.vue";
+import ToggleThemeButton from "@/layouts/ToggleThemeButton";
+import SocialLinks from "@/layouts/SocialLinks.vue";
+import ScrollToTop from "@/layouts/ScrollToTop.vue";
 
 export default {
   components: { Header, ToggleThemeButton, SocialLinks, ScrollToTop },

@@ -53,13 +53,13 @@
 </template>
 
 <script>
-import NextSectionButton from "../components/NextSectionButton.vue";
-import AbilityCard from "../components/about/AbilityCard.vue";
-import ExperienceCard from "../components/about/ExperienceCard.vue";
-import Footer from "../layouts/Footer.vue";
+import NextSectionButton from "@/components/NextSectionButton.vue";
+import AbilityCard from "@/components/about/AbilityCard.vue";
+import ExperienceCard from "@/components/about/ExperienceCard.vue";
+import Footer from "@/layouts/Footer.vue";
 
-import abilities from "../assets/json/about/abilities.json";
-import experiences from "../assets/json/about/experiences.json";
+import abilities from "@/assets/json/about/abilities.json";
+import experiences from "@/assets/json/about/experiences.json";
 
 export default {
   components: { NextSectionButton, AbilityCard, ExperienceCard, Footer },

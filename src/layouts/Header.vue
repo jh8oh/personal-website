@@ -32,10 +32,10 @@
 </template>
 
 <script>
-import logoIcon from "../assets/ico/header/logo-gallery.png";
-import logoHoveredIcon from "../assets/ico/header/logo-curiousblue.png";
-import navIcon from "../assets/ico/header/menu-gallery.svg";
-import navClickedIcon from "../assets/ico/header/menu-curiousblue.svg";
+import logoIcon from "@/assets/ico/header/logo-gallery.png";
+import logoHoveredIcon from "@/assets/ico/header/logo-curiousblue.png";
+import navIcon from "@/assets/ico/header/menu-gallery.svg";
+import navClickedIcon from "@/assets/ico/header/menu-curiousblue.svg";
 
 export default {
   data() {

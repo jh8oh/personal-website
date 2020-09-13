@@ -10,8 +10,9 @@
 </template>
 
 <script>
-import chevronDark from "../assets/ico/components/next-section-button/chevron-down-dark.png";
-import chevronAccent from "../assets/ico/components/next-section-button/chevron-down-accent.png";
+import chevronDark from "@/assets/ico/components/next-section-button/chevron-down-dark.png";
+import chevronLight from "@/assets/ico/components/next-section-button/chevron-down-light.png";
+import chevronAccent from "@/assets/ico/components/next-section-button/chevron-down-accent.png";
 
 export default {
   data() {
@@ -27,7 +28,7 @@ export default {
   },
   methods: {
     getChevron() {
-      return this.chevronHovered ? chevronAccent : chevronDark;
+      return this.chevronHovered ? chevronAccent : this.$store.getters.isLightTheme ? chevronDark : chevronLight;
     },
   },
 };
