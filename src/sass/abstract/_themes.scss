@@ -6,14 +6,12 @@ $themes: (
   light: (
     color-background: $white,
     color-background-variant: $wild-sand,
-    color-on-background: $tundora,
-    color-on-background-variant: $mineshaft,
+    color-on-background: $mineshaft,
   ),
   dark: (
     color-background: $mineshaft,
     color-background-variant: $mineshaft,
     color-on-background: $wild-sand,
-    color-on-background-variant: $white,
   ),
 );
 

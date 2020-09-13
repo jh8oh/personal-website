@@ -4,7 +4,6 @@
 
 // Colors - Greyscale
 $mineshaft: #222;
-$tundora: #444;
 $gray: #888;
 $wild-sand: #f4f4f4;
 $white: #fff;
@@ -15,16 +14,14 @@ $curious-blue: #1e88e5;
 $endeavour: #005cb2;
 
 // Colors - Semantics
-$color-base: $tundora;
-$color-base-variant: $mineshaft;
+$color-base: $mineshaft;
+$color-on-base: $wild-sand;
+$color-on-base-variant: $gray;
 
 $color-accent: $curious-blue;
 $color-accent-variant-dark: $endeavour;
 $color-accent-variant-light: $malibu;
-
-$color-on-base: $wild-sand;
-$color-on-base-variant: $gray;
-$color-on-accent: $white;
+$color-on-accent: $wild-sand;
 
 // Font Families
 @import url("https://fonts.googleapis.com/css?family=Oswald|Raleway|Share+Tech+Mono&display=swap");

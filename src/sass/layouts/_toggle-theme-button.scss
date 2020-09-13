@@ -1,0 +1,74 @@
+// ---------------------------------------------------------------------------
+// This file contains all styles related to the "Toggle Theme Button" component.
+// ---------------------------------------------------------------------------
+
+#theme {
+  position: fixed;
+  top: 72px;
+  right: 2.5%;
+  z-index: 3;
+
+  &-switch {
+    position: relative;
+    display: inline-block;
+    width: 72px;
+    height: 34px;
+
+    input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+
+      &:checked + #theme-slider:before {
+        transform: translateX(38px);
+      }
+    }
+  }
+
+  &-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 34px;
+    cursor: pointer;
+
+    @include themed {
+      background-color: t("color-on-background");
+    }
+    @include transition(0.4s);
+
+    &:before {
+      position: absolute;
+      content: "";
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      z-index: 1;
+      border-radius: 50%;
+      background-color: $color-accent;
+
+      @include transition(0.4s);
+    }
+  }
+
+  img {
+    position: absolute;
+    height: 26px;
+    width: 26px;
+    bottom: 4px;
+    z-index: 0;
+
+    &#icon {
+      &-light {
+        left: 4px;
+      }
+
+      &-dark {
+        right: 4px;
+      }
+    }
+  }
+}
