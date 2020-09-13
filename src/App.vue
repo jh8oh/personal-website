@@ -1,13 +1,15 @@
 <template>
-  <div id="app">
-    <Header />
-    <div id="content">
-      <transition :name="transitionName" mode="in-out">
-        <router-view />
-      </transition>
+  <div class="theme--light">
+    <div id="app">
+      <Header />
+      <div id="content">
+        <transition :name="transitionName" mode="in-out">
+          <router-view />
+        </transition>
+      </div>
+      <SocialLinks v-if="!isHome()" />
+      <ScrollToTop v-if="!isHome()" />
     </div>
-    <SocialLinks v-if="!isHome()" />
-    <ScrollToTop v-if="!isHome()" />
   </div>
 </template>
 

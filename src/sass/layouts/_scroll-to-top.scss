@@ -17,6 +17,9 @@
 
   span {
     font-size: 12px;
-    color: $color-on-background;
+
+    @include themed {
+      color: t("color-on-background");
+    }
   }
 }
