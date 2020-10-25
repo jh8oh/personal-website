@@ -16,7 +16,7 @@ header {
   box-sizing: border-box;
   align-items: center;
   z-index: 3; // Header on top of animation
-  background-color: $color-base-variant;
+  background-color: $color-base;
 
   @include breakpoint-tablet {
     padding: 0 $horizontal-padding-small;

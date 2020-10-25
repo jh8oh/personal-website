@@ -2,7 +2,7 @@
   {
     "id": 0,
     "name": "Android Development",
-    "img": ["android-dark.png", "android-light.png", "android-accent.png"],
+    "img": ["android-accent.png", "android-dark.png", "android-light.png"],
     "isExpanded": false,
     "description": "I got into Android development trying to find a good GUI for Java since the alternatives (AWT, JavaFX, and Swing) were all going out of style. It's thanks to Android that I got into developing user-facing applications that aren't just small games (and also taught me how much better Kotlin is to Java). Thanks to its lightweight nature as well as how easy it is to design using XML, you can go from conception to Minimum Viable Product in a week or so. Being able to churn out applications quickly enables you to constantly challenge yourself to make each one better than the last. All this means that Android has cemented itself as my go-to for creating any application.",
     "skills": ["Kotlin", "Java", "Gradle", "XML", "SQLite"]
@@ -10,7 +10,7 @@
   {
     "id": 1,
     "name": "Web Development",
-    "img": ["web-dark.png", "web-light.png", "web-accent.png"],
+    "img": ["web-accent.png", "web-dark.png", "web-light.png"],
     "isExpanded": false,
     "description": "The first time I touched web development was in 8<sup>th</sup> grade for IT class. It was a small 'wiki' on Minecraft and was built on HTMl, CSS, and a bit of JavaScript (mostly what I could scrounge from StackOverflow). Honestly, it wasn't bad for a website of that scale, but ever since I picked up web development recently, I've realized that there's so much that I missed out on: web stacks, Javascript frameworks, npm, backend, deployment, CSS preprocessors, databases, and <em>so</em> much more. Massive respect for them full-stack developer out there. Right now, I'm currently focusing on the front-end side of things, specifically Vue.js, while trying to get the hang of a full web stack (MEVN looks like a pretty nice route to pursue).",
     "skills": ["HTML5", "CSS/SCSS", "JavaScript", "Typescript", "PHP", "Vue.js", "WordPress REST API"]

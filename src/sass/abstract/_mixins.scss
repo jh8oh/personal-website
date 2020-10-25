@@ -52,8 +52,12 @@
     padding: 4px 6px;
     margin: 8px 0 0;
     vertical-align: bottom;
-    border-bottom: 2px solid $color-on-background;
+    border-bottom: 2px solid;
     cursor: pointer;
+
+    @include themed {
+      border-bottom-color: t("color-on-background");
+    }
     @include transition(padding-bottom 0.2s ease-out, margin-top 0.2s ease-out);
 
     &.active {

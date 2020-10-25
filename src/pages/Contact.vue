@@ -22,8 +22,8 @@
 <script>
 import emailjs from "emailjs-com";
 
-import Footer from "../layouts/Footer.vue";
-import Button from "../components/Button.vue";
+import Footer from "@/layouts/Footer.vue";
+import Button from "@/components/Button.vue";
 
 export default {
   components: { Footer, Button },

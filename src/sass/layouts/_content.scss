@@ -13,7 +13,10 @@ body {
 #content {
   position: relative;
   margin-top: 56px;
-  background-color: $color-background;
+
+  @include themed {
+    background-color: t("color-background");
+  }
 }
 
 .page {
@@ -23,5 +26,7 @@ body {
 }
 
 .background-alt {
-  background-color: $color-background-variant;
+  @include themed {
+    background-color: t("color-background-variant");
+  }
 }

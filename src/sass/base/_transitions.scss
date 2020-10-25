@@ -11,8 +11,11 @@
   position: fixed;
   min-height: $content-height;
   width: 100%;
-  background: white;
   top: 56px;
+
+  @include themed{
+    background: t('color-background');
+  }
 }
 
 @mixin page-slide-transition($translateX) {

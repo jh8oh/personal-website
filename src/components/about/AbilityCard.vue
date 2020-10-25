@@ -40,8 +40,10 @@ export default {
   methods: {
     getImg() {
       return this.imgHovered
-        ? require("../../assets/img/about/abilities/" + this.ability.img[2])
-        : require("../../assets/img/about/abilities/" + this.ability.img[0]);
+        ? require("../../assets/img/about/abilities/" + this.ability.img[0])
+        : this.$store.getters.isLightTheme
+        ? require("../../assets/img/about/abilities/" + this.ability.img[1])
+        : require("../../assets/img/about/abilities/" + this.ability.img[2]);
     },
     toggleDescription() {
       this.$emit("toggleExpand");

@@ -21,10 +21,10 @@
 </template>
 
 <script>
-import arrowLeftDark from "../assets/ico/components/slideshow-gallery/arrow-left-dark.png";
-import arrowLeftAccent from "../assets/ico/components/slideshow-gallery/arrow-left-accent.png";
-import arrowRightDark from "../assets/ico/components/slideshow-gallery/arrow-right-dark.png";
-import arrowRightAccent from "../assets/ico/components/slideshow-gallery/arrow-right-accent.png";
+import arrowLeftDark from "@/assets/ico/components/slideshow-gallery/arrow-left-dark.png";
+import arrowLeftAccent from "@/assets/ico/components/slideshow-gallery/arrow-left-accent.png";
+import arrowRightDark from "@/assets/ico/components/slideshow-gallery/arrow-right-dark.png";
+import arrowRightAccent from "@/assets/ico/components/slideshow-gallery/arrow-right-accent.png";
 
 export default {
   data() {
