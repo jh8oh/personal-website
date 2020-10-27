@@ -5,9 +5,9 @@
     </router-link>
     <nav>
       <ul>
-        <li v-for="page in pages" :key="page.title">
-          <router-link :to="page.url" exact="false" />
-        </li>
+        <router-link tag="li" v-for="page in pages" :key="page.title" :to="page.url">
+          {{ page.title }}
+        </router-link>
       </ul>
     </nav>
   </header>
@@ -16,8 +16,8 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 
-import logo from "@/assets/ico/header/logo-border-white.png";
-import logoHovered from "@/assets/ico/header/logo-border-accent.png";
+import logo from "@/assets/ico/header/logo-white.png";
+import logoHovered from "@/assets/ico/header/logo-accent.png";
 
 @Component
 export default class Header extends Vue {

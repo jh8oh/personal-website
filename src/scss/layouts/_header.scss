@@ -2,6 +2,55 @@
 // This file contains all styles related to the header
 // -----------------------------------------------------------------------------
 
-header{
+header {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  top: 0;
+  padding: 0 25%;
+  box-sizing: border-box;
+  z-index: 3;
+  background-color: $color-base;
 
+  img {
+    display: block;
+    height: 42px;
+    margin: 7px 0;
+  }
+
+  nav {
+    flex-grow: 1;
+  }
+
+  ul {
+    @include no-decoration-ul;
+    float: right;
+
+    li {
+      position: relative;
+      display: inline-block;
+      padding: 12px;
+      color: $color-on-base;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+
+      &:hover {
+        color: $color-accent;
+      }
+
+      &:after {
+        @include shutter-border-vertical(4px, 52px);
+      }
+
+      &.router-link-active {
+        color: $color-accent;
+
+        &:after {
+          width: 100%;
+        }
+      }
+    }
+  }
 }
