@@ -3,55 +3,125 @@
 // -----------------------------------------------------------------------------
 
 header {
+  $breakpoint-large: 1024px;
+  $breakpoint-small: 600px;
+
   position: fixed;
   display: flex;
   align-items: center;
   width: 100%;
   top: 0;
-  padding: 0 20%;
+  padding: 0 20vw;
   box-sizing: border-box;
   z-index: 3;
   background-color: $color-base;
 
+  @include breakpoint($breakpoint-large) {
+    padding: 0 10vw;
+  }
+
+  @include breakpoint($breakpoint-small) {
+    display: inline;
+    padding: 0;
+  }
+
+  $logo-size: 42px;
+
   img {
     display: block;
-    height: 42px;
+    height: $logo-size;
+
+    @include breakpoint($breakpoint-small) {
+      float: left;
+      margin: 11px 0 11px 2vw;
+    }
+  }
+
+  #menu-icon {
+    display: none;
+    float: right;
+    height: $logo-size;
+    width: $logo-size;
+    margin: 11px 2vw 11px 0;
+
+    @include breakpoint($breakpoint-small) {
+      display: block;
+    }
+  }
+
+  #toggle-menu {
+    display: none;
+
+    & + #menu-icon {
+      background: url("../assets/ico/header/menu-white.png") center;
+      background-size: contain;
+
+      &:hover {
+        background-image: url("../assets/ico/header/menu-accent.png");
+        @include transition(background-image 0.5s ease, transform 0.5s ease);
+      }
+    }
+
+    &:checked {
+      & + #menu-icon {
+        background: url("../assets/ico/header/menu-close.png") center;
+        background-size: contain;
+        transform: rotate(90deg);
+      }
+
+      & ~ nav {
+        max-height: 256px;
+      }
+    }
   }
 
   nav {
     flex-grow: 1;
     margin-left: 16px;
-  }
 
-  ul {
-    @include no-decoration-ul;
+    @include breakpoint($breakpoint-small) {
+      max-height: 0;
+      margin: 64px 0 0;
+      overflow: hidden;
+      @include transition(max-height 0.5s ease-in-out);
+    }
 
-    li {
-      position: relative;
-      display: inline-block;
-      padding: 16px 12px;
-      color: $color-on-base;
-      text-align: center;
-      text-decoration: none;
-      cursor: pointer;
+    ul {
+      @include no-decoration-ul;
 
-      &.right {
-        float: right;
-      }
+      li {
+        position: relative;
+        display: inline-block;
+        padding: 16px 12px;
+        color: $color-on-base;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
 
-      &:hover {
-        color: $color-accent;
-      }
+        @include breakpoint($breakpoint-small) {
+          display: block;
+          width: 100%;
+          box-sizing: border-box; // Keeps links centered
+        }
 
-      &:after {
-        @include shutter-border-vertical(4px, 60px);
-      }
+        &.right {
+          float: right;
+        }
 
-      &.router-link-active {
-        color: $color-accent;
+        &:hover {
+          color: $color-accent;
+        }
 
         &:after {
-          width: 100%;
+          @include shutter-border-vertical(4px, 60px);
+        }
+
+        &.router-link-active {
+          color: $color-accent;
+
+          &:after {
+            width: 100%;
+          }
         }
       }
     }

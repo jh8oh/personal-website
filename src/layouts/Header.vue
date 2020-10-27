@@ -3,9 +3,17 @@
     <router-link to="/">
       <img @mouseover="setLogo(true)" @mouseleave="setLogo(false)" :src="logoIcon" alt="Logo" />
     </router-link>
-    <nav>
+    <input id="toggle-menu" type="checkbox" />
+    <label id="menu-icon" for="toggle-menu" />
+    <nav :class="{ shown: navShown }">
       <ul>
-        <router-link tag="li" v-for="page in pages" :key="page.title" :to="page.url" :class="{right: page.floatRight}">
+        <router-link
+          tag="li"
+          v-for="page in pages"
+          :key="page.title"
+          :to="page.url"
+          :class="{ right: page.floatRight }"
+        >
           {{ page.title }}
         </router-link>
       </ul>
@@ -22,6 +30,7 @@ import logoHovered from "@/assets/ico/header/logo-accent.png";
 @Component
 export default class Header extends Vue {
   private logoIcon = logo;
+
   private pages = [
     { title: "About Me", url: "/about", floatRight: false },
     { title: "Portfolio", url: "/portfolio", floatRight: false },
