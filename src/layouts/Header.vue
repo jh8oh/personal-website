@@ -5,7 +5,7 @@
     </router-link>
     <nav>
       <ul>
-        <router-link tag="li" v-for="page in pages" :key="page.title" :to="page.url">
+        <router-link tag="li" v-for="page in pages" :key="page.title" :to="page.url" :class="{right: page.floatRight}">
           {{ page.title }}
         </router-link>
       </ul>
@@ -23,10 +23,10 @@ import logoHovered from "@/assets/ico/header/logo-accent.png";
 export default class Header extends Vue {
   private logoIcon = logo;
   private pages = [
-    { title: "About Me", url: "/about" },
-    { title: "Portfolio", url: "/portfolio" },
-    { title: "Blog", url: "/blog" },
-    { title: "Contact Me", url: "/contact" },
+    { title: "About Me", url: "/about", floatRight: false },
+    { title: "Portfolio", url: "/portfolio", floatRight: false },
+    { title: "Blog", url: "/blog", floatRight: false },
+    { title: "Contact Me", url: "/contact", floatRight: true },
   ];
 
   private setLogo(isLogoHovered: boolean) {
