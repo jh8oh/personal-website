@@ -16,36 +16,35 @@ header {
   img {
     display: block;
     height: 42px;
-    margin: 7px;
   }
 
   nav {
     flex-grow: 1;
+    margin-left: 16px;
   }
 
   ul {
-	@include no-decoration-ul;
-	margin-left: 16px;
+    @include no-decoration-ul;
 
     li {
       position: relative;
       display: inline-block;
-      padding: 12px;
+      padding: 16px 12px;
       color: $color-on-base;
       text-align: center;
       text-decoration: none;
       cursor: pointer;
 
-	  &.right{
-		  float:right;
-	  }
+      &.right {
+        float: right;
+      }
 
       &:hover {
         color: $color-accent;
       }
 
       &:after {
-        @include shutter-border-vertical(4px, 52px);
+        @include shutter-border-vertical(4px, 60px);
       }
 
       &.router-link-active {
