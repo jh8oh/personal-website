@@ -4,19 +4,20 @@
 
 header {
   $breakpoint-large: 1024px;
-  $breakpoint-small: 600px;
+  $breakpoint-small: 600px; // Convert to vertical menu-bar style navigation
 
   position: fixed;
   display: flex;
   align-items: center;
   width: 100%;
   top: 0;
-  padding: 0 20vw;
+  padding: 0 22vw;
   box-sizing: border-box;
   z-index: 3;
   background-color: $color-base;
 
   @include breakpoint($breakpoint-large) {
+    // Smaller horizontal padding with smaller screen
     padding: 0 10vw;
   }
 
@@ -25,50 +26,48 @@ header {
     padding: 0;
   }
 
-  $logo-size: 42px;
-
   #logo {
     display: block;
-    height: $logo-size;
+    height: 42px;
 
     @include breakpoint($breakpoint-small) {
       float: left;
-      margin: 11px 0 11px 2vw;
+      margin: 7px 0 7px 2vw;
     }
   }
 
   #menu-icon {
     display: none;
     float: right;
-    height: $logo-size;
-    width: $logo-size;
-    margin: 11px 2vw 11px 0;
+    height: 36px;
+    width: 36px;
+    margin: 10px 2vw 10px 0;
+    background: url("../assets/ico/header/menu-white.png") center;
+    background-size: contain;
+    @include transition(background-image 0.5s ease, transform 0.5s ease);
 
     @include breakpoint($breakpoint-small) {
       display: block;
     }
   }
 
-  #toggle-menu {
+  input {
     display: none;
 
-    & + #menu-icon {
-      background: url("../assets/ico/header/menu-white.png") center;
-      background-size: contain;
-
-      &:hover {
-        background-image: url("../assets/ico/header/menu-accent.png");
-        @include transition(background-image 0.5s ease, transform 0.5s ease);
-      }
+    // When menu is not clicked, change icon to accent
+    & + #menu-icon:hover {
+      background-image: url("../assets/ico/header/menu-accent.png");
     }
 
     &:checked {
+      // When menu is clicked, change icon to close
       & + #menu-icon {
         background: url("../assets/ico/header/menu-close.png") center;
         background-size: contain;
         transform: rotate(90deg);
       }
 
+      // Increase nav's max height
       & ~ nav {
         max-height: 256px;
       }
@@ -81,7 +80,7 @@ header {
 
     @include breakpoint($breakpoint-small) {
       max-height: 0;
-      margin: 64px 0 0;
+      margin-top: 56px;
       overflow: hidden;
       @include transition(max-height 0.5s ease-in-out);
     }
@@ -92,10 +91,8 @@ header {
       li {
         position: relative;
         display: inline-block;
-        padding: 16px 12px;
+        padding: 14px 8px;
         color: $color-on-base;
-        text-align: center;
-        text-decoration: none;
         cursor: pointer;
 
         @include breakpoint($breakpoint-small) {
@@ -108,12 +105,12 @@ header {
           float: right;
         }
 
-        &:hover {
-          color: $color-accent;
+        &:after {
+          @include shutter-border-vertical(4px, 52px);
         }
 
-        &:after {
-          @include shutter-border-vertical(4px, 60px);
+        &:hover {
+          color: $color-accent;
         }
 
         &.router-link-active {

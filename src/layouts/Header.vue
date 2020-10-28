@@ -5,7 +5,7 @@
     </router-link>
     <input id="toggle-menu" type="checkbox" />
     <label id="menu-icon" for="toggle-menu" />
-    <nav :class="{ shown: navShown }">
+    <nav>
       <ul>
         <router-link
           tag="li"
