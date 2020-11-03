@@ -91,7 +91,7 @@ header {
       li {
         position: relative;
         display: inline-block;
-        padding: 14px 8px;
+        padding: 12px 8px;
         color: $color-on-base;
         cursor: pointer;
 
@@ -106,7 +106,7 @@ header {
         }
 
         &:after {
-          @include shutter-border-vertical(4px, 52px);
+          @include shutter-border-vertical(2px, 54px);
         }
 
         &:hover {
