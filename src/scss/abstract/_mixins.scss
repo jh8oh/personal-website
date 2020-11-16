@@ -61,6 +61,6 @@
     color: $color;
     text-shadow: 0 0 #4e73df;
     white-space: nowrap;
-    @include animation(noise 2s infinite linear alternate-reverse);
+    @include animation(noise 3s infinite linear alternate-reverse);
   }
 }
