@@ -29,9 +29,74 @@
   }
 }
 
-// Shrinks slightly before popping back out.
-@include keyframes(push) {
+// Noise keyframes for glitch text
+@mixin noise-clip-and-shadow($clip-top, $clip-bottom, $shadow-x){
+  clip: rect($clip-top, 9999px, $clip-bottom, 0);
+  text-shadow: $shadow-x 0;
+}
+
+@include keyframes(noise) {
+  0% {
+    @include noise-clip-and-shadow(89px, 100px, 7px);
+  }
+  5% {
+    @include noise-clip-and-shadow(4px, 62px, -17px);
+  }
+  10% {
+    @include noise-clip-and-shadow(43px, 16px, 12px);
+  }
+  15% {
+    @include noise-clip-and-shadow(2px, 68px, -10px);
+  }
+  20% {
+    @include noise-clip-and-shadow(12px, 6px, -7px);
+  }
+  25% {
+    @include noise-clip-and-shadow(89px, 25px, -15px);
+  }
+  30% {
+    @include noise-clip-and-shadow(15px, 38px, 19px);
+  }
+  35% {
+    @include noise-clip-and-shadow(57px, 97px, 20px);
+  }
+  40% {
+    @include noise-clip-and-shadow(24px, 72px, -18px);
+  }
+  45% {
+    @include noise-clip-and-shadow(81px, 3px, -1px);
+  }
   50% {
-    transform: scale(0.8);
+    @include noise-clip-and-shadow(93px, 26px, 5px);
+  }
+  55% {
+    @include noise-clip-and-shadow(68px, 85px, 25px);
+  }
+  60% {
+    @include noise-clip-and-shadow(43px, 28px, 19px);
+  }
+  65% {
+    @include noise-clip-and-shadow(44px, 11px, 18px);
+  }
+  70% {
+    @include noise-clip-and-shadow(17px, 33px, -4px);
+  }
+  75% {
+    @include noise-clip-and-shadow(74px, 66px, 13px);
+  }
+  80% {
+    @include noise-clip-and-shadow(100px, 4px, 18px);
+  }
+  85% {
+    @include noise-clip-and-shadow(92px, 31px, -2px);
+  }
+  90% {
+    @include noise-clip-and-shadow(93px, 98px, 24px);
+  }
+  95% {
+    @include noise-clip-and-shadow(23px, 77px, 13px);
+  }
+  100% {
+    @include noise-clip-and-shadow(92px, 8px, -12px);
   }
 }

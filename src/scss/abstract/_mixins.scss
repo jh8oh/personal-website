@@ -27,7 +27,6 @@
   -o-animation: $args;
 }
 
-
 // Unordered list with no decoration
 @mixin no-decoration-ul {
   padding: 0;
@@ -48,4 +47,20 @@
   margin: 0 auto;
   background-color: $color-accent;
   @include transition(width 0.3s ease);
+}
+
+// Glitch text
+@mixin glitch-text($text, $color, $top-padding, $left-padding) {
+&:before {
+    content: $text;
+    position: absolute;
+    top: $top-padding;
+    left: $left-padding;
+    overflow: hidden;
+    clip: rect(0, 900px, 0, 0);
+    color: $color;
+    text-shadow: 0 0 #4e73df;
+    white-space: nowrap;
+    @include animation(noise 3s infinite linear alternate-reverse);
+  }
 }
