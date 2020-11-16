@@ -1,0 +1,37 @@
+// ---------------------------------------------------------------------------
+// Contains general keyframes (for animation)
+// ---------------------------------------------------------------------------
+
+// Mixin for keyframes
+@mixin keyframes($keyframes-name) {
+  @keyframes #{$keyframes-name} {
+    @content;
+  }
+
+  // Chrome/Safari
+  @-webkit-keyframes #{$keyframes-name} {
+    @content;
+  }
+
+  // Firefox
+  @-moz-keyframes #{$keyframes-name} {
+    @content;
+  }
+
+  // Internet explorer
+  @-ms-keyframes #{$keyframes-name} {
+    @content;
+  }
+
+  // Opera
+  @-o-keyframes #{$keyframes-name} {
+    @content;
+  }
+}
+
+// Shrinks slightly before popping back out.
+@include keyframes(push) {
+  50% {
+    transform: scale(0.8);
+  }
+}
