@@ -14,7 +14,6 @@ button {
   transition: 0.2s;
 
   &:hover {
-    @include glitch-text(attr(glitch-text), $color-on-accent, 8px, 32px, bold);
     color: $color-on-accent;
     background-color: $color-accent;
   }
