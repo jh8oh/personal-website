@@ -14,8 +14,16 @@ button {
   transition: 0.2s;
 
   &:hover {
-    @include glitch-text(attr(glitch-text), $color-on-accent, 8px, 32px, bold);
     color: $color-on-accent;
     background-color: $color-accent;
+    background: linear-gradient(
+      to bottom,
+      $color-accent,
+      $color-accent 50%,
+      $color-accent-dark 50%,
+      $color-accent-dark
+    );
+    background-size: 100% 6px;
+    @include animation(gradient-move 0.3s ease infinite);
   }
 }
