@@ -29,6 +29,20 @@
   }
 }
 
+// Background color that moves like VHS scan lines
+@include keyframes(gradient-move) {
+  0% {
+    background-size: 100% 6px;
+  }
+  50% {
+    background-size: 100% 2px;
+  }
+  100% {
+    background-size: 100% 6px;
+  }
+}
+
+// Text that glitches out
 @include keyframes(glitch-text-animation) {
   $steps: 20;
   @for $i from 0 through $steps {
