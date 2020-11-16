@@ -1,5 +1,5 @@
 <template>
-  <button @click="emitClicked()">
+  <button @click="emitClicked()" :glitch-text="text">
     {{ text }}
   </button>
 </template>

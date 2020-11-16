@@ -29,9 +29,74 @@
   }
 }
 
-// Shrinks slightly before popping back out.
-@include keyframes(push) {
+@mixin random-clip-and-shadow {
+  clip: rect(random(100) + px, 9999px, random(100) + px, 0);
+  text-shadow: (random(50) - 25) + px 0;
+}
+
+// Noise keyframes for glitch text
+@include keyframes(noise) {
+  0% {
+    @include random-clip-and-shadow;
+  }
+  5% {
+    @include random-clip-and-shadow;
+  }
+  10% {
+    @include random-clip-and-shadow;
+  }
+  15% {
+    @include random-clip-and-shadow;
+  }
+  20% {
+    @include random-clip-and-shadow;
+  }
+  25% {
+    @include random-clip-and-shadow;
+  }
+  30% {
+    @include random-clip-and-shadow;
+  }
+  35% {
+    @include random-clip-and-shadow;
+  }
+  40% {
+    @include random-clip-and-shadow;
+  }
+  45% {
+    @include random-clip-and-shadow;
+  }
   50% {
-    transform: scale(0.8);
+    @include random-clip-and-shadow;
+  }
+  55% {
+    @include random-clip-and-shadow;
+  }
+  60% {
+    @include random-clip-and-shadow;
+  }
+  65% {
+    @include random-clip-and-shadow;
+  }
+  70% {
+    @include random-clip-and-shadow;
+  }
+  75% {
+    @include random-clip-and-shadow;
+  }
+  80% {
+    @include random-clip-and-shadow;
+  }
+  85% {
+    @include random-clip-and-shadow;
+  }
+  90% {
+    @include random-clip-and-shadow;
+  }
+  95% {
+    @include random-clip-and-shadow;
+  }
+  100% {
+    @include random-clip-and-shadow;
   }
 }
