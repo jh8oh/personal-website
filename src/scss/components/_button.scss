@@ -11,6 +11,7 @@ button {
   background-color: transparent;
   @include text(inherit, inherit, inherit, inherit, 2px, uppercase); // Fonts need to be inherited
   cursor: pointer;
+  transition: 0.2s;
 
   &:hover {
     @include glitch-text(attr(glitch-text), $color-on-accent, 8px, 32px);
