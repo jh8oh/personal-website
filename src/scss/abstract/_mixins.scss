@@ -50,7 +50,7 @@
 }
 
 // Glitch text
-@mixin glitch-text($text, $color, $top-padding, $left-padding) {
+@mixin glitch-text($text, $font-weight, $color, $top-padding, $left-padding) {
 &:before {
     content: $text;
     position: absolute;
@@ -59,6 +59,7 @@
     overflow: hidden;
     clip: rect(0, 900px, 0, 0);
     color: $color;
+    font-weight: $font-weight;
     text-shadow: 0 0 #4e73df;
     white-space: nowrap;
     @include animation(noise 3s infinite linear alternate-reverse);
