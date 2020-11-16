@@ -1,0 +1,25 @@
+// ---------------------------------------------------------------------------
+// This file contains all styles related to the "Button" component.
+// ---------------------------------------------------------------------------
+
+button {
+  padding: 12px 42px;
+  border: 1px solid $color-accent;
+  border-radius: 4px;
+  outline: none;
+  color: $color-accent;
+  background-color: transparent;
+  @include text(inherit, inherit, inherit, inherit, 2px, uppercase);   // Fonts need to be inherited
+  cursor: pointer;
+  transition-duration: 0.3s;
+
+  &:hover {
+    color: $color-on-accent;
+    background-color: $color-accent;
+  }
+
+  // Continues after click (Needed for animation to continue after clicking)
+  &:active {
+    @include animation(push 0.1s ease-in-out);
+  }
+}

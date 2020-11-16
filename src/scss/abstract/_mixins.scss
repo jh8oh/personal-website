@@ -18,6 +18,16 @@
   -o-transition: $args;
 }
 
+// Animation mixin
+@mixin animation($args) {
+  animation: $args;
+  -webkit-animation: $args;
+  -moz-animation: $args;
+  -ms-animation: $args;
+  -o-animation: $args;
+}
+
+
 // Unordered list with no decoration
 @mixin no-decoration-ul {
   padding: 0;
