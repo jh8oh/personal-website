@@ -1,0 +1,41 @@
+// ---------------------------------------------------------------------------
+// This file contains styles that are specific to the "Home" page.
+// ---------------------------------------------------------------------------
+
+#home {
+  height: $content-height;
+  width: 100%;
+  background-color: $color-base;
+
+  #background-image {
+    position: absolute;
+    width: 85%;
+    max-width: 750px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.2;
+  }
+
+  #greeting {
+    position: absolute;
+    width: 75%;
+    max-width: 420px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+    #name {
+      @include text($heading-font-family, 72px, 300, 1.2, -0.5px, none);
+      position: relative;
+      color: $color-on-base;
+
+      @include glitch-text($color-on-base, $color-base, 10px);
+    }
+
+    span {
+      color: $color-on-base-variant;
+    }
+  }
+}

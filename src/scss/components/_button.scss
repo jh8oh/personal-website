@@ -1,0 +1,29 @@
+// ---------------------------------------------------------------------------
+// This file contains all styles related to the "Button" component.
+// ---------------------------------------------------------------------------
+
+button {
+  position: relative;
+  padding: 8px 32px;
+  border: 1px solid $color-accent;
+  outline: none;
+  color: $color-accent;
+  background-color: transparent;
+  @include text(inherit, inherit, inherit, inherit, 2px, uppercase); // Fonts need to be inherited
+  cursor: pointer;
+  transition: 0.2s;
+
+  &:hover {
+    color: $color-on-accent;
+    background-color: $color-accent;
+    background: linear-gradient(
+      to bottom,
+      $color-accent,
+      $color-accent 50%,
+      $color-accent-dark 50%,
+      $color-accent-dark
+    );
+    background-size: 100% 6px;
+    @include animation(gradient-move 0.3s ease infinite);
+  }
+}
