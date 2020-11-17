@@ -1,0 +1,44 @@
+// ---------------------------------------------------------------------------
+// Contains everything to do with transitions
+// ---------------------------------------------------------------------------
+
+// -enter/-leave: Starting state of entering/leaving object
+// -enter-to/-leave-to: Ending state of entering/leaving object
+// -enter-active/leave-active: Active state of entering/leaving object (Persists throughout the entire phase)
+
+// Page transitions (Page slides in on top of previous page)
+%page-transition {
+  position: fixed;
+  min-height: $content-height;
+  width: 100%;
+  top: 56px;
+  background: $color-background;
+}
+
+@mixin page-slide-transition($translateX) {
+  &-enter {
+    transform: translateX($translateX);
+
+    &-to {
+      transform: translateX(0%);
+    }
+
+    &-active {
+      @extend %page-transition;
+      @include transition(transform 0.4s ease-in-out);
+    }
+  }
+
+  &-leave-active {
+    @extend %page-transition;
+    opacity: 0;
+  }
+}
+
+.page-slide-left {
+  @include page-slide-transition(100%);
+}
+
+.page-slide-right {
+  @include page-slide-transition(-100%);
+}

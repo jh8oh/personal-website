@@ -7,5 +7,7 @@ body {
 }
 
 #content {
+  position: relative;
   margin-top: 56px;
+  overflow: auto;
 }
