@@ -50,24 +50,28 @@
 }
 
 // Glitch text
-@mixin glitch-text-pseudo-elements($text, $color, $top-offset, $left-offset, $font-weight) {
-  content: $text;
+%glitch-text-pseudo-element {
+  content: attr(glitch-text);
   position: absolute;
-  left: $left-offset;
-  top: $top-offset;
-  font-weight: $font-weight;
   white-space: nowrap;
   clip: rect(0, 900px, 0, 0);
-  color: $color;
   animation: glitch-text-animation 3s infinite alternate-reverse;
 }
 
-@mixin glitch-text($text, $color, $top-offset: 0, $left-offset: 0, $font-weight: normal) {
+@mixin glitch-text($color, $background-color, $top-padding: 0, $left-padding: 0, $offset: 1px) {
   &:before {
-    @include glitch-text-pseudo-elements($text, $color, $top-offset + 2px, $left-offset + 2px, $font-weight);
+    @extend %glitch-text-pseudo-element;
+    top: $top-padding + $offset;
+    left: $left-padding + $offset;
+    color: $color;
+    background-color: $background-color;
   }
 
   &:after {
-    @include glitch-text-pseudo-elements($text, $color, $top-offset - 2px, $left-offset - 2px, $font-weight);
+    @extend %glitch-text-pseudo-element;
+    top: $top-padding - $offset;
+    left: $left-padding - $offset;
+    color: $color;
+    background-color: $background-color;
   }
 }

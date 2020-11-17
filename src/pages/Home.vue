@@ -3,7 +3,7 @@
     <img id="background-image" src="@/assets/img/home/logo-border-base.png" />
     <div id="greeting">
       <span>Hi, I'm</span><br />
-      <span id="name">{{ name }}</span
+      <span id="name" :glitch-text="name">{{ name }}</span
       ><br />
       <span>Software developer, Programmer, Designer</span>
       <br /><br />
