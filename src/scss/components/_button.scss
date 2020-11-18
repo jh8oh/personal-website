@@ -16,14 +16,6 @@ button {
   &:hover {
     color: $color-on-accent;
     background-color: $color-accent;
-    background: linear-gradient(
-      to bottom,
-      $color-accent,
-      $color-accent 50%,
-      $color-accent-dark 50%,
-      $color-accent-dark
-    );
-    background-size: 100% 6px;
-    @include animation(gradient-move 0.3s ease infinite);
+    @include animation(flicker-color-accent 3s linear infinite);
   }
 }
