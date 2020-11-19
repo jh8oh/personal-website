@@ -4,7 +4,7 @@ name: Vue Deployment
 
 on:
   push:
-    branches: [ dev ]
+    branches: [dev]
 
 jobs:
   deploy:
@@ -23,4 +23,10 @@ jobs:
         run: npm install
 
       - name: Run deploy script
-        run: sh ./deploy.sh
+        uses: peaceiris/actions-gh-pages@v3.4.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          cname: ohjiho.dev
+          force_orphan: true
+          publish_branch: master
