@@ -17,7 +17,7 @@ echo 'ohjiho.dev' > CNAME
 echo Deploying...
 git init
 git add -A
-git commit -m 'deploy'
+git commit -m 'Deployment'
 git push -f git@github.com:jh8oh/jh8oh.github.io.git master
 
 cd -
