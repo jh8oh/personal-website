@@ -28,11 +28,17 @@ jobs:
       - name: Building...
         run: npm run build
 
+      - name: Set up Github credentials
+        uses: oleksiyrudenko/gha-git-credentials@v2-latest
+        with:
+          name: 'jh8oh'
+          email: 'ohjiho.ca@domain.com'
+          token: '${{ secrets.GITHUB_TOKEN }}'
+
       - name: Deploying...
         run: |
           cd dist
-          git config user.email "ohjiho.ca@gmail.com"
-          git config user.name "jh8oh"
+          git init
           git add -A
           git commit -m 'Deployment'
           git push -f git@github.com:jh8oh/jh8oh.github.io.git master
