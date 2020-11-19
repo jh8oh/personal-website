@@ -7,7 +7,9 @@ set -e
 cd dist
 echo 'ohjiho.dev' > CNAME
 
-echo Deploying...
+git config user.name --global "jh8oh"
+git config user.email --global "ohjiho.ca@gmail.com"
+
 git init
 git add -A
 git commit -m 'Deployment'
