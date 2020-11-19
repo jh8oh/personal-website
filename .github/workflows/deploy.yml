@@ -22,13 +22,20 @@ jobs:
       - name: Installing...
         run: npm ci
 
-      - name: Set up credentials
-        uses: oleksiyrudenko/gha-git-credentials@v2-latest
-        with:
-          name: 'jh8oh'
-          email: 'ohjiho.ca@gmail.com'
-          token: '${{ secrets.GITHUB_TOKEN }}'
+      - name: Linting...
+        run: npm run lint
+
+      - name: Building...
+        run: npm run build
 
       - name: Deploying...
-        run: sh deploy.sh
+        run: |
+          cd dist
+          git config user.email "ohjiho.ca@gmail.com"
+          git config user.name "jh8oh"
+          git init
+          git add -A
+          git commit -m 'Deployment'
+          git push -f git@github.com:jh8oh/jh8oh.github.io.git master
+
 
