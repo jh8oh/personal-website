@@ -34,8 +34,10 @@ export default class App extends Vue {
 
     if ((toId as number) > (fromId as number)) {
       this.transitionName = "page-slide-left";
-    } else {
+    } else if ((toId as number) < (fromId as number)) {
       this.transitionName = "page-slide-right";
+    } else {
+      this.transitionName = "";
     }
   }
 }
