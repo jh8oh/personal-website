@@ -12,7 +12,7 @@ npm run build
 
 # navigate into the build output directory
 cd dist
-echo 'www.ohjiho.dev' > CNAME
+echo 'ohjiho.dev' > CNAME
 
 echo Deploying...
 git init
