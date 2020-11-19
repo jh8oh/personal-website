@@ -48,30 +48,3 @@
   background-color: $color-accent;
   @include transition(width 0.3s ease);
 }
-
-// Glitch text
-%glitch-text-pseudo-element {
-  content: attr(glitch-text);
-  position: absolute;
-  white-space: nowrap;
-  clip: rect(0, 900px, 0, 0);
-  animation: glitch-text-animation 3s infinite alternate-reverse;
-}
-
-@mixin glitch-text($color, $background-color, $top-padding: 0, $left-padding: 0, $offset: 1px) {
-  &:before {
-    @extend %glitch-text-pseudo-element;
-    top: $top-padding + $offset;
-    left: $left-padding + $offset;
-    color: $color;
-    background-color: $background-color;
-  }
-
-  &:after {
-    @extend %glitch-text-pseudo-element;
-    top: $top-padding - $offset;
-    left: $left-padding - $offset;
-    color: $color;
-    background-color: $background-color;
-  }
-}

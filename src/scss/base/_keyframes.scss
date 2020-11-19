@@ -40,28 +40,26 @@
 }
 
 // Flicker animation
-@include keyframes(flicker-color-accent) {
+@include keyframes(flicker-accent) {
   $outline: rgba($color-accent-dark, 0.4);
 
   0%,
-  19.999%,
+  19%,
   22%,
-  62.999%,
+  62%,
   64%,
-  64.999%,
   70%,
   100% {
     opacity: 1;
-    box-shadow: -1px -1px 0 $outline, 1px -1px 0 $outline, -1px 1px 0 $outline, 1px 1px 0 $outline, 0 -2px 8px, 0 0 2px,
-      0 0 5px $color-accent, 0 0 15px $color-accent-dark, 0 0 2px $color-accent, 0 2px 3px #000;
+    box-shadow: -1px -1px 0 $outline, 1px -1px 0 $outline, -1px 1px 0 $outline, 1px 1px 0 $outline,
+      0 0 5px $color-accent, 0 0 15px $color-accent-dark, 0 0 2px $color-accent;
   }
 
   20%,
-  21.999%,
+  21%,
   63%,
-  63.999%,
   65%,
-  69.999% {
+  69% {
     opacity: 0.4;
     box-shadow: none;
   }
