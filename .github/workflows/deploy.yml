@@ -19,7 +19,7 @@ jobs:
       - name: Checkout branch
         uses: actions/checkout@v2
 
-      - name: Clean install dependencies
+      - name: Installing...
         run: npm ci
 
       - name: Linting...
@@ -28,11 +28,5 @@ jobs:
       - name: Building...
         run: npm run build
 
-      - name: Run deploy script
-        uses: peaceiris/actions-gh-pages@v3.4.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          cname: ohjiho.dev
-          force_orphan: true
-          publish_branch: master
+      - name: Deploying...
+        run: sh ./deploy.sh
