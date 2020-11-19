@@ -22,16 +22,13 @@ jobs:
       - name: Installing...
         run: npm ci
 
-      - name: Linting...
-        run: npm run lint
-
-      - name: Building...
-        run: npm run build
+      - name: Set up credentials
+        uses: oleksiyrudenko/gha-git-credentials@v2-latest
+        with:
+          name: 'jh8oh'
+          email: 'ohjiho.ca@gmail.com'
+          token: '${{ secrets.GITHUB_TOKEN }}'
 
       - name: Deploying...
-        uses: peaceiris/actions-gh-pages@v3.4.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          cname: ohjiho.dev
-          publish_branch: master
+        run: sh deploy.sh
+
