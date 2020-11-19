@@ -28,5 +28,10 @@ jobs:
       - name: Building...
         run: npm run build
 
+      - name: Set up github config
+        run: |
+          git config user.name "jh8oh"
+          git config user.email "ohjiho.ca@gmail.com"
+
       - name: Deploying...
         run: sh ./deploy.sh
