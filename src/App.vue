@@ -27,6 +27,7 @@ export default class App extends Vue {
       ["Portfolio", 2],
       ["Blog", 3],
       ["Contact", 4],
+      ["NotFound", 5],
     ]);
 
     const toId = routeIdMap.get(to);

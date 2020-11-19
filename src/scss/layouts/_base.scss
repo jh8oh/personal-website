@@ -8,6 +8,7 @@ body {
 
 #content {
   position: relative;
+  height: $content-height;
   margin-top: 56px;
   overflow: auto;
 }

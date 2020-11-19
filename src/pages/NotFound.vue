@@ -1,9 +1,9 @@
 <template>
-  <div>
-    <div id="content">
-      <span>404</span>
-      <Button :text="'Back to home'" @clicked="goToHome()" />
-    </div>
+  <div id="not-found">
+    <span id="code" glitch-text="404">404</span><br />
+    <span id="message">Page Not Found</span>
+    <br /><br /><br />
+    <Button :text="'Back to home'" @clicked="goToHome()" />
   </div>
 </template>
 
@@ -15,7 +15,7 @@ import Button from "@/components/Button.vue";
   components: { Button },
 })
 export default class NotFound extends Vue {
-  private goToHome(){
+  private goToHome() {
     this.$router.push("/");
   }
 }

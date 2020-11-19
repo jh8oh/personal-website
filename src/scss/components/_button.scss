@@ -16,6 +16,6 @@ button {
   &:hover {
     color: $color-on-accent;
     background-color: $color-accent;
-    @include animation(flicker-color-accent 3s linear infinite);
+    @include animation(flicker-accent 3s linear infinite);
   }
 }
