@@ -4,7 +4,7 @@
 
 button {
   position: relative;
-  padding: 8px 32px;
+  padding: 8px 36px;
   border: 1px solid $color-accent;
   outline: none;
   color: $color-accent;
@@ -13,9 +13,14 @@ button {
   cursor: pointer;
   transition: 0.2s;
 
-  &:hover {
+  &.fill:hover {
     color: $color-on-accent;
     background-color: $color-accent;
-    @include animation(flicker-accent 3s linear infinite);
+  }
+
+  &.neon:hover {
+    text-shadow: 0 0 1px $color-accent, 0 0 3px $color-accent-dark;
+    box-shadow: 0 0 5px $color-accent, 0 0 10px $color-accent-dark, 0 0 2px $color-accent, inset 0 0 5px $color-accent,
+      inset 0 0 10px $color-accent-dark, inset 0 0 2px $color-accent;
   }
 }
