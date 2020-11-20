@@ -9,12 +9,23 @@
 
   #background-image {
     position: absolute;
-    width: 85%;
+    height: 85vw;
+    width: 85vw;
+    max-height: 750px;
     max-width: 750px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    opacity: 0.2;
+    background: center/cover;
+    opacity: 0.08;
+
+    @include flicker-image(
+      "flicker-home-background-image",
+      url("../assets/img/home/logo-border-accent.png"),
+      url("../assets/img/home/logo-border-base.png"),
+      drop-shadow(0 0 12px $color-accent)
+    );
+    @include animation(flicker-home-background-image 10s linear infinite);
   }
 
   #greeting {
