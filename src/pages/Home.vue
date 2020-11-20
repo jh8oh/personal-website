@@ -7,7 +7,7 @@
       ><br />
       <span>Software developer, Programmer, Designer</span>
       <br /><br />
-      <Button :text="'Get to know me'" @clicked="goToAbout()" />
+      <Button :text="'Get to know me'" :buttonClass="'neon'" @clicked="goToAbout()" />
     </div>
   </div>
 </template>
