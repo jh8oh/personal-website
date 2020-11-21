@@ -2,17 +2,20 @@
 // Contains site-wide layout styles
 // ---------------------------------------------------------------------------
 
+// The outermost div
 body {
   margin: 0;
 }
 
+// Container for what's shown by the router-view
 #content {
   position: relative;
   min-height: $content-height;
-  margin-top: 56px;
+  margin-top: $header-height;
   overflow: auto;
 }
 
+// The default page (what's within the router-page) [excludes home page]
 .page {
   min-height: $content-height;
   margin: 0 24vw;

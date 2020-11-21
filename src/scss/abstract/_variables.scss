@@ -23,4 +23,5 @@ $body-font-family: "Barlow", sans-serif;
 $code-font-family: "Share Tech Mono", monospace;
 
 // Dimesions
-$content-height: calc(100vh - 56px);
+$header-height: 56px;
+$content-height: calc(100vh - $header-height);
