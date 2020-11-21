@@ -2,6 +2,7 @@
 // Contains everything to do with typeface (headline, body, caption, etc.)
 // ---------------------------------------------------------------------------
 
+// General text mixin
 @mixin text(
   $font-family,
   $font-size,
@@ -56,6 +57,9 @@ h2 {
 }
 
 @mixin glitch-text($color, $background-color, $top-padding: 0, $left-padding: 0, $offset: 1px) {
+  position: relative;
+  color: $color;
+
   &:before {
     @extend %glitch-text-pseudo-element;
     top: $top-padding + $offset;

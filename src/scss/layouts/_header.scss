@@ -81,6 +81,7 @@ header {
     @include breakpoint($breakpoint-small) {
       max-height: 0;
       margin-top: 56px;
+      margin-left: 0;
       overflow: hidden;
       @include transition(max-height 0.5s ease-in-out);
     }
@@ -93,6 +94,7 @@ header {
         display: inline-block;
         padding: 12px 8px;
         color: $color-on-base;
+        text-align: center;
         cursor: pointer;
 
         @include breakpoint($breakpoint-small) {
