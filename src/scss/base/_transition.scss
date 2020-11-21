@@ -2,6 +2,16 @@
 // Contains everything to do with transitions
 // ---------------------------------------------------------------------------
 
+// Transition mixin
+@mixin transition($args...) {
+  transition: $args;
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+}
+
+// Vue transitions
 // -enter/-leave: Starting state of entering/leaving object
 // -enter-to/-leave-to: Ending state of entering/leaving object
 // -enter-active/leave-active: Active state of entering/leaving object (Persists throughout the entire phase)
