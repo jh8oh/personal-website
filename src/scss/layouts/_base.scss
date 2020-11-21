@@ -12,3 +12,9 @@ body {
   margin-top: 56px;
   overflow: auto;
 }
+
+.page {
+  min-height: $content-height;
+  margin: 0 20vw;
+  overflow: auto;
+}
