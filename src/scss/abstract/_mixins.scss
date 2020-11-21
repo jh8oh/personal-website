@@ -27,6 +27,14 @@
   -o-animation: $args;
 }
 
+// Centers element using position: absolute
+@mixin absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 // Unordered list with no decoration
 @mixin no-decoration-ul {
   padding: 0;

@@ -8,14 +8,11 @@
   background-color: $color-base;
 
   #background-image {
-    position: absolute;
+    @include absolute-center;
     height: 85vw;
     width: 85vw;
     max-height: 750px;
     max-width: 750px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     background: center/cover;
     opacity: 0.05;
 
@@ -29,12 +26,9 @@
   }
 
   #greeting {
-    position: absolute;
+    @include absolute-center;
     width: 75%;
     max-width: 420px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     text-align: center;
 
     #name {
