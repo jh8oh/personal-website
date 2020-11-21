@@ -2,7 +2,15 @@
 // Contains everything to do with typeface (headline, body, caption, etc.)
 // ---------------------------------------------------------------------------
 
-@mixin text($font-family, $font-size, $font-weight, $line-height, $letter-spacing, $text-transform: none) {
+@mixin text(
+  $font-family,
+  $font-size,
+  $font-weight,
+  $line-height,
+  $letter-spacing,
+  $text-transform: none,
+  $color: $color-on-background
+) {
   margin: 0;
   font-family: $font-family;
   font-size: $font-size; // Fallback to pixels if rem is not supported
@@ -11,6 +19,24 @@
   line-height: $line-height;
   letter-spacing: $letter-spacing;
   text-transform: $text-transform;
+  color: $color;
+}
+
+// Heading
+h1 {
+  @include text($heading-font-family, 48px, 400, 1.2, -0.25px, uppercase);
+  display: inline-block;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: $color-on-background 4px solid;
+}
+
+h2 {
+  @include text($heading-font-family, 40px, 300, 1.2, -0.5px, uppercase);
+  display: inline-block;
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: $color-on-background 2px solid;
 }
 
 // Body

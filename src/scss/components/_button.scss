@@ -6,10 +6,9 @@ button {
   position: relative;
   padding: 8px 36px;
   border: 1px solid $color-accent;
+  @include text(inherit, inherit, inherit, inherit, 2px, uppercase, $color-accent); // Fonts need to be inherited
   outline: none;
-  color: $color-accent;
   background-color: transparent;
-  @include text(inherit, inherit, inherit, inherit, 2px, uppercase); // Fonts need to be inherited
   cursor: pointer;
   transition: 0.2s;
 
