@@ -7,8 +7,6 @@
   text-align: center;
 
   #code {
-    position: relative;
-    color: $color-accent;
     @include text($heading-font-family, 216px, 400, 1.2, -0.5px);
     @include glitch-text($color-accent, $color-background, 28px);
   }
