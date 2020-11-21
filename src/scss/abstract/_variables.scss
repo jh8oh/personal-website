@@ -3,18 +3,18 @@
 // ---------------------------------------------------------------------------
 
 // Colors
-$color-accent: #00ACFF;
-$color-accent-light: #51C5F3;
-$color-accent-dark: #008BCE;
+$color-accent: #00acff;
+$color-accent-light: #51c5f3;
+$color-accent-dark: #008bce;
 $color-on-accent: black;
 
 $color-background: white;
 $color-on-background: #161616;
 $color-on-background-variant: #666;
 
-$color-base:#161616;
+$color-base: #161616;
 $color-on-base: white;
-$color-on-base-variant: #AAA;
+$color-on-base-variant: #aaa;
 
 // Font-families
 @import url("https://fonts.googleapis.com/css?family=Oswald|Barlow|Share+Tech+Mono&display=swap");
@@ -24,4 +24,4 @@ $code-font-family: "Share Tech Mono", monospace;
 
 // Dimesions
 $header-height: 56px;
-$content-height: calc(100vh - $header-height);
+$content-height: calc(100vh - #{$header-height});
