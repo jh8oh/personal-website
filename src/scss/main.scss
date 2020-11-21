@@ -4,11 +4,11 @@
 @import "abstract/functions";
 @import "abstract/mixins";
 
+@import "base/content";
 @import "base/typeface";
 @import "base/keyframes";
 @import "base/transition";
 
-@import "layouts/base";
 @import "layouts/header";
 
 @import "components/button";
