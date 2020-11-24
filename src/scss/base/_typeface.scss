@@ -23,21 +23,22 @@
   color: $color;
 }
 
+@mixin heading($margin-padding-bottom, $border-bottom) {
+  display: inline-block;
+  margin-bottom: $margin-padding-bottom;
+  padding-bottom: $margin-padding-bottom;
+  border-bottom: $border-bottom;
+}
+
 // Heading
 h1 {
   @include text($heading-font-family, 48px, 400, 1.2, -0.25px, uppercase);
-  display: inline-block;
-  margin-bottom: 16px;
-  padding-bottom: 16px;
-  border-bottom: $color-on-background 4px solid;
+  @include heading(16px, $color-on-background 4px solid);
 }
 
 h2 {
   @include text($heading-font-family, 40px, 300, 1.2, -0.5px, uppercase);
-  display: inline-block;
-  margin-bottom: 12px;
-  padding-bottom: 12px;
-  border-bottom: $color-on-background 2px solid;
+  @include heading(12px, $color-on-background 2px solid);
 }
 
 // Body

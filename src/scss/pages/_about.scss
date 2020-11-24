@@ -1,0 +1,19 @@
+// ---------------------------------------------------------------------------
+// This file contains styles that are specific to the "About Me" page.
+// ---------------------------------------------------------------------------
+
+#about {
+  h1 {
+    margin-top: 76px;
+  }
+
+  #intro {
+    display: flex;
+    align-items: center;
+
+    img {
+	  max-width: 360px;
+	  margin-left: 52px;
+    }
+  }
+}
