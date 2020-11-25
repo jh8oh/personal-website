@@ -30,15 +30,24 @@
   border-bottom: $border-bottom;
 }
 
+
+
 // Heading
 h1 {
-  @include text($heading-font-family, 48px, 400, 1.2, -0.25px, uppercase);
+  @include text($heading-font-family, 48px, 400, 1.2, -0.5px, uppercase);
   @include heading(16px, $color-on-background 4px solid);
 }
 
 h2 {
-  @include text($heading-font-family, 40px, 300, 1.2, -0.5px, uppercase);
-  @include heading(12px, $color-on-background 2px solid);
+  @include text($heading-font-family, 40px, 400, 1.2, -1px, uppercase);
+  @include heading(8px, $color-on-background 3px solid);
+}
+
+h3 {
+}
+
+h4{
+
 }
 
 // Body
