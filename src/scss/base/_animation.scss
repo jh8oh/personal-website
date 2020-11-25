@@ -2,15 +2,6 @@
 // Contains general keyframes (for animation)
 // ---------------------------------------------------------------------------
 
-// Animation mixin
-@mixin animation($args) {
-  animation: $args;
-  -webkit-animation: $args;
-  -moz-animation: $args;
-  -ms-animation: $args;
-  -o-animation: $args;
-}
-
 // Mixin for keyframes
 @mixin keyframes($keyframes-name) {
   @keyframes #{$keyframes-name} {
