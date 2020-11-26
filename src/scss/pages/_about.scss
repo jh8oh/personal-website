@@ -3,17 +3,118 @@
 // ---------------------------------------------------------------------------
 
 #about {
-  h1 {
-    margin-top: 76px;
+  &-content {
+    margin: 120px 24vw;
+
+    @include breakpoint(1200px) {
+      margin: 60px 14vw;
+    }
+
+    @include breakpoint(600px) {
+      margin: 60px 4vw;
+    }
   }
 
   #intro {
+    $breakpoint: 1200px;
     display: flex;
+    flex-direction: row-reverse;
     align-items: center;
 
+    @include breakpoint($breakpoint) {
+      flex-direction: column;
+    }
+
     img {
-	  max-width: 360px;
-	  margin-left: 52px;
+      width: 40%;
+      max-width: 320px;
+      margin-left: 52px;
+
+      @include breakpoint($breakpoint) {
+        width: 80%;
+        margin-left: 0;
+        margin-bottom: 16px;
+      }
+    }
+  }
+
+  #experience {
+    $breakpoint: 840px;
+
+    margin-top: 100px;
+
+    &-content {
+      display: flex;
+
+      @include breakpoint($breakpoint) {
+        display: block;
+      }
+    }
+
+    #timeline {
+      @include no-decoration-ul;
+      min-width: 200px;
+      margin: 0 12px;
+      border-left: 1px solid $color-on-background;
+
+      li {
+        position: relative;
+        margin: 12px;
+        cursor: pointer;
+        @include transition(margin-left 0.2s ease-in-out);
+
+        &:before {
+          content: "";
+          position: absolute;
+          height: 6px;
+          width: 6px;
+          top: 50%;
+          left: -16px;
+          transform: translateY(-50%);
+          background-color: $color-background;
+          border: 1px solid $color-on-background;
+          border-radius: 50%;
+          @include transition(left 0.2s ease-in-out);
+        }
+
+        &.active {
+          margin-left: 16px;
+          color: $color-accent;
+
+          &:before {
+            border-color: $color-accent;
+            left: -20px;
+          }
+        }
+      }
+
+      // When screen is smaller than breakpoint (750px), then timeline moves to the top
+      @include breakpoint($breakpoint) {
+        @include horizontal-selector;
+        border-left: 0;
+
+        li {
+          &:before {
+            display: none;
+          }
+
+          &.active {
+            margin-left: 0;
+          }
+        }
+      }
+    }
+
+    #details {
+      padding: 4px 0;
+
+      #dates {
+        font-size: 16px;
+      }
+
+      p {
+        margin-top: 1rem;
+      }
     }
   }
 }

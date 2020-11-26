@@ -108,7 +108,7 @@ header {
         }
 
         &:after {
-          @include shutter-border-vertical(2px, 54px);
+          @include shutter-border-horizontal(2px, 54px);
         }
 
         &:hover {

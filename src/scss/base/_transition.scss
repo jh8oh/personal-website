@@ -45,3 +45,37 @@
 .page-slide-rtl {
   @include page-slide-transition(-100%);
 }
+
+// Sliding in/out while fading in/out
+@mixin slide-fade($translateX, $translateY) {
+  &-enter-active,
+  &-leave-active {
+    @include transition(opacity 0.2s, transform 0.2s);
+  }
+
+  &-enter {
+    opacity: 0;
+    transform: translate($translateX, $translateY);
+  }
+
+  &-leave-to {
+    opacity: 0;
+    transform: translate(-$translateX, -$translateY);
+  }
+}
+
+.slide-fade-left {
+  @include slide-fade(20px, 0px);
+}
+
+.slide-fade-right {
+  @include slide-fade(-20px, 0px);
+}
+
+.slide-fade-up {
+  @include slide-fade(0px, 20px);
+}
+
+.slide-fade-down {
+  @include slide-fade(0px, -20px);
+}
