@@ -28,7 +28,7 @@
               </li>
             </h4>
           </ul>
-          <transition name="shrink-grow-with-border" mode="out-in">
+          <transition :name="experienceTransitionName" mode="out-in">
             <ExperienceCard :key="activeExperience.id" :activeExperience="activeExperience" />
           </transition>
         </div>
@@ -38,7 +38,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
+import { Component, Watch, Vue } from "vue-property-decorator";
 import ExperienceCard from "@/components/about/ExperienceCard.vue";
 import experiences from "@/assets/content/about/experience.ts";
 
@@ -46,7 +46,17 @@ import experiences from "@/assets/content/about/experience.ts";
   components: { ExperienceCard },
 })
 export default class About extends Vue {
-  experiences = experiences;
-  activeExperience = experiences[0];
+  private experiences = experiences;
+  private activeExperience = experiences[0];
+  private experienceTransitionName = "";
+
+  @Watch("activeExperience.id", { immediate: true, deep: true })
+  onExperienceChange(from: number, to: number) {
+    if (to > from) {
+      this.experienceTransitionName = "slide-fade-down";
+    } else {
+      this.experienceTransitionName = "slide-fade-up";
+    }
+  }
 }
 </script>

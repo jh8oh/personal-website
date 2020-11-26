@@ -46,62 +46,28 @@
   @include page-slide-transition(-100%);
 }
 
-// Shrink old object and grow new object with shutter borders
-.shrink-grow-with-border {
-  $transition-time: 0.4s;
-
-  @mixin pseudo-elements($top) {
-    @extend %neon-box-shadow;
-    @include shutter-border-horizontal(1px, $top, 100%);
-    @include transition(max-width $transition-time ease-in-out);
-  }
-
-  @mixin shrink-grow-transition(
-    $start-height: 0,
-    $end-height: 0,
-    $start-padding: 0,
-    $end-padding: 0,
-    $pseudo-start-width: 0,
-    $pseudo-end-width: 0
-  ) {
-    max-height: $start-height;
-    padding: $start-padding;
-
-    &:before,
-    &:after {
-      max-width: $pseudo-start-width;
-    }
-
-    &-to {
-      max-height: $end-height;
-      padding: $end-padding;
-
-      &:before,
-      &:after {
-        max-width: $pseudo-end-width;
-      }
-    }
-
-    &-active {
-      position: relative;
-      overflow: hidden;
-      @include transition(all $transition-time ease-in-out);
-
-      &:before {
-        @include pseudo-elements(2px);
-      }
-
-      &:after {
-        @include pseudo-elements(calc(100% - 2px));
-      }
-    }
+// Sliding in/out while fading in/out
+@mixin slide-fade($translateX, $translateY) {
+  &-enter-active,
+  &-leave-active {
+    @include transition(opacity 0.2s, transform 0.2s);
   }
 
   &-enter {
-    @include shrink-grow-transition($end-height: 100vh, $end-padding: 4px 0, $pseudo-start-width: 100vw);
+    opacity: 0;
+    transform: translate($translateX, $translateY);
   }
 
-  &-leave {
-    @include shrink-grow-transition($start-height: 100vh, $start-padding: 4px 0, $pseudo-end-width: 100vw);
+  &-leave-to {
+    opacity: 0;
+    transform: translate(-$translateX, -$translateY);
   }
+}
+
+.slide-fade-up {
+  @include slide-fade(0px, 20px);
+}
+
+.slide-fade-down {
+  @include slide-fade(0px, -20px);
 }
