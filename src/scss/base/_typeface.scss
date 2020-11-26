@@ -14,7 +14,6 @@
 ) {
   margin: 0;
   font-family: $font-family;
-  font-size: $font-size; // Fallback to pixels if rem is not supported
   font-size: calculateRem($font-size);
   font-weight: $font-weight;
   line-height: $line-height;
