@@ -71,12 +71,12 @@
       }
 
       .active {
-        margin-left: 24px;
+        margin-left: 16px;
         color: $color-accent;
 
         &:before {
           border-color: $color-accent;
-          left: -28px;
+          left: -20px;
         }
       }
     }
