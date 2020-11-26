@@ -1,14 +1,7 @@
 // ---------------------------------------------------------------------------
-// Contains site-wide layout styles
+// Contains basic styles for the base elements
 // ---------------------------------------------------------------------------
 
-body {
+ul {
   margin: 0;
-}
-
-#content {
-  position: relative;
-  min-height: $content-height;
-  margin-top: 56px;
-  overflow: auto;
 }

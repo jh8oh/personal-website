@@ -2,12 +2,13 @@
 // Contains everything to do with transitions
 // ---------------------------------------------------------------------------
 
+// Vue transitions
 // -enter/-leave: Starting state of entering/leaving object
 // -enter-to/-leave-to: Ending state of entering/leaving object
 // -enter-active/leave-active: Active state of entering/leaving object (Persists throughout the entire phase)
 
 // Page transitions (Page slides in on top of previous page)
-%page-transition {
+%page-transition-active {
   position: fixed;
   min-height: $content-height;
   width: 100%;
@@ -24,21 +25,57 @@
     }
 
     &-active {
-      @extend %page-transition;
+      @extend %page-transition-active;
       @include transition(transform 0.4s ease-in-out);
     }
   }
 
   &-leave-active {
-    @extend %page-transition;
+    @extend %page-transition-active;
     opacity: 0;
   }
 }
 
-.page-slide-left {
+// Page slides from right-to-left
+.page-slide-ltr {
   @include page-slide-transition(100%);
 }
 
-.page-slide-right {
+// Page slides from left-to-right
+.page-slide-rtl {
   @include page-slide-transition(-100%);
+}
+
+// Sliding in/out while fading in/out
+@mixin slide-fade($translateX, $translateY) {
+  &-enter-active,
+  &-leave-active {
+    @include transition(opacity 0.2s, transform 0.2s);
+  }
+
+  &-enter {
+    opacity: 0;
+    transform: translate($translateX, $translateY);
+  }
+
+  &-leave-to {
+    opacity: 0;
+    transform: translate(-$translateX, -$translateY);
+  }
+}
+
+.slide-fade-left {
+  @include slide-fade(20px, 0px);
+}
+
+.slide-fade-right {
+  @include slide-fade(-20px, 0px);
+}
+
+.slide-fade-up {
+  @include slide-fade(0px, 20px);
+}
+
+.slide-fade-down {
+  @include slide-fade(0px, -20px);
 }

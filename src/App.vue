@@ -34,9 +34,9 @@ export default class App extends Vue {
     const fromId = routeIdMap.get(from);
 
     if ((toId as number) > (fromId as number)) {
-      this.transitionName = "page-slide-left";
+      this.transitionName = "page-slide-ltr";
     } else if ((toId as number) < (fromId as number)) {
-      this.transitionName = "page-slide-right";
+      this.transitionName = "page-slide-rtl";
     } else {
       this.transitionName = "";
     }
