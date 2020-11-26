@@ -64,6 +64,14 @@
   }
 }
 
+.slide-fade-left {
+  @include slide-fade(20px, 0px);
+}
+
+.slide-fade-right {
+  @include slide-fade(-20px, 0px);
+}
+
 .slide-fade-up {
   @include slide-fade(0px, 20px);
 }
