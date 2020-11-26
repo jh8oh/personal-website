@@ -4,7 +4,7 @@ name: Vue Deployment
 
 on:
   push:
-    branches: [dev]
+    branches: [deploy]
 
 jobs:
   deploy:
