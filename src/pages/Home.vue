@@ -1,6 +1,6 @@
 <template>
   <div id="home">
-    <div id="background-image"/>
+    <div id="background-image" class="absolute-center"/>
     <div id="greeting">
       <span>Hi, I'm</span><br />
       <span id="name" :glitch-text="name">{{ name }}</span><br />

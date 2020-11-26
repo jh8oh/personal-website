@@ -51,8 +51,7 @@
       }
     }
 
-    #timeline {
-      @include no-decoration-ul;
+    #timeline:not(.horizontal-selector) {
       min-width: 200px;
       margin: 0 12px;
       border-left: 1px solid $color-on-background;
@@ -84,22 +83,6 @@
           &:before {
             border-color: $color-accent;
             left: -20px;
-          }
-        }
-      }
-
-      // When screen is smaller than breakpoint (750px), then timeline moves to the top
-      @include breakpoint($breakpoint) {
-        @include horizontal-selector;
-        border-left: 0;
-
-        li {
-          &:before {
-            display: none;
-          }
-
-          &.active {
-            margin-left: 0;
           }
         }
       }

@@ -3,7 +3,7 @@
 // ---------------------------------------------------------------------------
 
 #not-found {
-  @include absolute-center;
+  @extend %absolute-center;
   text-align: center;
 
   #code {
