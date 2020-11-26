@@ -5,13 +5,13 @@
 @import "abstract/mixins";
 @import "abstract/placeholders";
 
-@import "base/container";
 @import "base/elements";
 @import "base/class";
 @import "base/typeface";
 @import "base/animation";
 @import "base/transition";
 
+@import "layouts/base";
 @import "layouts/header";
 
 @import "components/button";
