@@ -11,20 +11,19 @@ ul.no-decoration {
 
 // Horizontal selector of items
 ul.horizontal-selector {
-  padding: 0;
-  margin: 0 0 16px;
+  @extend ul, .no-decoration;
+  margin-bottom: 16px;
   overflow: auto;
   white-space: nowrap;
-  list-style-type: none;
 
   li {
     display: inline-block;
     padding: 4px 6px;
-    margin: 8px 0 0;
+    margin-top: 8px;
     vertical-align: bottom;
     border-bottom: 1px solid $color-on-background;
     cursor: pointer;
-    @include transition(padding-bottom 0.2s ease-out, margin-top 0.2s ease-out);
+    @include transition(all 0.2s ease-in-out);
 
     &.active {
       padding-bottom: 12px;
