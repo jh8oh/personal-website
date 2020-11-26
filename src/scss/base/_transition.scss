@@ -48,7 +48,7 @@
 
 // Shrink old object and grow new object with shutter borders
 .shrink-grow-with-border {
-  $transition-time: 1s;
+  $transition-time: 0.2s;
 
   @mixin pseudo-elements($top) {
     @extend %neon-box-shadow;

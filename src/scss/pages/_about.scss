@@ -5,15 +5,32 @@
 #about {
   &-content {
     margin: 120px 24vw;
+
+    @include breakpoint(600px){
+      margin: 60px 5vw;
+    }
   }
 
   #intro {
+    $breakpoint: 1200px;
     display: flex;
+    flex-direction: row-reverse;
     align-items: center;
 
+    @include breakpoint($breakpoint) {
+      flex-direction: column;
+    }
+
     img {
+      width: 40%;
       max-width: 320px;
       margin-left: 52px;
+
+      @include breakpoint($breakpoint){
+        width: 80%;
+        margin-left: 0;
+        margin-bottom: 16px;
+      }
     }
   }
 
