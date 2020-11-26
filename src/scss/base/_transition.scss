@@ -26,7 +26,7 @@
 
     &-active {
       @extend %page-transition-active;
-      @include transition(transform 0.4s ease-in-out);
+      @include transition(transform 5s ease-in-out);
     }
   }
 
@@ -44,4 +44,64 @@
 // Page slides from left-to-right
 .page-slide-rtl {
   @include page-slide-transition(-100%);
+}
+
+// Shrink old object and grow new object with shutter borders
+.shrink-grow-with-border {
+  $transition-time: 1s;
+
+  @mixin pseudo-elements($top) {
+    @extend %neon-box-shadow;
+    @include shutter-border-horizontal(1px, $top, 100%);
+    @include transition(max-width $transition-time ease-in-out);
+  }
+
+  @mixin shrink-grow-transition(
+    $start-height: 0,
+    $end-height: 0,
+    $start-padding: 0,
+    $end-padding: 0,
+    $pseudo-start-width: 0,
+    $pseudo-end-width: 0
+  ) {
+    max-height: $start-height;
+    padding: $start-padding;
+
+    &:before,
+    &:after {
+      max-width: $pseudo-start-width;
+    }
+
+    &-to {
+      max-height: $end-height;
+      padding: $end-padding;
+
+      &:before,
+      &:after {
+        max-width: $pseudo-end-width;
+      }
+    }
+
+    &-active {
+      position: relative;
+      overflow: hidden;
+      @include transition(all $transition-time ease-in-out);
+
+      &:before {
+        @include pseudo-elements(2px);
+      }
+
+      &:after {
+        @include pseudo-elements(calc(100% - 2px));
+      }
+    }
+  }
+
+  &-enter {
+    @include shrink-grow-transition($end-height: 100vh, $end-padding: 4px 0, $pseudo-start-width: 100vw);
+  }
+
+  &-leave {
+    @include shrink-grow-transition($start-height: 100vh, $start-padding: 4px 0, $pseudo-end-width: 100vw);
+  }
 }

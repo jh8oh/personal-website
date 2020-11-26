@@ -19,8 +19,7 @@ button {
 
   // Button glows when hovered
   &.neon:hover {
-    text-shadow: 0 0 1px $color-accent, 0 0 3px $color-accent-dark;
-    box-shadow: 0 0 5px $color-accent, 0 0 10px $color-accent-dark, 0 0 2px $color-accent, inset 0 0 5px $color-accent,
-      inset 0 0 10px $color-accent-dark, inset 0 0 2px $color-accent;
+    @extend %neon-text;
+    @extend %neon-box-shadow;
   }
 }

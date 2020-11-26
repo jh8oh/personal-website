@@ -23,36 +23,57 @@
   color: $color;
 }
 
-@mixin heading($margin-padding-bottom, $border-bottom) {
+@mixin heading($padding-bottom, $margin-bottom, $border-bottom) {
   display: inline-block;
-  margin-bottom: $margin-padding-bottom;
-  padding-bottom: $margin-padding-bottom;
+  padding-bottom: $padding-bottom;
+  margin-bottom: $margin-bottom;
   border-bottom: $border-bottom;
 }
-
-
 
 // Heading
 h1 {
   @include text($heading-font-family, 48px, 400, 1.2, -0.5px, uppercase);
-  @include heading(16px, $color-on-background 4px solid);
+  @include heading(16px, 28px, $color-on-background 4px solid);
 }
 
 h2 {
-  @include text($heading-font-family, 40px, 400, 1.2, -1px, uppercase);
-  @include heading(8px, $color-on-background 3px solid);
+  @include text($heading-font-family, 36px, 400, 1.2, -1px, uppercase);
+  @include heading(12px, 24px, $color-on-background 3px solid);
 }
 
 h3 {
+  @include text($heading-font-family, 26px, 400, 1.2, 0);
 }
 
-h4{
-
+h4 {
+  @include text($heading-font-family, 22px, 400, 1.2, 0)
 }
 
 // Body
 #app {
   @include text($body-font-family, 18px, 400, 1.8, 0.5px);
+}
+
+p {
+  margin: 0;
+}
+
+// Links
+a {
+  text-decoration: none;
+  @include transition(text-shadow 0.2s);
+
+  &:link {
+    color: $color-accent;
+  }
+
+  &:visited {
+    color: $color-accent-dark;
+  }
+
+  &:hover {
+    @extend %neon-text;
+  }
 }
 
 // Display
@@ -85,4 +106,9 @@ h4{
     color: $color;
     background-color: $background-color;
   }
+}
+
+// Neon text
+%neon-text {
+  text-shadow: 0 0 2px $color-accent, 0 0 1px $color-accent-dark;
 }

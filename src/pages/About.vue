@@ -14,17 +14,22 @@
     </section>
     <section id="experience">
       <h2>Experience</h2>
-      <ul>
-        <li v-for="experience in experiences" :key="experience.id" @click="activeExperience = experience">
-          {{ experience.employer }}
-        </li>
-      </ul>
-      <div>
-        <h3>
-          <a :href="activeExperience.website">{{ activeExperience.employer }}</a> - {{ activeExperience.position }}
-        </h3>
-        <span>{{ activeExperience.dates }}</span>
-        <p v-html="activeExperience.description" />
+      <div id="experience-content">
+        <ul id="timeline">
+          <h4>
+            <li
+              v-for="experience in experiences"
+              :key="experience.id"
+              @click="activeExperience = experience"
+              :class="{ active: activeExperience === experience }"
+            >
+              {{ experience.employer }}
+            </li>
+          </h4>
+        </ul>
+        <transition name="shrink-grow-with-border" mode="out-in">
+          <ExperienceCard :key="activeExperience.id" :activeExperience="activeExperience" />
+        </transition>
       </div>
     </section>
   </div>
@@ -32,9 +37,12 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
+import ExperienceCard from "@/components/about/ExperienceCard.vue";
 import experiences from "@/assets/content/about/experience.ts";
 
-@Component
+@Component({
+  components: { ExperienceCard },
+})
 export default class About extends Vue {
   experiences = experiences;
   activeExperience = experiences[0];
