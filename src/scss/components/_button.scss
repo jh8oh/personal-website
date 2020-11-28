@@ -11,14 +11,8 @@ button {
   cursor: pointer;
   transition: 0.2s;
 
-  // Fills in button when hovered
-  &.fill:hover {
-    color: $color-on-accent;
-    background-color: $color-accent;
-  }
-
   // Button glows when hovered
-  &.neon:hover {
+  &:hover {
     @extend %neon-text;
     @extend %neon-box-shadow;
   }
