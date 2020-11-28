@@ -29,6 +29,7 @@ header {
   #logo {
     display: block;
     height: 42px;
+    cursor: pointer;
 
     @include breakpoint($breakpoint-small) {
       float: left;

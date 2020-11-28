@@ -15,17 +15,15 @@ p {
 // Links
 a {
   text-decoration: none;
-  @include transition(text-shadow 0.2s);
+  background: linear-gradient($color-primary, $color-primary) no-repeat 0% 100%/0 1px;
+  @include transition(background-size 0.2s ease-in-out);
 
-  &:link {
+  &:link,
+  &:visited {
     color: $color-primary;
   }
 
-  &:visited {
-    color: $color-primary-dark;
-  }
-
   &:hover {
-    @include neon-text($color-primary, $color-primary-dark);
+    background-size: 100% 1px;
   }
 }
