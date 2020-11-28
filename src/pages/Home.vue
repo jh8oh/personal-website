@@ -6,7 +6,7 @@
       <span id="name" :glitch-text="name">{{ name }}</span><br />
       <span>Software Developer, Programmer, Designer</span>
       <br /><br />
-      <Button :text="'Get to know me'" @clicked="goToAbout()" />
+      <Button :text="'Get to know me'" :color="'secondary'" @clicked="goToAbout()" />
     </div>
   </div>
 </template>

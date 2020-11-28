@@ -7,13 +7,25 @@ button {
   border: 1px solid $color-secondary;
   outline: none;
   background-color: transparent;
-  @include text(inherit, inherit, inherit, inherit, 2px, uppercase, $color-secondary); // Fonts need to be inherited
   cursor: pointer;
   transition: 0.2s;
 
   // Button glows when hovered
-  &:hover {
-    @include neon-text($color-secondary, $color-secondary-dark);
-    @include neon-box-shadow($color-secondary, $color-secondary-dark);
+  @mixin button-color($color, $color-dark){
+    border-color: $color;
+    @include text(inherit, inherit, inherit, inherit, 2px, uppercase, $color); // Fonts need to be inherited
+
+    &:hover {
+      @include neon-text($color, $color-dark);
+      @include neon-box-shadow($color, $color-dark);
+    }
+  }
+
+  &.primary {
+    @include button-color($color-primary, $color-primary-dark);
+  }
+
+  &.secondary {
+    @include button-color($color-secondary, $color-secondary-dark);
   }
 }
