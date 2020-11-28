@@ -3,8 +3,10 @@
 // ---------------------------------------------------------------------------
 
 #not-found {
-  @include absolute-center;
-  text-align: center;
+  &-content {
+    @extend %absolute-center;
+    text-align: center;
+  }
 
   #code {
     @include text($heading-font-family, 216px, 400, 1.2, -0.5px);

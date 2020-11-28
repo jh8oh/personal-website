@@ -8,25 +8,24 @@
   background-color: $color-base;
 
   #background-image {
-    @include absolute-center;
-    height: 85vw;
-    width: 85vw;
+    @extend %absolute-center;
+    @include size(85vw);
     max-height: 750px;
     max-width: 750px;
     background: center/cover;
-    opacity: 0.05;
+    opacity: 0.1;
 
     @include flicker-image(
       "flicker-home-background-image",
       url("../assets/img/home/logo-border-accent.png"),
       url("../assets/img/home/logo-border-base.png"),
-      drop-shadow(0 0 12px $color-accent)
+      drop-shadow(0 0 6px $color-accent) drop-shadow(0 0 12px $color-accent-dark)
     );
     @include animation(flicker-home-background-image 10s linear infinite);
   }
 
   #greeting {
-    @include absolute-center;
+    @extend %absolute-center;
     width: 75%;
     max-width: 420px;
     text-align: center;

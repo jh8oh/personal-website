@@ -14,7 +14,7 @@
 ) {
   margin: 0;
   font-family: $font-family;
-  font-size: $font-size; // Fallback to pixels if rem is not supported
+  font-size: $font-size;    // Fallback if rem is not supported
   font-size: calculateRem($font-size);
   font-weight: $font-weight;
   line-height: $line-height;
@@ -52,28 +52,6 @@ h4 {
 // Body
 #app {
   @include text($body-font-family, 18px, 400, 1.8, 0.5px);
-}
-
-p {
-  margin: 0;
-}
-
-// Links
-a {
-  text-decoration: none;
-  @include transition(text-shadow 0.2s);
-
-  &:link {
-    color: $color-accent;
-  }
-
-  &:visited {
-    color: $color-accent-dark;
-  }
-
-  &:hover {
-    @extend %neon-text;
-  }
 }
 
 // Display
