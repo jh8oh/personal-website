@@ -108,11 +108,11 @@ header {
         }
 
         &:hover {
-          color: $color-accent;
+          color: $color-primary;
         }
 
         &.router-link-active {
-          color: $color-accent;
+          color: $color-primary;
 
           &:after {
             width: 100%;

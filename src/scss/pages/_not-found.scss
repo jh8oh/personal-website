@@ -12,6 +12,7 @@
 
   #code {
     @include text($heading-font-family, 216px, 400, 1.2, -0.5px);
-    @include glitch-text($color-accent, $color-base, 30px);
+    @include glitch-text($color-secondary, $color-base, 28px);
   }
+
 }
