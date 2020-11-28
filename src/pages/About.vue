@@ -3,7 +3,7 @@
     <div id="about-content">
       <h1>About Me</h1>
       <section id="intro">
-        <img src="../assets/img/about/profile-pic.png" alt="Profile Picture" />
+        <img src="../assets/img/about/profile-pic.jpg" alt="Profile Picture" />
         <p>
           Hello! I'm Ji Ho Oh (오지호) but I also go by Jay. I'm a 3rd-year undergrad at the University of Waterloo.<br /><br />
           I like creating user-facing software, UI/UX and all that, mostly because I want the things I make to look
