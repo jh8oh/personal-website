@@ -3,6 +3,8 @@
 // ---------------------------------------------------------------------------
 
 #not-found {
+  background-color: $color-base;
+
   &-content {
     @extend %absolute-center;
     text-align: center;
@@ -10,10 +12,6 @@
 
   #code {
     @include text($heading-font-family, 216px, 400, 1.2, -0.5px);
-    @include glitch-text($color-accent, $color-background, 28px);
-  }
-
-  #message {
-    @include text($body-font-family, 36px, 400, 1.2, -1px, capitalize);
+    @include glitch-text($color-accent, $color-base, 30px);
   }
 }
