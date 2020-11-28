@@ -17,6 +17,6 @@
 
 // Creates a neon box-shadow around the element
 %neon-box-shadow {
-  box-shadow: 0 0 5px $color-accent, 0 0 10px $color-accent-dark, 0 0 2px $color-accent, inset 0 0 5px $color-accent,
-    inset 0 0 10px $color-accent-dark, inset 0 0 2px $color-accent;
+  box-shadow: 0 0 5px $color-primary, 0 0 10px $color-primary-dark, 0 0 2px $color-primary, inset 0 0 5px $color-primary,
+    inset 0 0 10px $color-primary-dark, inset 0 0 2px $color-primary;
 }

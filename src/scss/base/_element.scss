@@ -18,11 +18,11 @@ a {
   @include transition(text-shadow 0.2s);
 
   &:link {
-    color: $color-accent;
+    color: $color-primary;
   }
 
   &:visited {
-    color: $color-accent-dark;
+    color: $color-primary-dark;
   }
 
   &:hover {

@@ -4,10 +4,10 @@
 
 button {
   padding: 8px 36px;
-  border: 1px solid $color-accent;
+  border: 1px solid $color-primary;
   outline: none;
   background-color: transparent;
-  @include text(inherit, inherit, inherit, inherit, 2px, uppercase, $color-accent); // Fonts need to be inherited
+  @include text(inherit, inherit, inherit, inherit, 2px, uppercase, $color-primary); // Fonts need to be inherited
   cursor: pointer;
   transition: 0.2s;
 

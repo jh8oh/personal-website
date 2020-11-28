@@ -77,10 +77,10 @@
 
         &.active {
           margin-left: 16px;
-          color: $color-accent;
+          color: $color-primary;
 
           &:before {
-            border-color: $color-accent;
+            border-color: $color-primary;
             left: -20px;
           }
         }
