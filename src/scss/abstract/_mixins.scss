@@ -27,6 +27,12 @@
   -o-animation: $args;
 }
 
+// Same height and width mixin
+@mixin size($size) {
+  height: $size;
+  width: $size;
+}
+
 // Pseudo-border(-top/-bottom) that expands and contracts from the center
 @mixin shutter-border-horizontal($height, $top, $width: 0) {
   content: "";

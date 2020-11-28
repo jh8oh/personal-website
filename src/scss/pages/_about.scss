@@ -65,8 +65,7 @@
         &:before {
           content: "";
           position: absolute;
-          height: 6px;
-          width: 6px;
+          @include size(6px);
           top: 50%;
           left: -16px;
           transform: translateY(-50%);

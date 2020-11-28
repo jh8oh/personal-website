@@ -9,8 +9,7 @@
 
   #background-image {
     @extend %absolute-center;
-    height: 85vw;
-    width: 85vw;
+    @include size(85vw);
     max-height: 750px;
     max-width: 750px;
     background: center/cover;
