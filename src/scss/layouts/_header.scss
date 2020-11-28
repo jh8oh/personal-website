@@ -29,6 +29,7 @@ header {
   #logo {
     display: block;
     height: 42px;
+    cursor: pointer;
 
     @include breakpoint($breakpoint-small) {
       float: left;
@@ -108,11 +109,11 @@ header {
         }
 
         &:hover {
-          color: $color-accent;
+          color: $color-primary;
         }
 
         &.router-link-active {
-          color: $color-accent;
+          color: $color-primary;
 
           &:after {
             width: 100%;
