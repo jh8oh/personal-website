@@ -19,7 +19,7 @@
       "flicker-home-background-image",
       url("../assets/img/home/logo-border-accent.png"),
       url("../assets/img/home/logo-border-base.png"),
-      drop-shadow(0 0 12px $color-accent)
+      drop-shadow(0 0 6px $color-accent) drop-shadow(0 0 12px $color-accent-dark)
     );
     @include animation(flicker-home-background-image 10s linear infinite);
   }
