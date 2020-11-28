@@ -4,16 +4,16 @@
 
 button {
   padding: 8px 36px;
-  border: 1px solid $color-primary;
+  border: 1px solid $color-secondary;
   outline: none;
   background-color: transparent;
-  @include text(inherit, inherit, inherit, inherit, 2px, uppercase, $color-primary); // Fonts need to be inherited
+  @include text(inherit, inherit, inherit, inherit, 2px, uppercase, $color-secondary); // Fonts need to be inherited
   cursor: pointer;
   transition: 0.2s;
 
   // Button glows when hovered
   &:hover {
-    @extend %neon-text;
-    @extend %neon-box-shadow;
+    @include neon-text($color-secondary, $color-secondary-dark);
+    @include neon-box-shadow($color-secondary, $color-secondary-dark);
   }
 }

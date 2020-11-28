@@ -26,6 +26,6 @@ a {
   }
 
   &:hover {
-    @extend %neon-text;
+    @include neon-text($color-primary, $color-primary-dark);
   }
 }
