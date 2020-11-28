@@ -10,6 +10,11 @@
   transform: translate(-50%, -50%);
 }
 
+%no-whitespace {
+  padding: 0;
+  margin: 0;
+}
+
 // Creates a neon box-shadow around the element
 %neon-box-shadow {
   box-shadow: 0 0 5px $color-accent, 0 0 10px $color-accent-dark, 0 0 2px $color-accent, inset 0 0 5px $color-accent,

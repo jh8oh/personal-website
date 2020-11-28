@@ -4,12 +4,12 @@
 
 // Unordered lists
 ul {
-  margin: 0;
+  @extend %no-whitespace;
 }
 
 // Paragraphs
 p {
-  margin: 0;
+  @extend %no-whitespace;
 }
 
 // Links

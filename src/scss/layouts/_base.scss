@@ -4,7 +4,7 @@
 
 // Outermost container
 body {
-  margin: 0;
+  @extend %no-whitespace;
 }
 
 // Container for what's shown by the router-view

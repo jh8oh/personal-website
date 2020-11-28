@@ -4,8 +4,7 @@
 
 // Unordered list with no decoration
 ul.no-decoration {
-  padding: 0;
-  margin: 0;
+  @extend %no-whitespace;
   list-style-type: none;
 }
 
