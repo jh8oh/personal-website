@@ -13,7 +13,7 @@
     max-height: 750px;
     max-width: 750px;
     background: center/cover;
-    opacity: 0.05;
+    opacity: 0.1;
 
     @include flicker-image(
       "flicker-home-background-image",
