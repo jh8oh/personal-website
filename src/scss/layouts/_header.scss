@@ -39,12 +39,11 @@ header {
   #menu-icon {
     display: none;
     float: right;
-    height: 36px;
-    width: 36px;
+    @include size(36px);
     margin: 10px 2vw 10px 0;
     background: url("../assets/ico/header/menu-white.png") center;
     background-size: contain;
-    @include transition(background-image 0.5s ease, transform 0.5s ease);
+    @include transition(all 0.5s ease-in-out);
 
     @include breakpoint($breakpoint-small) {
       display: block;
@@ -62,8 +61,7 @@ header {
     &:checked {
       // When menu is clicked, change icon to close
       & + #menu-icon {
-        background: url("../assets/ico/header/menu-close.png") center;
-        background-size: contain;
+        background: url("../assets/ico/header/menu-close.png") center contain;
         transform: rotate(90deg);
       }
 
@@ -87,8 +85,6 @@ header {
     }
 
     ul {
-      @include no-decoration-ul;
-
       li {
         position: relative;
         display: inline-block;

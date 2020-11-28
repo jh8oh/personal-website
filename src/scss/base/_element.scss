@@ -1,0 +1,31 @@
+// ---------------------------------------------------------------------------
+// Contains basic styles for the base elements
+// ---------------------------------------------------------------------------
+
+// Unordered lists
+ul {
+  @extend %no-whitespace;
+}
+
+// Paragraphs
+p {
+  @extend %no-whitespace;
+}
+
+// Links
+a {
+  text-decoration: none;
+  @include transition(text-shadow 0.2s);
+
+  &:link {
+    color: $color-accent;
+  }
+
+  &:visited {
+    color: $color-accent-dark;
+  }
+
+  &:hover {
+    @extend %neon-text;
+  }
+}

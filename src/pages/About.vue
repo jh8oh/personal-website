@@ -16,7 +16,7 @@
       <section id="experience">
         <h2>Experience</h2>
         <div id="experience-content">
-          <ul id="timeline">
+          <ul id="timeline" class="no-decoration" :class="{ 'horizontal-selector': isBelowBreakpoint }">
             <h4>
               <li
                 v-for="experience in experiences"
@@ -50,6 +50,16 @@ export default class About extends Vue {
   private activeExperience = experiences[0];
   private experienceTransitionName = "";
 
+  private isBelowBreakpoint = false;
+
+  created() {
+    window.addEventListener("resize", this.onResize);
+  }
+
+  destroyed() {
+    window.removeEventListener("resize", this.onResize);
+  }
+
   @Watch("activeExperience.id", { immediate: true, deep: true })
   onExperienceChange(from: number, to: number) {
     if (to > from) {
@@ -57,6 +67,11 @@ export default class About extends Vue {
     } else {
       this.experienceTransitionName = "slide-fade-up";
     }
+  }
+
+  onResize() {
+    const width = window.innerWidth > 0 ? window.innerWidth : screen.width;
+    this.isBelowBreakpoint = width <= 840;
   }
 }
 </script>

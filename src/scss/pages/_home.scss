@@ -8,9 +8,8 @@
   background-color: $color-base;
 
   #background-image {
-    @include absolute-center;
-    height: 85vw;
-    width: 85vw;
+    @extend %absolute-center;
+    @include size(85vw);
     max-height: 750px;
     max-width: 750px;
     background: center/cover;
@@ -26,7 +25,7 @@
   }
 
   #greeting {
-    @include absolute-center;
+    @extend %absolute-center;
     width: 75%;
     max-width: 420px;
     text-align: center;

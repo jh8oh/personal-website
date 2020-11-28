@@ -6,7 +6,7 @@
     <input id="toggle-menu" type="checkbox" />
     <label id="menu-icon" for="toggle-menu" />
     <nav>
-      <ul>
+      <ul class="no-decoration">
         <router-link
           tag="li"
           v-for="page in pages"
