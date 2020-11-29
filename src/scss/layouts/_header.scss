@@ -62,7 +62,7 @@ header {
     &:checked {
       // When menu is clicked, change icon to close
       & + #menu-icon {
-        background: url("../assets/ico/header/menu-close.png") center contain;
+        background: url("../assets/ico/header/menu-close.png") center/contain;
         transform: rotate(90deg);
       }
 
