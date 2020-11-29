@@ -50,7 +50,7 @@ export default class About extends Vue {
   private activeExperience = experiences[0];
   private experienceTransitionName = "";
 
-  private isBelowBreakpoint = false;
+  private isBelowBreakpoint = (window.innerWidth > 0 ? window.innerWidth : screen.width) <= 840;
 
   created() {
     window.addEventListener("resize", this.onResize);
@@ -62,10 +62,18 @@ export default class About extends Vue {
 
   @Watch("activeExperience.id", { immediate: true, deep: true })
   onExperienceChange(from: number, to: number) {
-    if (to > from) {
-      this.experienceTransitionName = "slide-fade-down";
+    if (this.isBelowBreakpoint) {
+      if (to > from) {
+        this.experienceTransitionName = "slide-fade-right";
+      } else {
+        this.experienceTransitionName = "slide-fade-left";
+      }
     } else {
-      this.experienceTransitionName = "slide-fade-up";
+      if (to > from) {
+        this.experienceTransitionName = "slide-fade-down";
+      } else {
+        this.experienceTransitionName = "slide-fade-up";
+      }
     }
   }
 
