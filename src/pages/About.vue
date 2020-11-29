@@ -62,10 +62,18 @@ export default class About extends Vue {
 
   @Watch("activeExperience.id", { immediate: true, deep: true })
   onExperienceChange(from: number, to: number) {
-    if (to > from) {
-      this.experienceTransitionName = "slide-fade-down";
+    if (this.isBelowBreakpoint) {
+      if (to > from) {
+        this.experienceTransitionName = "slide-fade-right";
+      } else {
+        this.experienceTransitionName = "slide-fade-left";
+      }
     } else {
-      this.experienceTransitionName = "slide-fade-up";
+      if (to > from) {
+        this.experienceTransitionName = "slide-fade-down";
+      } else {
+        this.experienceTransitionName = "slide-fade-up";
+      }
     }
   }
 
