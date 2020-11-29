@@ -50,7 +50,7 @@ export default class About extends Vue {
   private activeExperience = experiences[0];
   private experienceTransitionName = "";
 
-  private isBelowBreakpoint = false;
+  private isBelowBreakpoint = (window.innerWidth > 0 ? window.innerWidth : screen.width) <= 840;
 
   created() {
     window.addEventListener("resize", this.onResize);
