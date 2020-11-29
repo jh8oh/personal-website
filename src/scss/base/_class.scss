@@ -2,6 +2,11 @@
 // Contains basic classes
 // ---------------------------------------------------------------------------
 
+// Keep all words on same line
+.no-wrap{
+  white-space: nowrap;
+}
+
 // Unordered list with no decoration
 ul.no-decoration {
   @extend %no-whitespace;
