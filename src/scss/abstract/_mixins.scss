@@ -43,6 +43,6 @@
   left: 0;
   right: 0; // requires both left and right to center shutter
   margin: 0 auto;
-  background-color: $color-accent;
+  background-color: $color-primary;
   @include transition(width 0.3s ease);
 }

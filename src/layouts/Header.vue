@@ -1,6 +1,6 @@
 <template>
   <header>
-    <router-link to="/">
+    <router-link tag="div" to="/">
       <img id="logo" @mouseover="setLogo(true)" @mouseleave="setLogo(false)" :src="logoIcon" alt="Logo" />
     </router-link>
     <input id="toggle-menu" type="checkbox" />

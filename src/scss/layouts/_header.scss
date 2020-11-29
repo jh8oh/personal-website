@@ -29,6 +29,7 @@ header {
   #logo {
     display: block;
     height: 42px;
+    cursor: pointer;
 
     @include breakpoint($breakpoint-small) {
       float: left;
@@ -61,7 +62,7 @@ header {
     &:checked {
       // When menu is clicked, change icon to close
       & + #menu-icon {
-        background: url("../assets/ico/header/menu-close.png") center contain;
+        background: url("../assets/ico/header/menu-close.png") center/contain;
         transform: rotate(90deg);
       }
 
@@ -108,11 +109,11 @@ header {
         }
 
         &:hover {
-          color: $color-accent;
+          color: $color-primary;
         }
 
         &.router-link-active {
-          color: $color-accent;
+          color: $color-primary;
 
           &:after {
             width: 100%;

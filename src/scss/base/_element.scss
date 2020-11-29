@@ -4,7 +4,7 @@
 
 // Unordered lists
 ul {
-  @extend %no-whitespace;
+  margin: 0;
 }
 
 // Paragraphs
@@ -15,17 +15,15 @@ p {
 // Links
 a {
   text-decoration: none;
-  @include transition(text-shadow 0.2s);
+  background: linear-gradient($color-primary, $color-primary) no-repeat 0% 100%/0 1px;
+  @include transition(background-size 0.2s ease-in-out);
 
-  &:link {
-    color: $color-accent;
-  }
-
+  &:link,
   &:visited {
-    color: $color-accent-dark;
+    color: $color-primary;
   }
 
   &:hover {
-    @extend %neon-text;
+    background-size: 100% 1px;
   }
 }

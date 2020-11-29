@@ -1,5 +1,5 @@
 <template>
-  <button @click="emitClicked()" :class="buttonClass">
+  <button @click="emitClicked()" :class="color">
     <strong>{{ text }}</strong>
   </button>
 </template>
@@ -10,7 +10,7 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 @Component
 export default class Button extends Vue {
   @Prop({ required: true, type: String }) readonly text!: string;
-  @Prop({ required: false, type: String, default:"fill" }) readonly buttonClass!: string;
+  @Prop({ required: false, type: String, default: "primary" }) readonly color!: string;
 
   private emitClicked() {
     setTimeout(() => this.$emit("clicked"), 100);
