@@ -13,7 +13,7 @@ body {
   margin-top: $header-height;
 }
 
-// The default page container (what's within the router-page) [excludes home page]
+// The default page container (what's within the router-page)
 .page {
   min-height: $content-height;
   overflow: auto;
