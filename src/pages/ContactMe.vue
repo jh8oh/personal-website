@@ -1,6 +1,7 @@
 <template>
   <div id="contact-me" class="page">
     <div id="contact-me-content">
+      <h1>Contact Me</h1>
       <p>
         I'm always open for any work opportunities or collaborations. If you want to get in touch or just want to share
         some spicy memes, send me a message by using the form below or by emailing me directly at
