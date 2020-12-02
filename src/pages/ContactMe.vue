@@ -1,19 +1,20 @@
 <template>
   <div id="contact-me" class="page">
     <div id="contact-me-content">
-      <h1>Contact Me</h1>
       <p>
         I'm always open for any work opportunities or collaborations. If you want to get in touch or just want to share
         some spicy memes, send me a message by using the form below or by emailing me directly at
         <a href="mailto: ohjiho.sk@gmail.com">ohjiho.sk@gmail.com</a>.
       </p>
-      <form id="contact-form">
-        <input name="name" v-model="name" type="text" placeholder="Your Name (required)" />
-        <input name="email" v-model="email" type="email" placeholder="Your Email (required)" />
-        <input name="subject" type="text" placeholder="Subject" />
-        <textarea name="message" v-model="message" rows="10" placeholder="Your Message (required)"></textarea>
-      </form>
-      <Button :text="'SEND'" @clicked="sendEmail()" />
+      <div id="">
+        <form id="contact-form">
+          <input name="name" v-model="name" type="text" placeholder="Your Name (required)" />
+          <input name="email" v-model="email" type="email" placeholder="Your Email (required)" />
+          <input name="subject" type="text" placeholder="Subject" />
+          <textarea name="message" v-model="message" rows="10" placeholder="Your Message (required)" />
+        </form>
+        <Button :text="'SEND'" @clicked="sendEmail()" />
+      </div>
     </div>
   </div>
 </template>
@@ -28,18 +29,18 @@ import emailjs from "emailjs-com";
   components: { Button },
 })
 export default class ContactMe extends Vue {
-  private name?: string = undefined;
-  private email?: string = undefined;
-  private message?: string = undefined;
+  private name = "";
+  private email = "";
+  private message = "";
 
   private sendEmail(): void {
     // Validate Name
-    if (!this.name) {
+    if (this.name.length === 0) {
       alert("Please enter in a name");
       return;
     }
     // Validate Email
-    if (!this.email) {
+    if (this.email.length === 0) {
       alert("Please enter in an email");
       return;
     }
@@ -49,7 +50,7 @@ export default class ContactMe extends Vue {
       return;
     }
     // Validate Message
-    if (!this.message) {
+    if (this.message.length === 0) {
       alert("Please enter a message");
       return;
     }
