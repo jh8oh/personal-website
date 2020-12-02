@@ -1,20 +1,22 @@
 <template>
   <div id="contact-me" class="page">
     <div id="contact-me-content">
+      <h1>Contact Me</h1>
       <p>
         I'm always open for any work opportunities or collaborations. If you want to get in touch or just want to share
         some spicy memes, send me a message by using the form below or by emailing me directly at
         <a href="mailto: ohjiho.sk@gmail.com">ohjiho.sk@gmail.com</a>.
       </p>
-      <div id="">
-        <form id="contact-form">
+      <form id="contact-form">
+        <div id="sender-info">
           <input name="name" v-model="name" type="text" placeholder="Your Name (required)" />
           <input name="email" v-model="email" type="email" placeholder="Your Email (required)" />
-          <input name="subject" type="text" placeholder="Subject" />
-          <textarea name="message" v-model="message" rows="10" placeholder="Your Message (required)" />
-        </form>
-        <Button :text="'SEND'" @clicked="sendEmail()" />
-      </div>
+        </div>
+        <input name="subject" v-model="subject" type="text" placeholder="Subject" />
+        <textarea name="message" v-model="message" rows="5" placeholder="Your Message (required)" />
+      </form>
+      <Button :text="'SEND'" @clicked="sendEmail()" />
+      <Button :text="'RESET'" @clicked="resetForm()" />
     </div>
   </div>
 </template>
@@ -31,9 +33,17 @@ import emailjs from "emailjs-com";
 export default class ContactMe extends Vue {
   private name = "";
   private email = "";
+  private subject = "";
   private message = "";
 
-  private sendEmail(): void {
+  private resetForm() {
+    this.name = "";
+    this.email = "";
+    this.subject = "";
+    this.message = "";
+  }
+
+  private sendEmail() {
     // Validate Name
     if (this.name.length === 0) {
       alert("Please enter in a name");
