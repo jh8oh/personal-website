@@ -3,27 +3,41 @@
 // ---------------------------------------------------------------------------
 
 button {
+  @mixin neon-on-hover($color, $color-dark, $small: false) {
+    &:hover {
+      @if $small {
+        @include neon-text($color, $color-dark);
+        @include neon-box-shadow($color, $color-dark);
+      } @else {
+        @include neon-text($color, $color-dark, 1px);
+        @include neon-box-shadow($color, $color-dark, 2px);
+      }
+    }
+  }
+
   padding: 8px 36px;
   background-color: transparent;
-  border: 1px solid $color-secondary-dark;
+  border: 1px solid $color-primary-dark;
   outline: none;
   cursor: pointer;
   @include transition(all 0.3s ease);
-  // Fonts need to be inherited
-  @include text(inherit, inherit, inherit, inherit, 2px, uppercase, $color-secondary-dark);
+  @include text(inherit, inherit, inherit, inherit, 2px, uppercase, $color-primary-dark); // Fonts need to be inherited
+  @include neon-on-hover($color-primary, $color-primary-dark);
 
-  &:hover {
-    @include neon-text($color-secondary, $color-secondary-dark);
-    @include neon-box-shadow($color-secondary, $color-secondary-dark);
+  &.secondary {
+    border-color: $color-secondary-dark;
+    color: $color-secondary-dark;
+
+    @include neon-on-hover($color-secondary, $color-secondary-dark);
   }
 
   // Smaller size
   &.small {
     padding: 4px 16px;
+    @include neon-on-hover($color-primary, $color-primary-dark, true);
 
-    &:hover {
-      @include neon-text($color-secondary, $color-secondary-dark, 1px);
-      @include neon-box-shadow($color-secondary, $color-secondary-dark, 2px);
+    &.secondary {
+      @include neon-on-hover($color-secondary, $color-secondary-dark, true);
     }
   }
 
