@@ -14,7 +14,7 @@
 ) {
   margin: 0;
   font-family: $font-family;
-  font-size: $font-size;    // Fallback if rem is not supported
+  font-size: $font-size; // Fallback if rem is not supported
   font-size: calculateRem($font-size);
   font-weight: $font-weight;
   line-height: $line-height;
@@ -46,7 +46,7 @@ h3 {
 }
 
 h4 {
-  @include text($heading-font-family, 22px, 400, 1.2, 0)
+  @include text($heading-font-family, 22px, 400, 1.2, 0);
 }
 
 // Body
@@ -55,33 +55,26 @@ h4 {
 }
 
 // Display
-
-// Glitch text
-%glitch-text-pseudo-element {
-  content: attr(glitch-text);
-  position: absolute;
-  white-space: nowrap;
-  clip: rect(0, 900px, 0, 0);
-  @include animation(glitch-text-animation 3s infinite alternate-reverse);
-}
-
-@mixin glitch-text($color, $background-color, $top-padding: 0, $left-padding: 0, $offset: 1px) {
+@mixin glitch-text($name, $color, $background-color, $top-offset) {
   position: relative;
   color: $color;
 
-  &:before {
-    @extend %glitch-text-pseudo-element;
-    top: $top-padding + $offset;
-    left: $left-padding + $offset;
-    color: $color;
-    background-color: $background-color;
+  &::before,
+  &::after {
+    content: attr(glitch-text);
+    position: absolute;
+    top: $top-offset;
+    width: 100%;
   }
 
-  &:after {
-    @extend %glitch-text-pseudo-element;
-    top: $top-padding - $offset;
-    left: $left-padding - $offset;
-    color: $color;
-    background-color: $background-color;
+  &::after {
+    left: 1px;
+    text-shadow: -1px 0 rgba($color-secondary, 0.7);
+    @include animation(glitch-text-animation-1 4s infinite linear alternate-reverse);
+  }
+  &::before {
+    left: -1px;
+    text-shadow: 1px 0 rgba($color-primary, 0.7);
+    @include animation(glitch-text-animation-2 3s infinite linear alternate-reverse);
   }
 }
