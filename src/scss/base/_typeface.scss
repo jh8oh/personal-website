@@ -69,12 +69,12 @@ h4 {
 
   &::after {
     left: 1px;
-    text-shadow: -1px 0 rgba($color-primary, 0.7);
+    text-shadow: -1px 0 rgba($color-secondary, 0.7);
     @include animation(glitch-text-animation-1 4s infinite linear alternate-reverse);
   }
   &::before {
     left: -1px;
-    text-shadow: 1px 0 rgba($color-secondary, 0.7);
+    text-shadow: 1px 0 rgba($color-primary, 0.7);
     @include animation(glitch-text-animation-2 3s infinite linear alternate-reverse);
   }
 }
