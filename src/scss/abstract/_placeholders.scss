@@ -10,13 +10,8 @@
   transform: translate(-50%, -50%);
 }
 
+// Removes all whitespace around
 %no-whitespace {
   padding: 0;
   margin: 0;
-}
-
-// Creates a neon box-shadow around the element
-@mixin neon-box-shadow($color, $color-dark) {
-  box-shadow: 0 0 5px $color, 0 0 10px $color-dark, 0 0 2px $color, inset 0 0 5px $color,
-    inset 0 0 10px $color-dark, inset 0 0 2px $color;
 }

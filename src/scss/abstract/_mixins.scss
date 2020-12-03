@@ -9,6 +9,18 @@
   }
 }
 
+@mixin breakpoint-tablet{
+  @include breakpoint(1200px){
+    @content;
+  }
+}
+
+@mixin breakpoint-phone{
+  @include breakpoint(600px){
+    @content;
+  }
+}
+
 // Transition mixin
 @mixin transition($args...) {
   transition: $args;
@@ -31,6 +43,19 @@
 @mixin size($size) {
   height: $size;
   width: $size;
+}
+
+// Neon text
+@mixin neon-text($color, $color-dark, $size: 2px) {
+  color: $color;
+  text-shadow: 0 0 $size $color, 0 0 $size / 2 $color-dark;
+}
+
+// Creates a neon box-shadow around the element
+@mixin neon-box-shadow($color, $color-dark, $size: 12px) {
+  border-color: $color;
+  box-shadow: 0 0 $size $color, 0 0 $size * 2 $color-dark, 0 0 $size / 2 $color, inset 0 0 $size $color,
+    inset 0 0 $size * 2 $color-dark, inset 0 0 $size / 2 $color;
 }
 
 // Pseudo-border(-top/-bottom) that expands and contracts from the center

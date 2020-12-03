@@ -26,7 +26,7 @@ export default class App extends Vue {
       ["About", 1],
       ["Portfolio", 2],
       ["Blog", 3],
-      ["Contact", 4],
+      ["ContactMe", 4],
       ["NotFound", 5],
     ]);
 

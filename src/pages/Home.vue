@@ -1,12 +1,12 @@
 <template>
   <div id="home" class="page">
-    <div id="background-image" class="absolute-center"/>
+    <div id="background-image" class="absolute-center" />
     <div id="greeting">
       <span>Hi, I'm</span><br />
-      <span id="name" :glitch-text="name">{{ name }}</span><br />
+      <span id="name" glitch-text="Ji Ho Oh">Ji Ho Oh</span><br />
       <span>Software Developer, Programmer, Designer</span>
       <br /><br />
-      <Button :text="'Get to know me'" :color="'secondary'" @clicked="goToAbout()" />
+      <Button :text="'Get to know me'" :buttonClass="'secondary'" @clicked="goToAbout()" />
     </div>
   </div>
 </template>
@@ -19,8 +19,6 @@ import Button from "@/components/Button.vue";
   components: { Button },
 })
 export default class Home extends Vue {
-  private name = "Ji Ho Oh";
-
   private goToAbout() {
     this.$router.push("/about");
   }
