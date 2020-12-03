@@ -9,6 +9,18 @@
   }
 }
 
+@mixin breakpoint-tablet{
+  @include breakpoint(1200px){
+    @content;
+  }
+}
+
+@mixin breakpoint-phone{
+  @include breakpoint(600px){
+    @content;
+  }
+}
+
 // Transition mixin
 @mixin transition($args...) {
   transition: $args;
