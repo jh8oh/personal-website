@@ -6,11 +6,11 @@ button {
   @mixin neon-on-hover($color, $color-dark, $small: false) {
     &:hover {
       @if $small {
-        @include neon-text($color, $color-dark);
-        @include neon-box-shadow($color, $color-dark);
-      } @else {
         @include neon-text($color, $color-dark, 1px);
         @include neon-box-shadow($color, $color-dark, 2px);
+      } @else {
+        @include neon-text($color, $color-dark);
+        @include neon-box-shadow($color, $color-dark);
       }
     }
   }
