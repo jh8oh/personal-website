@@ -12,7 +12,7 @@
 
   #code {
     @include text($heading-font-family, 216px, 400, 1.2, -0.5px);
-    @include glitch-text($color-primary, $color-base, 28px);
+    @include glitch-text("not-found-glitch-text", $color-on-base, $color-base, 31px);
   }
 
 }
