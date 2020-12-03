@@ -15,8 +15,8 @@
         <input name="subject" v-model="subject" type="text" placeholder="Subject" />
         <textarea name="message" v-model="message" rows="5" placeholder="Your Message (required)" />
       </form>
-      <Button :text="'SEND'" @clicked="sendEmail()" />
-      <Button :text="'RESET'" @clicked="resetForm()" />
+      <Button :text="'SEND'" :buttonClass="'small neon'" @clicked="sendEmail()" />
+      <Button :text="'RESET'" :buttonClass="'small neon no-border'" @clicked="resetForm()" />
     </div>
   </div>
 </template>

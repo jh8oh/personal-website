@@ -4,16 +4,21 @@
 
 button {
   padding: 8px 36px;
-  border: 1px solid $color-secondary;
-  outline: none;
   background-color: transparent;
+  border: 1px solid $color-primary;
+  outline: none;
   cursor: pointer;
-  transition: 0.2s;
+  @include transition(all 0.3s ease);
+  @include text(inherit, inherit, inherit, inherit, 2px, uppercase, $color-primary); // Fonts need to be inherited
 
-  // Button glows when hovered
-  @mixin button-color($color, $color-dark){
-    border-color: $color;
-    @include text(inherit, inherit, inherit, inherit, 2px, uppercase, $color); // Fonts need to be inherited
+  // Smaller size
+  &.small {
+    padding: 4px 16px;
+  }
+
+  @mixin neon($color, $color-dark) {
+    border-color: $color-dark;
+    color: $color-dark;
 
     &:hover {
       @include neon-text($color, $color-dark);
@@ -21,11 +26,28 @@ button {
     }
   }
 
-  &.primary {
-    @include button-color($color-primary, $color-primary-dark);
+  // Neon (Primary)
+  &.neon {
+    @include neon($color-primary, $color-primary-dark);
   }
 
+  // Secondary
   &.secondary {
-    @include button-color($color-secondary, $color-secondary-dark);
+    border-color: $color-secondary;
+    color: $color-secondary;
+
+    // Neon
+    &.neon {
+      @include neon($color-secondary, $color-secondary-dark);
+    }
+  }
+
+  // No border
+  &.no-border {
+    border: none;
+
+    &.neon:hover {
+      box-shadow: none;
+    }
   }
 }

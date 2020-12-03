@@ -33,6 +33,19 @@
   width: $size;
 }
 
+// Neon text
+@mixin neon-text($color, $color-dark) {
+  color: $color;
+  text-shadow: 0 0 2px $color, 0 0 1px $color-dark;
+}
+
+// Creates a neon box-shadow around the element
+@mixin neon-box-shadow($color, $color-dark) {
+  border-color: $color;
+  box-shadow: 0 0 4px $color, 0 0 8px $color-dark, 0 0 2px $color, inset 0 0 4px $color, inset 0 0 8px $color-dark,
+    inset 0 0 2px $color;
+}
+
 // Pseudo-border(-top/-bottom) that expands and contracts from the center
 @mixin shutter-border-horizontal($height, $top, $width: 0) {
   content: "";
