@@ -3,7 +3,7 @@
     <div id="not-found-content">
       <span id="code" glitch-text="404">404</span>
       <br /><br />
-      <Button :text="'Back to home'" :buttonClass="'neon'" @clicked="goToHome()" />
+      <Button :text="'Back to home'" @clicked="goToHome()" />
     </div>
   </div>
 </template>

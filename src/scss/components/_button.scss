@@ -5,40 +5,25 @@
 button {
   padding: 8px 36px;
   background-color: transparent;
-  border: 1px solid $color-primary;
+  border: 1px solid $color-secondary-dark;
   outline: none;
   cursor: pointer;
   @include transition(all 0.3s ease);
-  @include text(inherit, inherit, inherit, inherit, 2px, uppercase, $color-primary); // Fonts need to be inherited
+  // Fonts need to be inherited
+  @include text(inherit, inherit, inherit, inherit, 2px, uppercase, $color-secondary-dark);
+
+  &:hover {
+    @include neon-text($color-secondary, $color-secondary-dark);
+    @include neon-box-shadow($color-secondary, $color-secondary-dark);
+  }
 
   // Smaller size
   &.small {
     padding: 4px 16px;
-  }
-
-  @mixin neon($color, $color-dark) {
-    border-color: $color-dark;
-    color: $color-dark;
 
     &:hover {
-      @include neon-text($color, $color-dark);
-      @include neon-box-shadow($color, $color-dark);
-    }
-  }
-
-  // Neon (Primary)
-  &.neon {
-    @include neon($color-primary, $color-primary-dark);
-  }
-
-  // Secondary
-  &.secondary {
-    border-color: $color-secondary;
-    color: $color-secondary;
-
-    // Neon
-    &.neon {
-      @include neon($color-secondary, $color-secondary-dark);
+      @include neon-text($color-secondary, $color-secondary-dark, 1px);
+      @include neon-box-shadow($color-secondary, $color-secondary-dark, 2px);
     }
   }
 
@@ -46,7 +31,7 @@ button {
   &.no-border {
     border: none;
 
-    &.neon:hover {
+    &:hover {
       box-shadow: none;
     }
   }

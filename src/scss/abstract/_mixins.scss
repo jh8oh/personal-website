@@ -34,16 +34,16 @@
 }
 
 // Neon text
-@mixin neon-text($color, $color-dark) {
+@mixin neon-text($color, $color-dark, $size: 2px) {
   color: $color;
-  text-shadow: 0 0 2px $color, 0 0 1px $color-dark;
+  text-shadow: 0 0 $size $color, 0 0 $size / 2 $color-dark;
 }
 
 // Creates a neon box-shadow around the element
-@mixin neon-box-shadow($color, $color-dark) {
+@mixin neon-box-shadow($color, $color-dark, $size: 4px) {
   border-color: $color;
-  box-shadow: 0 0 4px $color, 0 0 8px $color-dark, 0 0 2px $color, inset 0 0 4px $color, inset 0 0 8px $color-dark,
-    inset 0 0 2px $color;
+  box-shadow: 0 0 $size $color, 0 0 $size * 2 $color-dark, 0 0 $size / 2 $color, inset 0 0 $size $color, inset 0 0 $size * 2 $color-dark,
+    inset 0 0 $size / 2 $color;
 }
 
 // Pseudo-border(-top/-bottom) that expands and contracts from the center
