@@ -16,7 +16,7 @@
       <section id="experience">
         <h2>Experience</h2>
         <div id="experience-content">
-          <ul id="timeline" class="no-decoration" :class="{ 'horizontal-selector': isBelowBreakpoint }">
+          <ul id="timeline" :class="{ 'horizontal-selector': isBelowBreakpoint }">
             <h4>
               <li
                 v-for="experience in experiences"

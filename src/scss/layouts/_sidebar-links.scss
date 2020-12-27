@@ -10,7 +10,7 @@
   }
 
   ul {
-    @extend .no-decoration;
+    @extend %no-decoration;
 
     @include breakpoint-phone {
       text-align: center;
@@ -27,7 +27,7 @@
     }
 
     a {
-      @extend .no-underline;
+      @extend %no-underline;
     }
 
     img {
