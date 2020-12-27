@@ -2,20 +2,9 @@
 // Contains basic classes
 // ---------------------------------------------------------------------------
 
-// Anchor with no underline on hover
-a.no-underline{
-  background: none;
-}
-
-// Unordered list with no decoration
-ul.no-decoration {
-  @extend %no-whitespace;
-  list-style-type: none;
-}
-
 // Horizontal selector of items
 ul.horizontal-selector {
-  @extend ul, .no-decoration;
+  @extend %no-decoration;
   margin-bottom: 16px;
   overflow: auto;
   white-space: nowrap;

@@ -37,7 +37,7 @@
       }
     }
 
-    p > span{
+    p > span {
       white-space: nowrap;
     }
   }
@@ -47,7 +47,7 @@
 
     margin-top: 100px;
 
-    @include breakpoint-tablet{
+    @include breakpoint-tablet {
       margin-top: 48px;
     }
 
@@ -60,6 +60,7 @@
     }
 
     #timeline:not(.horizontal-selector) {
+      @extend %no-decoration;
       min-width: 200px;
       margin: 0 12px;
       border-left: 1px solid $color-on-background;
