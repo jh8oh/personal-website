@@ -1,21 +1,27 @@
 @charset "UTF-8";
 
+// Configurations and helpers
 @import "abstract/variables";
 @import "abstract/functions";
 @import "abstract/mixins";
 @import "abstract/placeholders";
 
+// Base
 @import "base/typeface";
 @import "base/element";
 @import "base/class";
 @import "base/animation";
 @import "base/transition";
 
+// Layout
 @import "layouts/base";
 @import "layouts/header";
+@import "layouts/sidebar-links";
 
+// Components
 @import "components/button";
 
+// Page-specific styles
 @import "pages/home";
 @import "pages/about";
 @import "pages/contact-me";

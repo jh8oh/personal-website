@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="sidebar-links">
     <ul>
       <li v-for="link in links" :key="link.title">
         <a :href="link.to">

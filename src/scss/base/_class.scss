@@ -2,6 +2,11 @@
 // Contains basic classes
 // ---------------------------------------------------------------------------
 
+// Anchor with no underline on hover
+a.no-underline{
+  background: none;
+}
+
 // Unordered list with no decoration
 ul.no-decoration {
   @extend %no-whitespace;
