@@ -27,13 +27,17 @@ header {
   }
 
   #logo {
-    display: block;
-    height: 42px;
     cursor: pointer;
+    @extend %no-underline;
 
     @include breakpoint($breakpoint-small) {
       float: left;
       margin: 7px 0 7px 2vw;
+    }
+
+    img {
+      display: block;
+      @include size(42px);
     }
   }
 
@@ -86,6 +90,8 @@ header {
     }
 
     ul {
+      @extend %no-decoration;
+
       li {
         position: relative;
         display: inline-block;

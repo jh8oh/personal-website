@@ -6,15 +6,17 @@
         <router-view />
       </transition>
     </div>
+    <SidebarLinks v-if="!isHome()" />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Watch, Vue } from "vue-property-decorator";
 import Header from "@/layouts/Header.vue";
+import SidebarLinks from "@/layouts/SidebarLinks.vue";
 
 @Component({
-  components: { Header },
+  components: { Header, SidebarLinks },
 })
 export default class App extends Vue {
   private transitionName = "";
@@ -40,6 +42,10 @@ export default class App extends Vue {
     } else {
       this.transitionName = "";
     }
+  }
+
+  isHome() {
+    return this.$route.name === "Home";
   }
 }
 </script>

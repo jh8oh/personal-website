@@ -1,0 +1,37 @@
+#sidebar-links {
+  position: fixed;
+  bottom: 32px;
+  left: 2.5%;
+  z-index: 3;
+
+  @include breakpoint-phone {
+    // Links are now locked below the footer
+    position: static;
+  }
+
+  ul {
+    @extend %no-decoration;
+
+    @include breakpoint-phone {
+      text-align: center;
+    }
+
+    li {
+      margin: 6px 0;
+
+      // Links are now horizontal
+      @include breakpoint-phone {
+        display: inline-block;
+        margin: 0 2px;
+      }
+    }
+
+    a {
+      @extend %no-underline;
+    }
+
+    img {
+      width: 32px;
+    }
+  }
+}
