@@ -23,6 +23,15 @@
   color: $color;
 }
 
+@mixin display-text($font-size) {
+  @include text($display-font-family, $font-size, 400, 1, -1px, none, transparent);
+  word-spacing: -0.1em;
+  white-space: nowrap;
+  background: $color-secondary-gradient;
+  background-clip: text;
+  filter: drop-shadow(4px 4px 2px black);
+}
+
 @mixin heading($padding-bottom, $margin-bottom, $border-bottom) {
   display: inline-block;
   padding-bottom: $padding-bottom;

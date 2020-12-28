@@ -2,11 +2,15 @@
   <div id="home" class="page">
     <div id="background-image" class="absolute-center" />
     <div id="greeting">
-      <span>Hi, I'm</span><br />
-      <span id="name" glitch-text="Ji Ho Oh">Ji Ho Oh</span><br />
+      <span>Hi, I'm</span>
+      <span id="name" glitch-text="Ji Ho Oh">Ji Ho Oh</span>
       <span>Software Developer, Programmer, Designer</span>
       <br /><br />
-      <Button :text="'Get to know me'" :buttonClass="'secondary'" @clicked="goToAbout()" />
+      <Button
+        :text="'Get to know me'"
+        :buttonClass="'secondary'"
+        @clicked="goToAbout()"
+      />
     </div>
   </div>
 </template>
