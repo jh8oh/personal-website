@@ -3,7 +3,7 @@
     <div id="background-image" class="absolute-center" />
     <div id="greeting">
       <span>Hi, I'm</span>
-      <span id="name" glitch-text="Ji Ho Oh">Ji Ho Oh</span>
+      <span id="name">Ji Ho Oh</span>
       <span>Software Developer, Programmer, Designer</span>
       <br /><br />
       <Button
