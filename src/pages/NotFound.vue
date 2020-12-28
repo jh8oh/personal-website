@@ -1,9 +1,13 @@
 <template>
   <div id="not-found" class="page">
     <div id="not-found-content">
-      <span id="code" glitch-text="404">404</span>
+      <span id="code">404</span>
       <br /><br />
-      <Button :text="'Back to home'" :buttonClass="'secondary'" @clicked="goToHome()" />
+      <Button
+        :text="'Back to home'"
+        :buttonClass="'secondary'"
+        @clicked="goToHome()"
+      />
     </div>
   </div>
 </template>

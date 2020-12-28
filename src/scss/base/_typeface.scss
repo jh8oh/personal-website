@@ -62,28 +62,3 @@ h4 {
 #app {
   @include text($body-font-family, 18px, 400, 1.8, 0.5px);
 }
-
-// Display
-@mixin glitch-text($name, $color, $background-color, $top-offset) {
-  position: relative;
-  color: $color;
-
-  &::before,
-  &::after {
-    content: attr(glitch-text);
-    position: absolute;
-    top: $top-offset;
-    width: 100%;
-  }
-
-  &::after {
-    left: 1px;
-    text-shadow: -1px 0 rgba($color-secondary, 0.7);
-    @include animation(glitch-text-animation-1 4s infinite linear alternate-reverse);
-  }
-  &::before {
-    left: -1px;
-    text-shadow: 1px 0 rgba($color-primary, 0.7);
-    @include animation(glitch-text-animation-2 3s infinite linear alternate-reverse);
-  }
-}

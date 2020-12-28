@@ -29,20 +29,6 @@
   }
 }
 
-// Text that glitches out
-@for $i from 1 through 2 {
-  @include keyframes(glitch-text-animation-#{$i}) {
-    $steps: 10;
-    @for $i from 0 through $steps {
-      $top: percentage(random(100) / 100);
-      $bottom: percentage(random(101 - $top) / 100);
-      #{percentage($i*(1/$steps))} {
-        clip-path: inset($top 0 $bottom 0);
-      }
-    }
-  }
-}
-
 // Image flicker animation
 @mixin flicker-image($name, $image-1, $image-2, $image-1-filter: none, $image-2-filter: none) {
   @at-root {
