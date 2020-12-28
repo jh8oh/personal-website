@@ -6,7 +6,7 @@
         <router-view />
       </transition>
     </div>
-    <SidebarLinks v-if="!isHome()" />
+    <SidebarLinks v-if="isContent()" />
   </div>
 </template>
 
@@ -44,8 +44,9 @@ export default class App extends Vue {
     }
   }
 
-  isHome() {
-    return this.$route.name === "Home";
+  isContent() {
+    const routeName = this.$route.name;
+    return !(routeName === "Home" || routeName === "NotFound");
   }
 }
 </script>
