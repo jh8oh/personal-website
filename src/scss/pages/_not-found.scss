@@ -11,6 +11,6 @@
   }
 
   #code {
-    @include display-text(216px);
+    @include display-text(min(40vw, 216px));
   }
 }
