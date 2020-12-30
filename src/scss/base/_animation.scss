@@ -29,6 +29,40 @@
   }
 }
 
+// Flicker transitions
+@include keyframes(flicker-transition-enter) {
+  5%,
+  19%,
+  40%,
+  99% {
+    opacity: 0;
+  }
+
+  0%,
+  4%,
+  20%,
+  39%,
+  100% {
+    opacity: 1;
+  }
+}
+
+@include keyframes(flicker-transition-leave) {
+  0%,
+  9%,
+  16%,
+  24% {
+    opacity: 1;
+  }
+
+  10%,
+  15%,
+  25%,
+  100% {
+    opacity: 0;
+  }
+}
+
 // Neon flicker animation
 @mixin neon-flicker($name, $color, $color-dark, $small: false, $box: true, $text: true) {
   @at-root {
