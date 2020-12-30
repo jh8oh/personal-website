@@ -17,7 +17,10 @@
     }
 
     li {
-      margin: 6px 0;
+      display: flex;
+      align-items: center;
+      padding: 4px 0;
+      margin: 4px 0;
 
       // Links are now horizontal
       @include breakpoint-phone {
@@ -28,10 +31,26 @@
 
     a {
       @extend %no-underline;
+
+      &:hover + span {
+        @include animation(flicker-transition-enter 0.2s forwards);
+      }
     }
 
     img {
-      width: 32px;
+      display: block;
+      @include size(32px);
+
+      &:hover {
+        filter: drop-shadow(0 0 0.4px $color-primary) drop-shadow(0 0 0.8px $color-primary-dark);
+      }
+    }
+
+    span {
+      opacity: 0;
+      margin-left: 6px;
+      color: $color-primary;
+      @include animation(none);
     }
   }
 }
