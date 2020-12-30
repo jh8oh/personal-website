@@ -1,5 +1,5 @@
 <template>
-  <footer></footer>
+  <footer class="body-2">© 2020 Ji Ho Oh</footer>
 </template>
 
 <script lang="ts">

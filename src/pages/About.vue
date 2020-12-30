@@ -45,16 +45,18 @@
         </div>
       </section>
     </div>
+    <Footer />
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Watch, Vue } from "vue-property-decorator";
+import { Component, Vue } from "vue-property-decorator";
 import ExperienceCard from "@/components/about/ExperienceCard.vue";
+import Footer from "@/layouts/Footer.vue";
 import experiences from "@/assets/ts/about/experience.ts";
 
 @Component({
-  components: { ExperienceCard },
+  components: { ExperienceCard, Footer },
 })
 export default class About extends Vue {
   private experiences = experiences;
