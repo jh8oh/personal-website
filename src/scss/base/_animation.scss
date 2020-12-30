@@ -31,19 +31,18 @@
 
 // Flicker transitions
 @include keyframes(flicker-transition-enter) {
-  5%,
-  19%,
-  40%,
-  99% {
-    opacity: 0;
+  20%,
+  39%,
+  60%,
+  100% {
+    opacity: 1;
   }
 
   0%,
-  4%,
-  20%,
-  39%,
-  100% {
-    opacity: 1;
+  19%,
+  40%,
+  59% {
+    opacity: 0;
   }
 }
 
