@@ -3,15 +3,11 @@
 // ---------------------------------------------------------------------------
 
 button {
-  @mixin neon-on-hover($color, $color-dark, $small: false) {
+  @mixin neon-flicker-on-hover($anim-name) {
+    @include animation(none);
+
     &:hover {
-      @if $small {
-        @include neon-text($color, $color-dark, 1px);
-        @include neon-box-shadow($color, $color-dark, 2px);
-      } @else {
-        @include neon-text($color, $color-dark);
-        @include neon-box-shadow($color, $color-dark);
-      }
+      @include animation($anim-name 0.2s forwards);
     }
   }
 
@@ -20,33 +16,38 @@ button {
   border: 1px solid $color-primary-dark;
   outline: none;
   cursor: pointer;
-  @include transition(all 0.3s ease);
   @include text(inherit, inherit, inherit, inherit, 2px, uppercase, $color-primary-dark); // Fonts need to be inherited
-  @include neon-on-hover($color-primary, $color-primary-dark);
+  @include neon-flicker("neon-flicker-primary", $color-primary, $color-primary-dark);
+  @include neon-flicker-on-hover(neon-flicker-primary);
 
   &.secondary {
     border-color: $color-secondary-dark;
     color: $color-secondary-dark;
-
-    @include neon-on-hover($color-secondary, $color-secondary-dark);
+    @include neon-flicker("neon-flicker-secondary", $color-secondary, $color-secondary-dark);
+    @include neon-flicker-on-hover(neon-flicker-secondary);
   }
 
   // Smaller size
   &.small {
     padding: 4px 16px;
-    @include neon-on-hover($color-primary, $color-primary-dark, true);
+    @include neon-flicker("neon-flicker-primary-small", $color-primary, $color-primary-dark, true);
+    @include neon-flicker-on-hover(neon-flicker-primary-small);
 
     &.secondary {
-      @include neon-on-hover($color-secondary, $color-secondary-dark, true);
+      @include neon-flicker("neon-flicker-secondary-small", $color-secondary, $color-secondary-dark, true);
+      @include neon-flicker-on-hover(neon-flicker-secondary-small);
     }
   }
 
   // No border
   &.no-border {
     border: none;
+    @include neon-flicker("neon-flicker-primary-no-border", $color-primary, $color-primary-dark, true, false);
+    @include neon-flicker-on-hover(neon-flicker-primary-no-border);
 
-    &:hover {
-      box-shadow: none;
+    &.secondary {
+      @include neon-flicker("neon-flicker-secondary-no-border", $color-secondary, $color-secondary-dark, true, false);
+      @include neon-flicker-on-hover(neon-flicker-secondary-no-border);
     }
   }
 }
