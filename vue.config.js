@@ -10,6 +10,6 @@ module.exports = {
       .test(/\.(pdf)(\?.*)?$/)
       .use("file-loader")
       .loader("file-loader")
-      .options({ name: "assets/pdf/[name].[hash:8].[ext]" });
+      .options({ name: "assets/[name].[ext]" });
   },
 };
