@@ -24,6 +24,7 @@
 
       // Links are now horizontal
       @include breakpoint-phone {
+        position: relative;
         display: inline-block;
         margin: 0 2px;
       }
@@ -51,6 +52,12 @@
       margin-left: 6px;
       color: $color-primary;
       @include animation(none);
+
+      @include breakpoint-phone {
+        position: absolute;
+        transform: translateX(-50%);
+        margin: 0;
+      }
     }
   }
 }
