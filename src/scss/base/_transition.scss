@@ -53,6 +53,6 @@
   }
 
   &-leave-active {
-    @include animation(flicker-transition-leave 0.5s backwards);
+    @include animation(flicker-transition-leave 0.5s forwards);
   }
 }
