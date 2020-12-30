@@ -13,24 +13,26 @@
     background: center/cover;
     opacity: 0.1;
 
-    @include flicker-image(
-      "flicker-home-background-image",
+    @include image-flicker(
+      "flicker-home-background",
       url("../assets/img/home/logo-border-accent.png"),
       url("../assets/img/home/logo-border-base.png"),
       drop-shadow(0 0 6px $color-primary) drop-shadow(0 0 12px $color-primary-dark)
     );
-    @include animation(flicker-home-background-image 10s linear infinite);
+    @include animation(flicker-home-background 10s linear infinite);
   }
 
   #greeting {
     @extend %absolute-center;
-    width: 75%;
+    width: 75vw;
     max-width: 420px;
     text-align: center;
 
     #name {
-      @include text($heading-font-family, 76px, 400, 1.2, -0.5px, none, $color-on-base);
-      @include glitch-text("name-glitch-text", $color-on-base, $color-base, 11px);
+      display: inline-block;
+      @include display-text(min(18vw, 96px));
+      margin: 20px 0;
+      transform: rotate(-5deg);
     }
 
     span {

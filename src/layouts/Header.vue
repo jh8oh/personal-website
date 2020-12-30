@@ -1,12 +1,12 @@
 <template>
   <header>
-    <router-link tag="div" to="/">
-      <img id="logo" @mouseover="setLogo(true)" @mouseleave="setLogo(false)" :src="logoIcon" alt="Logo" />
+    <router-link id="logo" to="/">
+      <img @mouseover="setLogo(true)" @mouseleave="setLogo(false)" :src="logoIcon" alt="Logo" />
     </router-link>
     <input id="toggle-menu" type="checkbox" />
     <label id="menu-icon" for="toggle-menu" />
     <nav>
-      <ul class="no-decoration">
+      <ul>
         <router-link
           tag="li"
           v-for="page in pages"

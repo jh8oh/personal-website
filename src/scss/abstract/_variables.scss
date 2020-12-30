@@ -11,6 +11,12 @@ $color-on-primary: black;
 $color-secondary: #fc6097;
 $color-secondary-light: #ff94c8;
 $color-secondary-dark: #c52869;
+$color-secondary-gradient: linear-gradient(
+    $color-secondary-light 0%,
+    $color-secondary 25%,
+    $color-secondary-dark 70%,
+    red 100%
+);
 $color-on-secondary: black;
 
 $color-background: white;
@@ -19,10 +25,11 @@ $color-on-background-variant: #666;
 
 $color-base: #161616;
 $color-on-base: white;
-$color-on-base-variant: #aaa;
+$color-on-base-variant: #ccc;
 
 // Font-families
-@import url("https://fonts.googleapis.com/css?family=Oswald|Titillium+Web|Share+Tech+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Permanent+Marker|Oswald|Titillium+Web|Share+Tech+Mono&display=swap");
+$display-font-family: "Permanent Marker", cursive;
 $heading-font-family: "Oswald", sans-serif;
 $body-font-family: "Titillium Web", sans-serif;
 $code-font-family: "Share Tech Mono", monospace;
