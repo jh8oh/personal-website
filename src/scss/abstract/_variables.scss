@@ -11,12 +11,7 @@ $color-on-primary: black;
 $color-secondary: #fc6097;
 $color-secondary-light: #ff94c8;
 $color-secondary-dark: #c52869;
-$color-secondary-gradient: linear-gradient(
-    $color-secondary-light 0%,
-    $color-secondary 25%,
-    $color-secondary-dark 70%,
-    red 100%
-);
+$color-secondary-gradient: linear-gradient($color-secondary-light, $color-secondary 75%, $color-secondary-dark);
 $color-on-secondary: black;
 
 $color-background: white;

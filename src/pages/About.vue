@@ -51,7 +51,7 @@
 <script lang="ts">
 import { Component, Watch, Vue } from "vue-property-decorator";
 import ExperienceCard from "@/components/about/ExperienceCard.vue";
-import experiences from "@/assets/content/about/experience.ts";
+import experiences from "@/assets/ts/about/experience.ts";
 
 @Component({
   components: { ExperienceCard },
