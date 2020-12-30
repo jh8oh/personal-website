@@ -13,13 +13,13 @@
     background: center/cover;
     opacity: 0.1;
 
-    @include flicker-image(
-      "flicker-home-background-image",
+    @include image-flicker(
+      "flicker-home-background",
       url("../assets/img/home/logo-border-accent.png"),
       url("../assets/img/home/logo-border-base.png"),
       drop-shadow(0 0 6px $color-primary) drop-shadow(0 0 12px $color-primary-dark)
     );
-    @include animation(flicker-home-background-image 10s linear infinite);
+    @include animation(flicker-home-background 10s linear infinite);
   }
 
   #greeting {

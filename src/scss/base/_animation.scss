@@ -64,7 +64,7 @@
 }
 
 // Image flicker animation (repeated)
-@mixin flicker-image($name, $image-1, $image-2, $image-1-filter: none, $image-2-filter: none) {
+@mixin image-flicker($name, $image-1, $image-2, $image-1-filter: none, $image-2-filter: none) {
   @at-root {
     @include keyframes($name) {
       0%,
