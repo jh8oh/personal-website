@@ -17,7 +17,7 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import sidebarLinks from "@/assets/content/sidebar-links.ts";
+import sidebarLinks from "@/assets/ts/sidebar-links.ts";
 
 @Component
 export default class SidebarLinks extends Vue {
