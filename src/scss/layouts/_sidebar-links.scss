@@ -33,7 +33,7 @@
       @extend %no-underline;
 
       &:hover + span {
-        display: inline;
+        @include animation(flicker-transition-enter 0.2s forwards);
       }
     }
 
@@ -47,8 +47,10 @@
     }
 
     span {
-      display: none;
+      opacity: 0;
       margin-left: 6px;
+      color: $color-primary;
+      @include animation(none);
     }
   }
 }
