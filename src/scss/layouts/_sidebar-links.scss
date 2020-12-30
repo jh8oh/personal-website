@@ -31,7 +31,11 @@
     }
 
     img {
-      width: 32px;
+      @include size(32px);
+
+      &:hover {
+        filter: drop-shadow(0 0 0.4px $color-primary) drop-shadow(0 0 0.8px $color-primary-dark);
+      }
     }
   }
 }
