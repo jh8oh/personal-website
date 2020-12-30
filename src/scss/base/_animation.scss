@@ -29,8 +29,76 @@
   }
 }
 
-// Image flicker animation
-@mixin flicker-image($name, $image-1, $image-2, $image-1-filter: none, $image-2-filter: none) {
+// Flicker transitions
+@include keyframes(flicker-transition-enter) {
+  5%,
+  19%,
+  40%,
+  99% {
+    opacity: 0;
+  }
+
+  0%,
+  4%,
+  20%,
+  39%,
+  100% {
+    opacity: 1;
+  }
+}
+
+@include keyframes(flicker-transition-leave) {
+  0%,
+  9%,
+  16%,
+  24% {
+    opacity: 1;
+  }
+
+  10%,
+  15%,
+  25%,
+  100% {
+    opacity: 0;
+  }
+}
+
+// Neon flicker animation
+@mixin neon-flicker($name, $color, $color-dark, $small: false, $box: true, $text: true) {
+  @at-root {
+    @include keyframes($name) {
+      5%,
+      19%,
+      40%,
+      99% {
+        @if $text {
+          color: $color-dark;
+          text-shadow: none;
+        }
+        @if $box {
+          border-color: $color-dark;
+          box-shadow: none;
+        }
+      }
+
+      0%,
+      4%,
+      20%,
+      39%,
+      100% {
+        @if $text {
+          @include neon-text($color, $color-dark, $small);
+        }
+        @if $box {
+          @include neon-box-shadow($color, $color-dark, $small);
+        }
+      }
+    }
+  }
+}
+
+// Image flicker animation (repeated)
+@mixin image-flicker($name, $image-1, $image-2, $image-1-filter: none, $image-2-filter: none) {
   @at-root {
     @include keyframes($name) {
       0%,
