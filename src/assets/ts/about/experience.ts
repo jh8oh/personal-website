@@ -6,7 +6,14 @@ class Experience {
   dates: string;
   description: string;
 
-  constructor(id: number, employer: string, position: string, website: string, dates: string, description: string) {
+  constructor(
+    id: number,
+    employer: string,
+    position: string,
+    website: string,
+    dates: string,
+    description: string
+  ) {
     this.id = id;
     this.employer = employer;
     this.position = position;
@@ -21,10 +28,9 @@ const innovapost = new Experience(
   "Innovapost",
   "Android/Innovation Developer",
   "https://innovapost.com/",
-  "September 2020 - Current",
+  "September - December 2020",
   "Split between working on the Android-platform team and the 'Innovation Garage'.<br /><strong>Android</strong><ul><li>Fixed production bugs and implemented new features for the Canada Post application</li><li>Worked in a agile-scrum environment</li></ul><strong>Innovation Garage</strong><ul><li>Researched the possibility of implementing progressive registration and OAuth 2.0 on the app</li><li>Part of a pilot team to eliminate the need for ring scanners and instead use wrist-mounted PDTs which automatically (de)activate their scanner based on the gravimeter.</li></ul>"
 );
-
 
 const dcCanada = new Experience(
   1,

@@ -1,6 +1,6 @@
 <template>
   <div id="about" class="page">
-    <div id="about-content">
+    <div id="about-content" class="page-content">
       <h1>About Me</h1>
       <section id="intro">
         <img src="../assets/img/about/profile-pic.jpg" alt="Profile Picture" />
@@ -45,16 +45,18 @@
         </div>
       </section>
     </div>
+    <Footer />
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Watch, Vue } from "vue-property-decorator";
+import { Component, Vue } from "vue-property-decorator";
 import ExperienceCard from "@/components/about/ExperienceCard.vue";
-import experiences from "@/assets/content/about/experience.ts";
+import Footer from "@/layouts/Footer.vue";
+import experiences from "@/assets/ts/about/experience.ts";
 
 @Component({
-  components: { ExperienceCard },
+  components: { ExperienceCard, Footer },
 })
 export default class About extends Vue {
   private experiences = experiences;

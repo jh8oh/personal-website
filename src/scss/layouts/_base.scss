@@ -17,4 +17,8 @@ body {
 .page {
   min-height: $content-height;
   overflow: auto;
+
+  &-content {
+    padding-bottom: 32px;
+  }
 }
