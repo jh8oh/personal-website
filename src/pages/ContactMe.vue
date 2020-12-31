@@ -1,34 +1,61 @@
 <template>
   <div id="contact-me" class="page">
-    <div id="contact-me-content">
+    <div id="contact-me-content" class="page-content">
       <h1>Contact Me</h1>
       <p>
-        I'm always open for any work opportunities or collaborations. If you want to get in touch or just want to share
-        some spicy memes, send me a message by using the form below or by emailing me directly at
+        I'm always open for any work opportunities or collaborations. If you
+        want to get in touch or just want to share some spicy memes, send me a
+        message by using the form below or by emailing me directly at
         <a href="mailto: ohjiho.sk@gmail.com">ohjiho.sk@gmail.com</a>.
       </p>
       <form id="contact-form">
         <div id="sender-info">
-          <input name="name" v-model="name" type="text" placeholder="Your Name (required)" />
-          <input name="email" v-model="email" type="email" placeholder="Your Email (required)" />
+          <input
+            name="name"
+            v-model="name"
+            type="text"
+            placeholder="Your Name (required)"
+          />
+          <input
+            name="email"
+            v-model="email"
+            type="email"
+            placeholder="Your Email (required)"
+          />
         </div>
-        <input name="subject" v-model="subject" type="text" placeholder="Subject" />
-        <textarea name="message" v-model="message" rows="5" placeholder="Your Message (required)" />
+        <input
+          name="subject"
+          v-model="subject"
+          type="text"
+          placeholder="Subject"
+        />
+        <textarea
+          name="message"
+          v-model="message"
+          rows="5"
+          placeholder="Your Message (required)"
+        />
       </form>
       <Button :text="'SEND'" :buttonClass="'small'" @clicked="sendEmail()" />
-      <Button :text="'RESET'" :buttonClass="'small no-border'" @clicked="resetForm()" />
+      <Button
+        :text="'RESET'"
+        :buttonClass="'small no-border'"
+        @clicked="resetForm()"
+      />
     </div>
+    <Footer />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
+import Footer from "@/layouts/Footer.vue";
 import Button from "@/components/Button.vue";
 
 import emailjs from "emailjs-com";
 
 @Component({
-  components: { Button },
+  components: { Button, Footer },
 })
 export default class ContactMe extends Vue {
   private name = "";
@@ -65,16 +92,23 @@ export default class ContactMe extends Vue {
       return;
     }
     // All clear, send email
-    emailjs.sendForm("default_service", "contact_me", "#contact-form", "user_KPA6UZpEDVA0yIJHW5WPo").then(
-      (result) => {
-        console.log("Success", result.status, result.text);
-        alert("Your email has been sent!");
-      },
-      (error) => {
-        console.log("Error", error);
-        alert("There was an error with your email.");
-      }
-    );
+    emailjs
+      .sendForm(
+        "default_service",
+        "contact_me",
+        "#contact-form",
+        "user_KPA6UZpEDVA0yIJHW5WPo"
+      )
+      .then(
+        (result) => {
+          console.log("Success", result.status, result.text);
+          alert("Your email has been sent!");
+        },
+        (error) => {
+          console.log("Error", error);
+          alert("There was an error with your email.");
+        }
+      );
   }
 }
 </script>
