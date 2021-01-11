@@ -38,7 +38,7 @@ const dcCanada = new Experience(
   "Web/Android Developer",
   "https://www.dc-canada.ca/",
   "Jan. - Apr. 2020",
-  "Worked on maintaining the existing <a href=\"https://onestoryaday.ca\">One Story a Day website</a> and developing an app for it<br /><strong>Web Developer</strong><ul><li>Maintained and developed new contents and features on a WordPress powered website</li><li>Integrated MotionPay into the payment system for the Chinese domain which allowed customers to pay by scanning a QR code in Alipay/WeChat pay</ul><strong>Android Developer</strong><ul><li>Solo development and design of an Android eBook reader titled 'One Story a Day'</li><li>Connects with the LMS on the website to sync up users between the site</li></ul>"
+  "Worked on maintaining the existing <a href=\"https://onestoryaday.ca\">One Story a Day website</a> and developing an app for it<br /><strong>Web Developer</strong><ul><li>Maintained and developed new contents and features on a WordPress powered website</li><li>Integrated MotionPay into the payment system for the Chinese domain which allowed customers to pay by scanning a QR code in Alipay/WeChat pay</ul><strong>Android Developer</strong><ul><li>Solo development and design of an Android eBook reader titled 'One Story a Day'</li><li>Connects with the LMS on the website to sync up users between the site and the app</li></ul>"
 );
 
 const experiences = [innovapost, dcCanada];
