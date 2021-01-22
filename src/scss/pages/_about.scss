@@ -59,41 +59,8 @@
       }
     }
 
-    #timeline:not(.horizontal-selector) {
-      @extend %no-decoration;
-      min-width: 200px;
-      margin: 0 12px;
-      border-left: 1px solid $color-on-background;
-
-      li {
-        position: relative;
-        margin: 12px;
-        cursor: pointer;
-        @include transition(margin-left 0.2s ease-in-out);
-
-        &:before {
-          content: "";
-          position: absolute;
-          @include size(6px);
-          top: 50%;
-          left: -16px;
-          transform: translateY(-50%);
-          background-color: $color-background;
-          border: 1px solid $color-on-background;
-          border-radius: 50%;
-          @include transition(left 0.2s ease-in-out);
-        }
-
-        &.active {
-          margin-left: 16px;
-          color: $color-primary;
-
-          &:before {
-            border-color: $color-primary;
-            left: -20px;
-          }
-        }
-      }
+    #timeline {
+      @include navigation-bar(840px);
     }
 
     #details {
