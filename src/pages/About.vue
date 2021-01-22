@@ -50,7 +50,7 @@
 import { Component, Vue } from "vue-property-decorator";
 import ExperienceCard from "@/components/about/ExperienceCard.vue";
 import Footer from "@/layouts/Footer.vue";
-import experiences from "@/assets/ts/about/experience.ts";
+import experiences from "@/ts/content/about/experience";
 
 @Component({
   components: { ExperienceCard, Footer },
