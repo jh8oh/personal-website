@@ -20,6 +20,20 @@
       </section>
       <section id="skills">
         <h2>Skills</h2>
+        <ul>
+          <li
+            v-for="skill in skills"
+            :key="skill.id"
+            @click="setActiveSkill(skill)"
+          >
+            <SkillCard
+              :activeTitle="activeSkill === skill"
+              :showContent="activeSkill != null && activeSkill != skill"
+              :skillTitle="skill.skillTitle"
+              :skills="skillBack[skill.id]"
+            />
+          </li>
+        </ul>
       </section>
       <section id="experience">
         <h2>Experience</h2>
@@ -51,18 +65,36 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
+
 import SkillCard from "@/components/about/SkillCard.vue";
 import ExperienceCard from "@/components/about/ExperienceCard.vue";
 import Footer from "@/layouts/Footer.vue";
-import skills from "@/ts/content/about/skills.ts";
-import experiences from "@/ts/content/about/experiences.ts";
+
+import SkillCategory from "@/ts/class/about/SkillCategory";
+import Skill from "@/ts/class/about/Skill";
+import skills from "@/ts/content/about/skills";
+import experiences from "@/ts/content/about/experiences";
 
 @Component({
   components: { SkillCard, ExperienceCard, Footer },
 })
 export default class About extends Vue {
+  private skills = skills;
+  private activeSkill: SkillCategory | null = null;
+  private skillBack: Skill[][] = [];
+
   private experiences = experiences;
   private activeExperience = experiences[0];
+
+  private setActiveSkill(skill: SkillCategory) {
+    if (this.activeSkill === null) {
+      this.activeSkill = skill;
+      this.skillBack = skill.splitSkills(this.skills.length - 1, skill.id);
+    } else if (this.activeSkill === skill) {
+      this.activeSkill = null;
+      this.skillBack = [];
+    }
+  }
 
   private isBelowBreakpoint =
     (window.innerWidth > 0 ? window.innerWidth : screen.width) <= 840;

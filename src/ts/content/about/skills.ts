@@ -22,6 +22,7 @@ const androidSkills = [
   new Skill("Motion Sensors", 2),
 ];
 const android = new SkillCategory(
+  0,
   "Android Development",
   androidDark,
   androidPrimary,
@@ -40,6 +41,7 @@ const webSkills = [
   new Skill("PHP", 2),
 ];
 const web = new SkillCategory(
+  1,
   "Web Development",
   webDark,
   webPrimary,
