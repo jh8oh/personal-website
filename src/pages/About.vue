@@ -58,21 +58,5 @@ import experiences from "@/ts/content/about/experience";
 export default class About extends Vue {
   private experiences = experiences;
   private activeExperience = experiences[0];
-
-  private isBelowBreakpoint =
-    (window.innerWidth > 0 ? window.innerWidth : screen.width) <= 840;
-
-  created() {
-    window.addEventListener("resize", this.onResize);
-  }
-
-  destroyed() {
-    window.removeEventListener("resize", this.onResize);
-  }
-
-  onResize() {
-    const width = window.innerWidth > 0 ? window.innerWidth : screen.width;
-    this.isBelowBreakpoint = width <= 840;
-  }
 }
 </script>
