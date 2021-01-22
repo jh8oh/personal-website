@@ -3,7 +3,7 @@
     <div id="about-content" class="page-content">
       <h1>About Me</h1>
       <section id="intro">
-        <img src="../assets/img/about/profile-pic.jpg" alt="Profile Picture" />
+        <img src="@/assets/img/about/profile-pic.jpg" alt="Profile Picture" />
         <p>
           Hello! I'm Ji Ho Oh (오지호) but I also go by Jay. I'm a 3rd-year
           undergrad at the University of Waterloo.<br /><br />
@@ -51,12 +51,14 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
+import SkillCard from "@/components/about/SkillCard.vue";
 import ExperienceCard from "@/components/about/ExperienceCard.vue";
 import Footer from "@/layouts/Footer.vue";
+import skills from "@/assets/ts/about/skill.ts";
 import experiences from "@/assets/ts/about/experience.ts";
 
 @Component({
-  components: { ExperienceCard, Footer },
+  components: { SkillCard, ExperienceCard, Footer },
 })
 export default class About extends Vue {
   private experiences = experiences;

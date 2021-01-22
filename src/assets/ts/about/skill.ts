@@ -1,11 +1,23 @@
+import androidDark from "@/assets/ico/about/skills/android-dark.png";
+import androidPrimary from "@/assets/ico/about/skills/android-primary.png";
+import webDark from "@/assets/ico/about/skills/web-dark.png";
+import webPrimary from "@/assets/ico/about/skills/web-primary.png";
+
 class SkillCategory {
   name: string;
-  icoPath: string;
+  iconDark: string;
+  iconPrimary: string;
   skills: Skill[];
 
-  constructor(name: string, icoPath: string, skills: Skill[]) {
+  constructor(
+    name: string,
+    iconDark: string,
+    iconPrimary: string,
+    skills: Skill[]
+  ) {
     this.name = name;
-    this.icoPath = icoPath;
+    this.iconDark = iconDark;
+    this.iconPrimary = iconPrimary;
     this.skills = skills;
   }
 
@@ -46,6 +58,7 @@ class Skill {
   }
 }
 
+// Android
 const androidSkills = [
   new Skill("Kotlin", 5),
   new Skill("Java", 4),
@@ -60,8 +73,14 @@ const androidSkills = [
   new Skill("Navigation", 5),
   new Skill("Motion Sensors", 2),
 ];
-const android = new SkillCategory("Android Development", "", androidSkills);
+const android = new SkillCategory(
+  "Android Development",
+  androidDark,
+  androidPrimary,
+  androidSkills
+);
 
+// Web
 const webSkills = [
   new Skill("HTML5", 5),
   new Skill("CSS3", 5),
@@ -72,7 +91,12 @@ const webSkills = [
   new Skill("WordPress", 3),
   new Skill("PHP", 2),
 ];
-const web = new SkillCategory("Web Development", "", webSkills);
+const web = new SkillCategory(
+  "Web Development",
+  webDark,
+  webPrimary,
+  webSkills
+);
 
 const skills = [android, web];
 
