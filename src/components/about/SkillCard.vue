@@ -2,19 +2,30 @@
   <div class="skill">
     <transition name="flicker" mode="out-in">
       <div
-        key="1"
         class="title"
+        key="1"
         @mouseover="setTitleHovered(true)"
         @mouseleave="setTitleHovered(false)"
         v-if="!showContent"
       >
         <img :src="skillTitle.icon" />
-        <h3>{{ skillTitle.name }}</h3>
+        <h3 :class="{ colorPrimary: isTitleHovered || activeTitle }">
+          {{ skillTitle.name }}
+        </h3>
       </div>
-      <div key="2" class="content" v-else>
+      <div class="content" key="2" v-else>
         <ul>
           <li v-for="skill in skills" :key="skill.name">
-            {{ skill.name }}
+            <span class="name">
+              {{ skill.name }}
+            </span>
+            <ul class="rating">
+              <li
+                v-for="i in 5"
+                :key="i"
+                :class="{ filled: skill.proficiency >= i }"
+              />
+            </ul>
           </li>
         </ul>
       </div>
@@ -35,12 +46,17 @@ export default class SkillCard extends Vue {
   @Prop({ required: true, type: Boolean }) readonly showContent!: boolean;
   @Prop({ required: false, type: Array }) readonly skills?: Skill[];
 
+  private isTitleHovered = false;
+
   @Watch("activeTitle")
   onActiveTitleChange(newVal: boolean) {
-    this.skillTitle.setIcon(this.activeTitle);
+    if (!this.isTitleHovered) {
+      this.skillTitle.setIcon(this.activeTitle);
+    }
   }
 
   setTitleHovered(isTitleHovered: boolean) {
+    this.isTitleHovered = isTitleHovered;
     if (!this.activeTitle) {
       this.skillTitle.setIcon(isTitleHovered);
     }

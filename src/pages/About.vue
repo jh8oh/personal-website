@@ -20,7 +20,7 @@
       </section>
       <section id="skills">
         <h2>Skills</h2>
-        <ul>
+        <ul id="skills-list">
           <li
             v-for="skill in skills"
             :key="skill.id"
