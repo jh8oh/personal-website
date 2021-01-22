@@ -1,62 +1,10 @@
+import SkillCategory from "../../class/about/SkillCategory";
+import Skill from "../../class/about/Skill";
+
 import androidDark from "@/assets/ico/about/skills/android-dark.png";
 import androidPrimary from "@/assets/ico/about/skills/android-primary.png";
 import webDark from "@/assets/ico/about/skills/web-dark.png";
 import webPrimary from "@/assets/ico/about/skills/web-primary.png";
-
-class SkillCategory {
-  name: string;
-  iconDark: string;
-  iconPrimary: string;
-  skills: Skill[];
-
-  constructor(
-    name: string,
-    iconDark: string,
-    iconPrimary: string,
-    skills: Skill[]
-  ) {
-    this.name = name;
-    this.iconDark = iconDark;
-    this.iconPrimary = iconPrimary;
-    this.skills = skills;
-  }
-
-  // Splits the skill array equally into n arrays
-  splitSkills(n: number) {
-    if (n < 2) {
-      return this.skills;
-    }
-
-    var length = this.skills.length,
-      out = [],
-      i = 0,
-      size;
-
-    if (length % n === 0) {
-      size = length / n;
-      while (i < length) {
-        out.push(this.skills.slice(i, (i += size)));
-      }
-    } else {
-      while (i < length) {
-        size = Math.ceil((length - i) / n--);
-        out.push(this.skills.slice(i, (i += size)));
-      }
-    }
-
-    return out;
-  }
-}
-
-class Skill {
-  name: string;
-  proficiency: number;
-
-  constructor(name: string, proficiency: number) {
-    this.name = name;
-    this.proficiency = proficiency;
-  }
-}
 
 // Android
 const androidSkills = [

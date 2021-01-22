@@ -54,8 +54,8 @@ import { Component, Vue } from "vue-property-decorator";
 import SkillCard from "@/components/about/SkillCard.vue";
 import ExperienceCard from "@/components/about/ExperienceCard.vue";
 import Footer from "@/layouts/Footer.vue";
-import skills from "@/assets/ts/about/skill.ts";
-import experiences from "@/assets/ts/about/experience.ts";
+import skills from "@/ts/content/about/skills.ts";
+import experiences from "@/ts/content/about/experiences.ts";
 
 @Component({
   components: { SkillCard, ExperienceCard, Footer },
