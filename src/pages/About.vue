@@ -27,10 +27,10 @@
             @click="setActiveSkill(skill)"
           >
             <SkillCard
+              :skillTitle="skill.skillTitle"
               :activeTitle="activeSkill === skill"
               :showContent="activeSkill != null && activeSkill != skill"
-              :skillTitle="skill.skillTitle"
-              :skills="skillBack[skill.id]"
+              :skills="skillContent[skill.id]"
             />
           </li>
         </ul>
@@ -81,7 +81,7 @@ import experiences from "@/ts/content/about/experiences";
 export default class About extends Vue {
   private skills = skills;
   private activeSkill: SkillCategory | null = null;
-  private skillBack: Skill[][] = [];
+  private skillContent: Skill[][] = [];
 
   private experiences = experiences;
   private activeExperience = experiences[0];
@@ -89,10 +89,10 @@ export default class About extends Vue {
   private setActiveSkill(skill: SkillCategory) {
     if (this.activeSkill === null) {
       this.activeSkill = skill;
-      this.skillBack = skill.splitSkills(this.skills.length - 1, skill.id);
+      this.skillContent = skill.splitSkills(this.skills.length - 1, skill.id);
     } else if (this.activeSkill === skill) {
       this.activeSkill = null;
-      this.skillBack = [];
+      this.skillContent = [];
     }
   }
 
