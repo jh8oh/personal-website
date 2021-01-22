@@ -18,6 +18,9 @@
           playing video games, reading manga, and world-building.
         </p>
       </section>
+      <section id="skills">
+        <h2>Skills</h2>
+      </section>
       <section id="experience">
         <h2>Experience</h2>
         <div id="experience-content">
