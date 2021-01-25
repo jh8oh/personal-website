@@ -101,11 +101,11 @@ export default class ContactMe extends Vue {
       )
       .then(
         (result) => {
-          console.log("Success", result.status, result.text);
+          window.console.log("Success", result.status, result.text);
           alert("Your email has been sent!");
         },
         (error) => {
-          console.log("Error", error);
+          window.console.log("Error", error);
           alert("There was an error with your email.");
         }
       );
